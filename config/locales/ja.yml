@@ -1,0 +1,44 @@
+ja:
+  activerecord:
+    attributes:
+      work:
+        original_title: タイトル
+      expression:
+        original_title: タイトル
+        content_type_id: 表現の種類
+        note: 備考
+        language: 言語
+      manifestation:
+        edition: 版
+        title_proper: タイトル
+        examined_year: 検定年度
+        note: 備考
+        textbook_code: 教科書記号
+        textbook_number: 教科書番号
+        extent: ページ数・大きさ
+        url: URL
+        source_year: 掲載年度
+        start_year: 使用開始年度
+        end_year: 使用終了年度
+        bib_id: 書誌ID
+      person:
+        full_name: フルネーム
+      catalog:
+        name: 名称
+        url: URL
+    models:
+      work: Work
+      expression: Expression
+      manifestation: Manifestation
+      content_type: 表現の種類
+
+  enju:
+    show: 表示
+    edit: 編集
+    destroy: 削除
+    back: 戻る
+    search: 検索
+    listing: "%{model}の一覧"
+    new: "%{model}の新規作成"
+    editing: "%{model}の編集"
+    showing: "%{model}の表示"

@@ -1,0 +1,23 @@
+<div id="content_detail" class="ui-corner-all">
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Work:</b>
+  <%= link_to @reify.work.original_title, @reify.work %>
+</p>
+
+<p>
+  <b>Expression:</b>
+  <%= link_to @reify.expression.original_title, @reify.expression %>
+</p>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('enju.edit'), edit_reify_path(@reify) %></li>
+    <li><%= link_to t('enju.back'), reifies_path %></li>
+  </ul>
+</div>

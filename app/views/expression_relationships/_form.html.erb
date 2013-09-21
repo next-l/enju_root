@@ -1,0 +1,31 @@
+<%= form_for(@expression_relationship) do |f| %>
+  <% if @expression_relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expression_relationship.errors.count, "error") %> prohibited this expression_relationship from being saved:</h2>
+
+      <ul>
+      <% @expression_relationship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%= link_to @expression_relationship.parent.work.original_title, @expression_relationship.parent %>
+    <%= f.hidden_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :child_id %><br />
+    <%= link_to @expression_relationship.child.work.original_title, @expression_relationship.child %>
+    <%= f.hidden_field :child_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expression_relationship_type_id %><br />
+    <%= f.select(:expression_relationship_type_id, @relationship_types.map{|w| [w.name, w.id]}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

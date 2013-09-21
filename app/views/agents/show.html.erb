@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Full name:</b>
+  <%= @agent.full_name %>
+</p>
+
+<p>
+  <b>Agent type:</b>
+  <%= @agent.agent_type_id %>
+</p>
+
+
+<%= link_to t('enju.edit'), edit_agent_path(@agent) %> |
+<%= link_to t('enju.back'), agents_path %>

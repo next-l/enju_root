@@ -1,0 +1,23 @@
+<div id="content_detail" class="ui-corner-all">
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manifestation:</b>
+  <%= link_to @produce.manifestation.title_proper, @produce.manifestation %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= link_to @produce.person.full_name, @produce.person %>
+</p>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('enju.edit'), edit_produce_path(@produce) %></li>
+    <li><%= link_to t('enju.back'), produces_path %></li>
+  </ul>
+</div>

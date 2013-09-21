@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @language.name %>
+</p>
+
+<p>
+  <b>Native name:</b>
+  <%= @language.native_name %>
+</p>
+
+<p>
+  <b>Display name:</b>
+  <%= @language.display_name %>
+</p>
+
+<p>
+  <b>Iso 639 1:</b>
+  <%= @language.iso_639_1 %>
+</p>
+
+<p>
+  <b>Iso 639 2:</b>
+  <%= @language.iso_639_2 %>
+</p>
+
+<p>
+  <b>Iso 639 3:</b>
+  <%= @language.iso_639_3 %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @language.note %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @language.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_language_path(@language) %> |
+<%= link_to 'Back', languages_path %>

@@ -1,0 +1,70 @@
+<%= form_for(@manifestation) do |f| %>
+  <% if @manifestation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manifestation.errors.count, "error") %> prohibited this manifestation from being saved:</h2>
+
+      <ul>
+      <% @manifestation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--
+  <div class="field">
+    <%= f.label :title_proper %><br />
+    <%= f.text_field :title_proper %>
+  </div>
+  <div class="field">
+    <%= f.label :bib_id %><br />
+    <%= f.text_field :bib_id %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.url_field :url %>
+  </div>
+  <!--
+  <div class="field">
+    <%= f.label :edition %><br />
+    <%= f.text_field :edition %>
+  </div>
+  <div class="field">
+    <%= f.label :source_year %><br />
+    <%= f.text_field :source_year %>
+  </div>
+  <div class="field">
+    <%= f.label :start_year %><br />
+    <%= f.text_field :start_year %>
+  </div>
+  <div class="field">
+    <%= f.label :end_year %><br />
+    <%= f.text_field :end_year %>
+  </div>
+  <div class="field">
+    <%= f.label :examined_year %><br />
+    <%= f.text_field :examined_year %>
+  </div>
+  <div class="field">
+    <%= f.label :textbook_code %><br />
+    <%= f.text_field :textbook_code %>
+  </div>
+  <div class="field">
+    <%= f.label :textbook_number %><br />
+    <%= f.text_field :textbook_number %>
+  </div>
+  <div class="field">
+    <%= f.label :extent %><br />
+    <%= f.text_field :extent %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_field :note %>
+    <%= f.hidden_field :expression_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

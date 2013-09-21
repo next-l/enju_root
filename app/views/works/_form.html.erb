@@ -1,0 +1,60 @@
+<%= form_for(@work) do |f| %>
+  <% if @work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+      <% @work.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @parent_work %>
+    <div class="field">
+      <%= f.label :parent %><br />
+      <%= link_to @parent_work.original_title, @parent_work %>
+      <%= f.hidden_field :parent_id %>
+    </div>
+  <% end %>
+
+  <% if @work.work_url %>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= params[:work_url] %>
+    <%= f.hidden_field :work_url %>
+  </div>
+  <% end %>
+  <% if @work.manifestation_url %>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= params[:manifestation_url] %>
+    <%= f.hidden_field :manifestation_url %>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :preferred_title_for_the_work %><br />
+    <%= f.text_field :original_title %>
+    <%= f.hidden_field :manifestation_id %>
+    <%= f.text_field :manifestation_url %>
+  </div>
+  <div class="field">
+    <%= f.label :form_of_work %><br />
+    <%= f.text_field :form_of_work %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_work %><br />
+    <%= f.text_field :date_of_work %>
+  </div>
+  <!--
+  <div class="field">
+    <%= f.label :create_expression %><br />
+    <%= f.check_box :create_expression %>
+  </div>
+  -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

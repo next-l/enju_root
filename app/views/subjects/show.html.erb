@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Term:</b>
+  <%= @subject.term %>
+</p>
+
+<p>
+  <b>Subject heading:</b>
+  <%= @subject.subject_heading_id %>
+</p>
+
+<p>
+  <b>Subject type:</b>
+  <%= @subject.subject_type_id %>
+</p>
+
+
+<%= link_to t('enju.edit'), edit_subject_path(@subject) %> |
+<%= link_to t('enju.back'), subjects_path %>

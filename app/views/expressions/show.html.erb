@@ -1,0 +1,56 @@
+<div id="content_detail" class="ui-corner-all">
+  <h1 class="title">[E<%= @expression.id %>] <%= t('enju.showing', :model => t('activerecord.models.expression')) -%></h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.original_title') %>:</b>
+  [E<%= @expression.id %>] <%= @expression.original_title %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.content_type_id') %>:</b>
+  <%= @expression.content_type.name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.language') %>:</b>
+  <%= @expression.language %>
+</p>
+
+<p>
+  <b>Work:</b>
+  [W<%= @expression.work.id %>] <%= link_to @expression.work.original_title, @expression.work %>
+</p>
+
+<p>
+  <b>Manifestations</b>
+</p>
+  
+<ul>
+  <% @expression.manifestations.each do |manifestation| %>
+    <li>[M<%= manifestation.id %>] <%= link_to manifestation.cinii_title, manifestation %></li>
+  <% end %>
+</ul>
+
+<p>
+  <b>relationship graph:</b>
+</p>
+
+<%=raw File.open("#{Rails.root.to_s}/public/expressions/#{@expression.id}.svg").read if Setting.generate_graph %>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('enju.edit'), edit_expression_path(@expression) %></li>
+    <li><%= link_to t('enju.back'), expressions_path %></li>
+
+    <li><%= link_to 'New child', expressions_path(:parent_id => @expression.id) %></li>
+    <li><%= link_to 'New manifestation', manifestations_path(:expression_id => @expression.id, :mode => 'add') %></li>
+    <li><%= link_to 'New contributor', people_path(:expression_id => @expression.id, :mode => 'add') %></li>
+    <li><%= link_to 'Edit work', works_path(:expression_id => @expression.id, :mode => 'edit') %></li>
+    <li><%= link_to 'JSON-LD', expression_path(@expression, :format => :json) %></li>
+  </ul>
+</div>

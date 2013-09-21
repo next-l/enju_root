@@ -1,0 +1,106 @@
+<div id="content_detail" class="ui-corner-all">
+  <h1 class="title">[M<%= @manifestation.id %>] <%= t('enju.showing', :model => t('activerecord.models.manifestation')) -%></h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>タイトル:</b>
+  [M<%= @manifestation.id %>] <%= @manifestation.cinii_title %>
+  <br />
+  (Creator: <%= @manifestation.cinii_creator %>)
+</p>
+
+<p>
+  <b>出版社:</b>
+  <%= @manifestation.cinii_publisher %>
+</p>
+
+<ul>
+  <% @manifestation.producers.each do |producer| %>
+    <li><%= link_to producer.full_name, producer %></li>
+  <% end %>
+</ul>
+
+<!--
+<p>
+  <b>書誌ID:</b>
+  <%= @manifestation.bib_id %>
+</p>
+-->
+
+<p>
+  <b>目録システムURL:</b>
+  <%= link_to @manifestation.url, @manifestation.url if @manifestation.url? %>
+</p>
+
+<p>
+  <b>備考:</b>
+  <%= @manifestation.note %>
+</p>
+
+<p>
+  <b>関連の表示:</b>
+</p>
+
+<ul>
+  <% @manifestation.expressions.each do |expression| %>
+    <li>
+    [W<%= expression.work.id %>] <%= link_to expression.work.original_title, expression.work %>
+      <ul>
+        <% expression.work.expressions.each do |e| %>
+          <li>
+          <% if @manifestation.expressions.exists?(e) %>
+            <strong>
+          <% end %>
+          [E<%= e.id %>] <%= link_to e.original_title, e %>
+          <% if @manifestation.expressions.exists?(e) %>
+            </strong>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<%= frbr_graph(@manifestation) %>
+
+<p>
+  <b>他のサイト:</b>
+</p>
+
+<ul>
+  <% @catalogs.each do |catalog| %>
+    <li><%= catalog.name %>:
+      <ul>
+        <% begin %>
+          <% JSON::LD::API.toRDF("#{catalog.url}/bib_id/#{@manifestation.bib_id}.json").value["http://purl.org/vocab/frbr/core#embodimentOf"].each do |v| %>
+            <li>[W] <%= remote_work(v) %></li>
+          <% end %>
+        <% rescue SocketError %>
+          <li>Socket error.</li>
+        <% rescue Errno::ENETUNREACH %>
+          <li>Network is unreachable.</li>
+        <% rescue OpenURI::HTTPError %>
+          <li>Not found.</li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('enju.edit'), edit_manifestation_path(@manifestation) %></li>
+    <li><%= link_to t('enju.back'), manifestations_path %></li>
+
+    <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
+    <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
+    <li><%= link_to 'New producer', people_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
+    <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, :format => :json) %></li>
+  </div>
+</div>

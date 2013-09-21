@@ -1,0 +1,45 @@
+<%= form_for(@expression) do |f| %>
+  <% if @expression.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expression.errors.count, "error") %> prohibited this expression from being saved:</h2>
+
+      <ul>
+      <% @expression.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :work %><br />
+    <%= link_to @expression.work.original_title, @expression.work %>
+    <%= f.hidden_field :work_id %>
+  </div>
+  <div class="field">
+    <%= f.label :original_title %><br />
+    <%= f.text_field :original_title %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :content_type_id %><br />
+    <%= f.select(:content_type_id, @content_types.map{|c| [c.name, c.id]}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manifestation_url %><br />
+    <%= link_to @expression.manifestation_url, @expression.manifestation_url if @expression.manifestation_url %>
+    <%= f.hidden_field :manifestation_id %>
+    <%= f.hidden_field :manifestation_url %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<div id="content_detail" class="ui-corner-all">
+<h1 class="title">Listing content_types</h1>
+<div id="content_list">
+
+<table class="index">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @content_types.each do |content_type| %>
+  <tr class="line<%= cycle("0", "1") -%>">
+    <td><%= link_to content_type.name, content_type %></td>
+    <td><%= link_to t('enju.edit'), edit_content_type_path(content_type) %></td>
+    <td><%= link_to t('enju.destroy'), content_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to 'New Content type', new_content_type_path %></li>
+  </ul>
+</div>

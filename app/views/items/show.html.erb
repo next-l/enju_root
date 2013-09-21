@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item identifier:</b>
+  <%= @item.item_identifier %>
+</p>
+
+
+<%= link_to t('enju.edit'), edit_item_path(@item) %> |
+<%= link_to t('enju.back'), items_path %>

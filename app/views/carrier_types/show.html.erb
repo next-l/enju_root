@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @carrier_type.name %>
+</p>
+
+
+<%= link_to t('enju.edit'), edit_carrier_type_path(@carrier_type) %> |
+<%= link_to t('enju.back'), carrier_types_path %>
