@@ -40,6 +40,11 @@ class EnjuRoot::SetupGenerator < Rails::Generators::Base
   enju_root_user_model
   attr_accessible :username, :user_group_id, :user_number, :note
 EOS
+    inject_into_file "app/helpers/application_helper.rb", :after => /module ApplicationHelper$\n/ do
+      <<"EOS"
+  include EnjuRoot::ApplicationHelper
+EOS
+  end
     #inject_into_file "app/assets/javascripts/application.js", :after => /\/\/= require jquery_ujs$\n/ do
     #  "//= require enju_root\n"
     #end
