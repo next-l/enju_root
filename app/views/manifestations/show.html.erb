@@ -100,7 +100,7 @@
 
     <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
     <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
-    <li><%= link_to 'New producer', people_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
+    <li><%= link_to 'New producer', agents_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
     <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, :format => :json) %></li>
   </div>
 </div>
