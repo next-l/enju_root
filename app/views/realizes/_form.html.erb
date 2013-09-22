@@ -18,10 +18,10 @@
     <%= f.hidden_field :expression_id %>
   </div>
   <div class="field">
-    <%= f.label :person %><br />
-    <%= link_to @realize.person.full_name, @realize.person %>
+    <%= f.label :agent %><br />
+    <%= link_to @realize.agent.full_name, @realize.agent %>
     <br />
-    <%= f.hidden_field :person_id %>
+    <%= f.hidden_field :agent_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

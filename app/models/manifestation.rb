@@ -7,7 +7,7 @@ class Manifestation < ActiveRecord::Base
   has_many :embodies
   has_many :expressions, :through => :embodies
   has_many :produces, :dependent => :destroy, :foreign_key => 'manifestation_id'
-  has_many :producers, :through => :produces, :source => :person #, :order => 'produces.position'
+  has_many :producers, :through => :produces, :source => :agent #, :order => 'produces.position'
 
   #validates :cinii_title, :presence => true
   validates :url, :presence => true
@@ -31,7 +31,7 @@ class Manifestation < ActiveRecord::Base
   end
 
   def creators
-    Person.where(:id => Create.where(:work_id => expressions.joins(:reify).pluck(:work_id)).pluck(:person_id))
+    Agent.where(:id => Create.where(:work_id => expressions.joins(:reify).pluck(:work_id)).pluck(:agent_id))
   end
 
   def generate_graph

@@ -49,8 +49,8 @@
         <%= link_to '関連著作を追加', new_expression_relationship_path(:parent_id => @parent_expression.id, :child_id => expression.id) if !expression.parents.include?(@parent_expression)%>
       <% elsif @manifestation %>
         <%= link_to '関連を追加', new_embody_path(:expression_id => expression.id, :manifestation_id => @manifestation.id) if !@manifestation.expressions.include?(expression) %>
-      <% elsif @person %>
-        <%= link_to '関連を追加', new_realize_path(:expression_id => expression.id, :person_id => @person.id) if @person and !expression.contributors.include?(@person) %>
+      <% elsif @agent %>
+        <%= link_to '関連を追加', new_realize_path(:expression_id => expression.id, :agent_id => @agent.id) if @agent and !expression.contributors.include?(@agent) %>
       <% else %>
         <%= link_to '関連を追加', new_reify_path(:work_id => @work.id, :expression_id => expression.id) if @work and expression.work != @work %>
       <% end %>

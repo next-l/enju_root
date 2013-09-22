@@ -7,12 +7,12 @@ class ExpressionsController < ApplicationController
     @work = work = Work.find(params[:work_id]) if params[:work_id]
     @parent_expression = Expression.find(params[:parent_id]) if params[:parent_id]
     @manifestation = manifestation = Manifestation.find(params[:manifestation_id]) if params[:manifestation_id]
-    @person = person = Person.find(params[:person_id]) if params[:person_id]
+    @agent = agent = Agent.find(params[:agent_id]) if params[:agent_id]
     @expressions = Expression.search do
       if params[:mode] != 'add'
         with(:work_id).equal_to work.id if work
         with(:manifestation_ids).equal_to manifestation.id if manifestation
-        with(:person_ids).equal_to person.id if person
+        with(:agent_ids).equal_to agent.id if agent
       end
       fulltext params[:query]
       paginate :page => params[:page], :per_page => Expression.default_per_page

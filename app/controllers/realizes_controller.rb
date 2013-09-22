@@ -25,9 +25,9 @@ class RealizesController < ApplicationController
   # GET /realizes/new.json
   def new
     @realize = Realize.new
-    @person = Person.find(params[:person_id]) if params[:person_id]
+    @agent = Agent.find(params[:agent_id]) if params[:agent_id]
     @expression = Expression.find(params[:expression_id]) if params[:expression_id]
-    @realize.person = @person
+    @realize.agent = @agent
     @realize.expression = @expression
 
     respond_to do |format|

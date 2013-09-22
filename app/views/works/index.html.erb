@@ -56,8 +56,8 @@
         <%= link_to '関連著作を修正', edit_reify_path(@reify, :work_id => work.id, :expression_id => @expression) if !work.expressions.include?(@expression) and @reify %>
       <% elsif @manifestation_id %>
         <%= link_to '関連著作を追加', expressions_path(:work_id => work.id, :manifestation_id => @manifestation_id, :mode => 'add') unless work.expressions.map{|e| e.manifestations}.flatten.include?(Manifestation.find(@manifestation_id)) %>
-      <% elsif @person %>
-        <%= link_to '関連著作を追加', new_create_path(:work_id => work.id, :person_id => @person.id) unless work.creators.include?(@person) %>
+      <% elsif @agent %>
+        <%= link_to '関連著作を追加', new_create_path(:work_id => work.id, :agent_id => @agent.id) unless work.creators.include?(@agent) %>
       <% end %>
     </td>
     <td><%= link_to t('enju.edit'), edit_work_path(work) %></td>

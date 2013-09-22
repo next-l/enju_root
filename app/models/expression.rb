@@ -6,7 +6,7 @@ class Expression < ActiveRecord::Base
   has_one :reify
   has_one :work, :through => :reify
   has_many :realizes, :dependent => :destroy, :foreign_key => 'expression_id'
-  has_many :contributors, :through => :realizes, :source => :person #, :order => 'realizes.position'
+  has_many :contributors, :through => :realizes, :source => :agent #, :order => 'realizes.position'
   has_many :embodies
   has_many :manifestations, :through => :embodies
   has_many :children_relationships, :foreign_key => 'parent_id', :class_name => 'WorkRelationship', :dependent => :destroy

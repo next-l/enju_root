@@ -25,9 +25,9 @@ class CreatesController < ApplicationController
   # GET /creates/new.json
   def new
     @create = Create.new
-    @person = Person.find(params[:person_id]) if params[:person_id]
+    @agent = Agent.find(params[:agent_id]) if params[:agent_id]
     @work = Work.find(params[:work_id]) if params[:work_id]
-    @create.person = @person
+    @create.agent = @agent
     @create.work = @work
 
     respond_to do |format|

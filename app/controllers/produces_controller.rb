@@ -25,9 +25,9 @@ class ProducesController < ApplicationController
   # GET /produces/new.json
   def new
     @produce = Produce.new
-    @person = Person.find(params[:person_id]) if params[:person_id]
+    @agent = Agent.find(params[:agent_id]) if params[:agent_id]
     @manifestation = Manifestation.find(params[:manifestation_id]) if params[:manifestation_id]
-    @produce.person = @person
+    @produce.agent = @agent
     @produce.manifestation = @manifestation
 
     respond_to do |format|

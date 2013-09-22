@@ -13,14 +13,14 @@ class WorksController < ApplicationController
         flash[:notice] = 'This manifestation URL is already registered.'
       end
     end
-    @person = person = Person.find(params[:person_id]) if params[:person_id]
+    @agent = agent = Agent.find(params[:agent_id]) if params[:agent_id]
     @query = params[:query]
     @works = Work.search do
       adjust_solr_params do |params|
         params[:defType] = 'edismax'
       end
       if params[:mode] != 'add'
-        with(:creator_ids).equal_to person.id if person
+        with(:creator_ids).equal_to agent.id if agent
       end
       fulltext params[:query]
       paginate :page => params[:page], :per_page => Work.default_per_page

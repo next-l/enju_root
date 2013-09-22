@@ -18,10 +18,10 @@
     <%= f.hidden_field :manifestation_id %>
   </div>
   <div class="field">
-    <%= f.label :person %><br />
-    <%= link_to @produce.person.full_name, @produce.person %>
+    <%= f.label :agent %><br />
+    <%= link_to @produce.agent.full_name, @produce.agent %>
     <br />
-    <%= f.hidden_field :person_id %>
+    <%= f.hidden_field :agent_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

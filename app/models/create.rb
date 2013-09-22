@@ -1,5 +1,5 @@
 class Create < ActiveRecord::Base
-  attr_accessible :work_id, :person_id
+  attr_accessible :work_id, :agent_id
   belongs_to :work
-  belongs_to :person
+  belongs_to :agent
 end

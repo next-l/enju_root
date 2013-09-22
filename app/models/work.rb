@@ -7,7 +7,7 @@ class Work < ActiveRecord::Base
   has_many :reifies
   has_many :expressions, :through => :reifies
   has_many :creates, :dependent => :destroy, :foreign_key => 'work_id'
-  has_many :creators, :through => :creates, :source => :person #, :order => 'creates.position'
+  has_many :creators, :through => :creates, :source => :agent #, :order => 'creates.position'
   has_many :children_relationships, :foreign_key => 'parent_id', :class_name => 'WorkRelationship', :dependent => :destroy
   has_many :parents_relationships, :foreign_key => 'child_id', :class_name => 'WorkRelationship', :dependent => :destroy
   has_many :children, :through => :children_relationships, :source => :child
