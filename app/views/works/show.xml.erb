@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <work>
-  <title><%= @work.original_title %></title>
+  <title><%= @work.preferred_title %></title>
   <url><%= work_url(@work) %></url>
   <expressions>
     <% @work.expressions.each do |expression| %>
       <expression>
-        <title><%= expression.original_title %></title>
+        <title><%= expression.preferred_title %></title>
         <content_type><%= expression.content_type.name %></content_type>
         <url><%= expression_url(expression) %></url>
         <manifestations>

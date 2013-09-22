@@ -13,9 +13,9 @@
 
 <% @reifies.each do |reify| %>
   <tr class="line<%= cycle("0", "1") -%>">
-    <td><%= link_to reify.work.original_title, reify.work if reify.work %></td>
+    <td><%= link_to reify.work.preferred_title, reify.work if reify.work %></td>
     <td>
-      <%= link_to reify.expression.work.original_title, reify.expression if reify.expression %>
+      <%= link_to reify.expression.work.preferred_title, reify.expression if reify.expression %>
       <br />
       (<%= reify.expression.try(:language) %>)
     </td>

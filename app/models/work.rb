@@ -1,5 +1,5 @@
 class Work < ActiveRecord::Base
-  attr_accessible :original_title, :manifestation_id, :parent_id,
+  attr_accessible :preferred_title, :manifestation_id, :parent_id,
     :create_expression
   attr_accessible :manifestation_url, :work_url, :form_of_work, :date_of_work,
     :parent_work_url
@@ -13,12 +13,12 @@ class Work < ActiveRecord::Base
   has_many :children, :through => :children_relationships, :source => :child
   has_many :parents, :through => :parents_relationships, :source => :parent
 
-  validates :original_title, :presence => true
+  validates :preferred_title, :presence => true
 
   after_save :generate_graph if Setting.generate_graph
 
   searchable do
-    text :original_title do
+    text :preferred_title do
       titles
     end
     string :url, :multiple => true do
@@ -34,7 +34,7 @@ class Work < ActiveRecord::Base
     :manifestation_url, :work_url
 
   def titles
-    [original_title, expressions.map{|e| e.manifestations.map{|m| m.cinii_title}}].flatten
+    [preferred_title, expressions.map{|e| e.manifestations.map{|m| m.cinii_title}}].flatten
   end
 
   def generate_graph
@@ -45,15 +45,15 @@ class Work < ActiveRecord::Base
     g.node[:shape] = "plaintext"
     g.node[:fontsize] = 10
 
-    w = g.add_nodes("[W#{id}] #{original_title}", "URL" => "/works/#{id}", :fontcolor => "red", :shape => 'box', :color => 'blue')
+    w = g.add_nodes("[W#{id}] #{preferred_title}", "URL" => "/works/#{id}", :fontcolor => "red", :shape => 'box', :color => 'blue')
 
     parents.each do |parent|
-      p = g.add_nodes("[W#{parent.id}] #{parent.original_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
+      p = g.add_nodes("[W#{parent.id}] #{parent.preferred_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
       g.add_edges(p, w)
     end
 
     children.each do |child|
-      c = g.add_nodes("[W#{child.id}] #{child.original_title}", "URL" => "/works/#{child.id}", :shape => 'box', :color => 'blue')
+      c = g.add_nodes("[W#{child.id}] #{child.preferred_title}", "URL" => "/works/#{child.id}", :shape => 'box', :color => 'blue')
       g.add_edges(w, c)
       child.expressions.each do |expression|
         e3 = g.add_nodes("[E#{expression.id}] #{expression.language} #{expression.content_type.name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
@@ -76,11 +76,11 @@ class Work < ActiveRecord::Base
             e2 = g.add_nodes("[E#{expression2.id}] #{expression2.language} #{expression2.content_type.name}", "URL" => "/expressions/#{expression2.id}", :shape => 'box', :color => 'blue')
             g.add_edges(e2, m)
             if expression2.work != self
-              w2 = g.add_nodes("[W#{expression2.work.id}] #{expression2.work.original_title}", "URL" => "/works/#{expression2.work.id}", :shape => 'box', :color => 'blue')
+              w2 = g.add_nodes("[W#{expression2.work.id}] #{expression2.work.preferred_title}", "URL" => "/works/#{expression2.work.id}", :shape => 'box', :color => 'blue')
               g.add_edges(w2, e2)
             end
             expression.work.parents.each do |parent|
-              w3 = g.add_nodes("[W#{parent.id}] #{parent.original_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
+              w3 = g.add_nodes("[W#{parent.id}] #{parent.preferred_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
               g.add_edges(w3, w2)
             end
           end
@@ -93,10 +93,10 @@ class Work < ActiveRecord::Base
 
   def self.fetch(work_url)
     doc = Nokogiri::XML(open("#{work_url}.xml"))
-    work = Work.new(:original_title => doc.at('//work/title').content)
+    work = Work.new(:preferred_title => doc.at('//work/title').content)
     work.save!
     doc.xpath('//expression').each do |e|
-      expression = Expression.new(:original_title => e.at('./title').content)
+      expression = Expression.new(:preferred_title => e.at('./title').content)
       expression.work = work
       expression.save
     end

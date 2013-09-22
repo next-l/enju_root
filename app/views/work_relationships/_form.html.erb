@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :parent_id %><br />
-    <%= link_to @work_relationship.parent.original_title, @work_relationship.parent %>
+    <%= link_to @work_relationship.parent.preferred_title, @work_relationship.parent %>
     <%= f.hidden_field :parent_id %>
   </div>
   <div class="field">
     <%= f.label :child_id %><br />
-    <%= link_to @work_relationship.child.original_title, @work_relationship.child %>
+    <%= link_to @work_relationship.child.preferred_title, @work_relationship.child %>
     <%= f.hidden_field :child_id %>
   </div>
   <div class="field">

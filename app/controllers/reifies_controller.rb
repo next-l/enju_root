@@ -32,7 +32,7 @@ class ReifiesController < ApplicationController
     @reify.expression = @expression
     @manifestation_id = Manifestation.find(params[:manifestation_id]).id if params[:manifestation_id]
     if @manifestation_id and @work
-      expression = Expression.create(:original_title => @work.original_title)
+      expression = Expression.create(:preferred_title => @work.preferred_title)
       @reify.expression = expression
       @reify.save
       redirect_to new_embody_path(:expression_id => expression.id, :manifestation_id => @manifestation_id)

@@ -48,7 +48,7 @@ class Manifestation < ActiveRecord::Base
     expressions.each do |expression|
       e = g.add_nodes("[E#{expression.id}] #{expression.language} #{expression.content_type.name}", "URL" => "/expressions/#{expression.id}")
       g.add_edges(e, m)
-      w = g.add_nodes("[W#{expression.work.id}] #{expression.work.original_title}", "URL" => "/works/#{expression.work.id}")
+      w = g.add_nodes("[W#{expression.work.id}] #{expression.work.preferred_title}", "URL" => "/works/#{expression.work.id}")
       g.add_edges(w, e)
       expression.manifestations.each do |manifestation|
         if manifestation != self
@@ -64,7 +64,7 @@ class Manifestation < ActiveRecord::Base
   def titles
     title = []
     title << cinii_title
-    title << expressions.map{|expression| [expression.original_title, expression.work.original_title, expression.work.expressions.pluck(:original_title)]}.flatten
+    title << expressions.map{|expression| [expression.preferred_title, expression.work.preferred_title, expression.work.expressions.pluck(:preferred_title)]}.flatten
     title
   end
 

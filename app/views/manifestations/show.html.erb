@@ -45,14 +45,14 @@
 <ul>
   <% @manifestation.expressions.each do |expression| %>
     <li>
-    [W<%= expression.work.id %>] <%= link_to expression.work.original_title, expression.work %>
+    [W<%= expression.work.id %>] <%= link_to expression.work.preferred_title, expression.work %>
       <ul>
         <% expression.work.expressions.each do |e| %>
           <li>
           <% if @manifestation.expressions.exists?(e) %>
             <strong>
           <% end %>
-          [E<%= e.id %>] <%= link_to e.original_title, e %>
+          [E<%= e.id %>] <%= link_to e.preferred_title, e %>
           <% if @manifestation.expressions.exists?(e) %>
             </strong>
           <% end %>

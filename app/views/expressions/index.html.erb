@@ -8,7 +8,7 @@
     <% if @manifestation %>
       of [M] <%= @manifestation.title_proper %>
     <% elsif @work %>
-      of [W] <%= @work.original_title %>
+      of [W] <%= @work.preferred_title %>
     <% end %>
   </h1>
 <div id="content_list">
@@ -26,7 +26,7 @@
 
 <table class="index">
   <tr>
-    <th><%= t('activerecord.attributes.expression.original_title') %></th>
+    <th><%= t('activerecord.attributes.expression.preferred_title') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -35,7 +35,7 @@
 <% @expressions.each do |expression| %>
   <tr class="line<%= cycle("0", "1") -%>">
     <td>
-      <strong><%= link_to expression.original_title, expression %></strong>
+      <strong><%= link_to expression.preferred_title, expression %></strong>
       <br />
       <%= t('activerecord.attributes.expression.language') %>: <%= expression.language %>
       <%= t('activerecord.models.content_type') %>: <%= expression.content_type.name %>

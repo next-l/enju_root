@@ -1,7 +1,7 @@
 {
   "@id": "<%= work_url(@work) %>",
   "@type": "http://purl.org/vocab/frbr/core#Work",
-  "http://purl.org/dc/terms/title": "<%= @work.original_title %>",
+  "http://purl.org/dc/terms/title": "<%= @work.preferred_title %>",
   "http://purl.org/dc/terms/creator":
     <%=raw @work.creators.map{|creator| agent_url(creator)}.to_s %>,
   "http://purl.org/vocab/frbr/core#realization": 

@@ -4,8 +4,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t('activerecord.attributes.work.original_title') %>:</b>
-  [W<%= @work.id %>] <%= @work.original_title %>
+  <b><%= t('activerecord.attributes.work.preferred_title') %>:</b>
+  [W<%= @work.id %>] <%= @work.preferred_title %>
     <br />
     (Creator: <%= @work.expressions.map{|e| e.manifestations}.flatten.map{|m| m.cinii_creator}.join(" / ") %>)
 </p>
@@ -16,7 +16,7 @@
 
 <ul>
   <% @work.parents.each do |parent| %>
-    <li>[W<%= @work.id %>] <%= link_to parent.original_title, parent %></li>
+    <li>[W<%= @work.id %>] <%= link_to parent.preferred_title, parent %></li>
   <% end %>
 </ul>
 
@@ -26,7 +26,7 @@
 
 <ul>
   <% @work.children.each do |child| %>
-    <li>[W<%= child.id %>] <%= link_to child.original_title, child %></li>
+    <li>[W<%= child.id %>] <%= link_to child.preferred_title, child %></li>
   <% end %>
 </ul>
 
@@ -37,7 +37,7 @@
 <ul>
   <% @work.expressions.each do |expression| %>
     <li>
-    [E<%= expression.id %>] <%= link_to expression.original_title, expression %>
+    [E<%= expression.id %>] <%= link_to expression.preferred_title, expression %>
       <!--
       Creator: <% expression.work.creators.each do |creator| %>
         <%= link_to creator.full_name, creator %>
@@ -60,7 +60,7 @@
 
 <p>
   <b>Other WE system:</b>
-  <%= link_to @work.parent_work_url, @work.parent_work_url %>
+  <%= link_to @work.parent_work_url, @work.parent_work_url if @work.parent_work_url? %>
 </p>
 
 

@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :work %><br />
-    <%= link_to @expression.work.original_title, @expression.work %>
+    <%= link_to @expression.work.preferred_title, @expression.work %>
     <%= f.hidden_field :work_id %>
   </div>
   <div class="field">
-    <%= f.label :original_title %><br />
-    <%= f.text_field :original_title %>
+    <%= f.label :preferred_title %><br />
+    <%= f.text_field :preferred_title %>
   </div>
   <div class="field">
     <%= f.label :language %><br />

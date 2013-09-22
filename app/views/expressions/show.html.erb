@@ -4,8 +4,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t('activerecord.attributes.expression.original_title') %>:</b>
-  [E<%= @expression.id %>] <%= @expression.original_title %>
+  <b><%= t('activerecord.attributes.expression.preferred_title') %>:</b>
+  [E<%= @expression.id %>] <%= @expression.preferred_title %>
 </p>
 
 <p>
@@ -20,7 +20,7 @@
 
 <p>
   <b>Work:</b>
-  [W<%= @expression.work.id %>] <%= link_to @expression.work.original_title, @expression.work %>
+  [W<%= @expression.work.id %>] <%= link_to @expression.work.preferred_title, @expression.work %>
 </p>
 
 <p>

@@ -2,9 +2,9 @@ ja:
   activerecord:
     attributes:
       work:
-        original_title: タイトル
+        preferred_title: タイトル
       expression:
-        original_title: タイトル
+        preferred_title: タイトル
         content_type_id: 表現の種類
         note: 備考
         language: 言語

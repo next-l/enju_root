@@ -14,7 +14,7 @@
   <% if @parent_work %>
     <div class="field">
       <%= f.label :parent %><br />
-      <%= link_to @parent_work.original_title, @parent_work %>
+      <%= link_to @parent_work.preferred_title, @parent_work %>
       <%= f.hidden_field :parent_id %>
     </div>
   <% end %>
@@ -36,9 +36,8 @@
 
   <div class="field">
     <%= f.label :preferred_title_for_the_work %><br />
-    <%= f.text_field :original_title %>
+    <%= f.text_field :preferred_title %>
     <%= f.hidden_field :manifestation_id %>
-    <%= f.text_field :manifestation_url %>
   </div>
   <div class="field">
     <%= f.label :form_of_work %><br />

@@ -29,7 +29,7 @@
 
 <table class="index">
   <tr>
-    <th><%= t('activerecord.attributes.work.original_title') %></th>
+    <th><%= t('activerecord.attributes.work.preferred_title') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -38,7 +38,7 @@
 <% @works.each do |work| %>
   <tr class="line<%= cycle("0", "1") -%>">
     <td>
-      <strong>[W] <%= link_to work.original_title, work_path(work, :manifestation_id => @manifestation_id) %></strong>
+      <strong>[W] <%= link_to work.preferred_title, work_path(work, :manifestation_id => @manifestation_id) %></strong>
       <br />
       <!--
       Creator:

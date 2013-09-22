@@ -48,7 +48,7 @@ class ExpressionsController < ApplicationController
     @manifestation = Manifestation.find(params[:manifestation_id]) if params[:manifestation_id]
     @expression.work = @work
     @expression.work_id = @work.id
-    @expression.original_title = @expression.work.original_title
+    @expression.preferred_title = @expression.work.preferred_title
     @expression.manifestation_id = @manifestation.id if @manifestation
 
     respond_to do |format|
@@ -74,9 +74,13 @@ class ExpressionsController < ApplicationController
         if @expression.manifestation_id.present?
           format.html { redirect_to new_embody_url(:expression_id => @expression.id, :manifestation_id => @expression.manifestation_id), notice: 'Expression was successfully created.' }
         else
-          manifestation = Manifestation.create(:url => @expression.manifestation_url)
-          @expression.manifestations << manifestation
-          format.html { redirect_to manifestation, :notice => 'Expression was successfully created.' }
+          if @expression.manifestation_url.present?
+            manifestation = Manifestation.create(:url => @expression.manifestation_url)
+            @expression.manifestations << manifestation
+            format.html { redirect_to manifestation, :notice => 'Expression was successfully created.' }
+          else
+            format.html { redirect_to @expression, :notice => 'Expression was successfully created.' }
+          end
         end
         format.json { render json: @expression, status: :created, location: @expression }
       else
