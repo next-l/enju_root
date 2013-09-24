@@ -1,6 +1,6 @@
 class Work < ActiveRecord::Base
   attr_accessible :preferred_title, :manifestation_id, :parent_id,
-    :create_expression
+    :create_expression, :variant_title, :intended_audience
   attr_accessible :manifestation_url, :work_url, :form_of_work, :date_of_work,
     :parent_work_url
 

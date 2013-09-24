@@ -31,13 +31,17 @@
     <%= f.label :url %><br />
     <%= params[:manifestation_url] %>
     <%= f.hidden_field :manifestation_url %>
+    <%= f.hidden_field :manifestation_id %>
   </div>
   <% end %>
 
   <div class="field">
     <%= f.label :preferred_title_for_the_work %><br />
     <%= f.text_field :preferred_title %>
-    <%= f.hidden_field :manifestation_id %>
+  </div>
+  <div class="field">
+    <%= f.label :variant_title_for_the_work %><br />
+    <%= f.text_field :variant_title %>
   </div>
   <div class="field">
     <%= f.label :form_of_work %><br />
@@ -46,6 +50,10 @@
   <div class="field">
     <%= f.label :date_of_work %><br />
     <%= f.text_field :date_of_work %>
+  </div>
+  <div class="field">
+    <%= f.label :intended_audience %><br />
+    <%= f.text_area :intended_audience %>
   </div>
   <!--
   <div class="field">
