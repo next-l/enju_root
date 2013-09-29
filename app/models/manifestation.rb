@@ -10,7 +10,7 @@ class Manifestation < ActiveRecord::Base
   has_many :producers, :through => :produces, :source => :agent #, :order => 'produces.position'
 
   #validates :cinii_title, :presence => true
-  validates :url, :presence => true
+  validates :url, :presence => true, :uniqueness => true
 
   after_save :generate_graph if Setting.generate_graph
 

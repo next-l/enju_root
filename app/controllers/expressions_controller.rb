@@ -45,7 +45,11 @@ class ExpressionsController < ApplicationController
       flash[:notice] = "You should specify the Work entity."
       redirect_to works_url; return
     end
-    @manifestation = Manifestation.find(params[:manifestation_id]) if params[:manifestation_id]
+    if @expression.manifestation_url
+      @manifestation = Manifestation.where(:url => params[:manifestation_id]).first
+    elsif params[:manifestation_id]
+      @manifestation = Manifestation.find(params[:manifestation_id])
+    end
     @expression.work = @work
     @expression.work_id = @work.id
     @expression.preferred_title = @expression.work.preferred_title

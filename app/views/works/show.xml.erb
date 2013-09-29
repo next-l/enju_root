@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <work>
   <title><%= @work.preferred_title %></title>
+  <variant_title><%= @work.variant_title %></variant_title>
+  <form_of_work><%= @work.form_of_work %></form_of_work>
+  <date_of_work><%= @work.date_of_work %></date_of_work>
+  <intended_audience><%= @work.intended_audience %></intended_audience>
   <url><%= work_url(@work) %></url>
   <expressions>
     <% @work.expressions.each do |expression| %>
