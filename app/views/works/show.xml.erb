@@ -6,19 +6,4 @@
   <date_of_work><%= @work.date_of_work %></date_of_work>
   <intended_audience><%= @work.intended_audience %></intended_audience>
   <url><%= work_url(@work) %></url>
-  <expressions>
-    <% @work.expressions.each do |expression| %>
-      <expression>
-        <title><%= expression.preferred_title %></title>
-        <content_type><%= expression.content_type.name %></content_type>
-        <url><%= expression_url(expression) %></url>
-        <manifestations>
-          <% expression.manifestations.each do |manifestation| %>
-            <url><%= manifestation_url(manifestation) %></url>
-            <mihub_url><%= manifestation.url %></mihub_url>
-          <% end %>
-        </manifestations>
-      </expression>
-    <% end %>
-  </expressions>
 </work>
