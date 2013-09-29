@@ -3,6 +3,7 @@ ja:
     attributes:
       work:
         preferred_title: タイトル
+        variant_title: 他のタイトル
       expression:
         preferred_title: タイトル
         content_type_id: 表現の種類
