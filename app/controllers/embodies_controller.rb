@@ -47,8 +47,10 @@ class EmbodiesController < ApplicationController
   # POST /embodies.json
   def create
     @embody = Embody.new(params[:embody])
-    manifestation = Manifestation.new(:url => @embody.manifestation_url)
-    @embody.manifestation = manifestation
+    if @embody.manifestation_url
+      manifestation = Manifestation.new(:url => @embody.manifestation_url)
+      @embody.manifestation = manifestation
+    end
 
     respond_to do |format|
       if @embody.save
