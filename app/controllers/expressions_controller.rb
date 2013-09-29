@@ -46,7 +46,7 @@ class ExpressionsController < ApplicationController
       redirect_to works_url; return
     end
     if @expression.manifestation_url
-      @manifestation = Manifestation.where(:url => params[:manifestation_id]).first
+      @manifestation = Manifestation.where(:url => params[:manifestation_url]).first
     elsif params[:manifestation_id]
       @manifestation = Manifestation.find(params[:manifestation_id])
     end
