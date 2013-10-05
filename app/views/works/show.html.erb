@@ -84,6 +84,6 @@
     <li><%= link_to 'New expression', expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], :mode => 'add') %></li>
     <li><%= link_to 'New child', works_path(:parent_id => @work.id) %></li>
     <li><%= link_to 'New creator', agents_path(:work_id => @work.id, :mode => 'add') %></li>
-    <li><%= link_to 'JSON-LD', work_path(@work, :format => :json) %></li>
+    <li><%= link_to 'JSON-LD', work_path(@work, :format => :jsonld) %></li>
   </ul>
 </div>

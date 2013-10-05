@@ -74,7 +74,7 @@
     <li><%= catalog.name %>:
       <ul>
         <% begin %>
-          <% JSON::LD::API.toRDF("#{catalog.url}/bib_id/#{@manifestation.bib_id}.json").value["http://purl.org/vocab/frbr/core#embodimentOf"].each do |v| %>
+          <% JSON::LD::API.toRDF("#{catalog.url}/bib_id/#{@manifestation.bib_id}.jsonld").value["http://purl.org/vocab/frbr/core#embodimentOf"].each do |v| %>
             <li>[W] <%= remote_work(v) %></li>
           <% end %>
         <% rescue SocketError %>
@@ -101,6 +101,6 @@
     <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
     <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
     <li><%= link_to 'New producer', agents_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
-    <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, :format => :json) %></li>
+    <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, :format => :jsonld) %></li>
   </div>
 </div>

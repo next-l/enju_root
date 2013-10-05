@@ -32,6 +32,7 @@ class ExpressionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json #{ render json: @expression }
+      format.jsonld
     end
   end
 
@@ -79,8 +80,9 @@ class ExpressionsController < ApplicationController
         #  format.html { redirect_to new_embody_url(:expression_id => @expression.id, :manifestation_id => @expression.manifestation_id), notice: 'Expression was successfully created.' }
         #else
           if @expression.manifestation_url.present?
-            manifestation = Manifestation.create(:url => @expression.manifestation_url)
-            @expression.manifestations << manifestation
+            manifestation = Manifestation.where(:url => @expression.manifestation_url).first
+            manifestation = Manifestation.create(:url => @expression.manifestation_url) unless manifestation
+            manifestation.expressions << @expression
             format.html { redirect_to manifestation, :notice => 'Expression was successfully created.' }
           else
             format.html { redirect_to @expression, :notice => 'Expression was successfully created.' }

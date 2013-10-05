@@ -45,6 +45,7 @@ class WorksController < ApplicationController
       format.svg {
         send_file "#{Rails.root.to_s}/public/work_#{@work.id}.svg", :disposition => "inline", :type => "image/svg+xml"
       }
+      format.jsonld
     end
   end
 

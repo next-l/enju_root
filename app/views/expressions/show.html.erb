@@ -51,6 +51,6 @@
     <li><%= link_to 'New manifestation', manifestations_path(:expression_id => @expression.id, :mode => 'add') %></li>
     <li><%= link_to 'New contributor', agents_path(:expression_id => @expression.id, :mode => 'add') %></li>
     <li><%= link_to 'Edit work', works_path(:expression_id => @expression.id, :mode => 'edit') %></li>
-    <li><%= link_to 'JSON-LD', expression_path(@expression, :format => :json) %></li>
+    <li><%= link_to 'JSON-LD', expression_path(@expression, :format => :jsonld) %></li>
   </ul>
 </div>
