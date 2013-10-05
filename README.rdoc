@@ -1,3 +1,24 @@
-= EnjuRoot
+= Next-L Enju Root
 
-This project rocks and uses MIT-LICENSE.
+Next-L Enju Root は、{Project Next-L}[http://www.next-l.jp] で開発している書誌管理システムです。
+
+Next-L Enju Root is a bibliographic data management system developed by {Project Next-L}[http://www.next-l.jp].
+
+== Project Next-L とは (What is Project Next-L?)
+{Project Next-L}[http://www.next-l.jp] とは、日本の図書館関係者有志の手で新しい図書館管理システムを作り上げるプロジェクトです。
+
+{Project Next-L}[http://www.next-l.jp] is a project to build a new integrated library system maintained by Japanese volunteers interested in libraries.
+
+== 動作デモ (Demonstration)
+* http://root.next-l.jp
+
+== インストール (Install)
+* https://github.com/nabeta/enju_root/wiki
+
+== 関連するプロジェクト (Related projects)
+* {Next-L Enju Leaf}[https://github.com/nabeta/enju_leaf]
+* {Next-L Enju Flower}[https://github.com/next-l/enju_flower]
+
+== 製作者・貢献者 (Authors and contributors)
+* {TANABE, Kosuke}[http://mwr.mediacom.keio.ac.jp/~tanabe/] ({@nabeta}[https://twitter.com/nabeta])
+* {Project Next-L}[http://www.next-l.jp] ({@enju_library}[https://twitter.com/enju_library])
