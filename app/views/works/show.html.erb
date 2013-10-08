@@ -11,8 +11,73 @@
 </p>
 
 <p>
+  <b><%= t('activerecord.attributes.work.variant_title') %>:</b>
+  <%= @work.variant_title %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.form_of_work') %>:</b>
+  <%= @work.form_of_work %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.date_of_work') %>:</b>
+  <%= @work.date_of_work %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.medium_of_performance') %>:</b>
+  <%= @work.medium_of_performance %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.numeric_designation') %>:</b>
+  <%= @work.numeric_designation %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.key') %>:</b>
+  <%= @work.key %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.signatory_for_treaty') %>:</b>
+  <%= @work.signatory_for_treaty %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.authorized_access_point') %>:</b>
+  <%= @work.authorized_access_point %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.variant_access_point') %>:</b>
+  <%= @work.variant_access_point %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.status_of_identification') %>:</b>
+  <%= @work.status_of_identification %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.source_consulted') %>:</b>
+  <%= @work.source_consulted %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.intended_audience') %>:</b>
+  <%= @work.intended_audience %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.work.cataloguers_note') %>:</b>
+  <%= @work.cataloguers_note %>
+</p>
+
+<p>
   <b>Parent:</b>
-  </p>
+</p>
 
 <ul>
   <% @work.parents.each do |parent| %>

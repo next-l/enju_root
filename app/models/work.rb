@@ -3,6 +3,11 @@ class Work < ActiveRecord::Base
     :create_expression, :variant_title, :intended_audience
   attr_accessible :manifestation_url, :work_url, :form_of_work, :date_of_work,
     :parent_work_url
+  attr_accessible :place_of_origin, :other_distinguishing_characteristic,
+    :identifier, :medium_of_performance, :numeric_designation, :key,
+    :authorized_access_point, :variant_access_point,
+    :signatory_for_treaty, :status_of_identification, :source_consulted,
+    :cataloguers_note
 
   has_many :reifies
   has_many :expressions, :through => :reifies
