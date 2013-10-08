@@ -19,6 +19,51 @@
 </p>
 
 <p>
+  <b><%= t('activerecord.attributes.expression.date_of_expression') %>:</b>
+  <%= @expression.date_of_expression %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.other_distinguishing_characteristic') %>:</b>
+  <%= @expression.other_distinguishing_characteristic %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.horizontal_scale_of_cartographic_content') %>:</b>
+  <%= @expression.horizontal_scale_of_cartographic_content %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.vertical_scale_of_cartographic_content') %>:</b>
+  <%= @expression.vertical_scale_of_cartographic_content %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.authorized_access_point') %>:</b>
+  <%= @expression.authorized_access_point %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.variant_access_point') %>:</b>
+  <%= @expression.variant_access_point %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.status_of_identification') %>:</b>
+  <%= @expression.status_of_identification %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.source_consulted') %>:</b>
+  <%= @expression.source_consulted %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.expression.cataloguers_note') %>:</b>
+  <%= @expression.cataloguers_note %>
+</p>
+
+<p>
   <b>Work:</b>
   [W<%= @expression.work.id %>] <%= link_to @expression.work.preferred_title, @expression.work %>
 </p>
