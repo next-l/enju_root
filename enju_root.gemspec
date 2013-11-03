@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
   s.add_dependency "sunspot_rails"
   s.add_dependency "validates_timeliness"
   s.add_dependency "rack-protection"
-  # s.add_dependency "jquery-rails"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "sunspot_solr"
