@@ -4,7 +4,6 @@ class EnjuRoot::SetupGenerator < Rails::Generators::Base
 
   def copy_setup_files
     directory("db/fixtures", "db/fixtures/enju_root")
-    directory("solr", "solr")
     empty_directory("public/works")
     empty_directory("public/expressions")
     empty_directory("public/manifestations")

@@ -13,7 +13,7 @@ Next-L Enju Root is a bibliographic data management system developed by {Project
 * http://root.next-l.jp
 
 == インストール (Install)
-* https://github.com/nabeta/enju_root/wiki
+* https://github.com/next-l/enju_root/wiki
 
 == 関連するプロジェクト (Related projects)
 * {Next-L Enju Leaf}[https://github.com/nabeta/enju_leaf]
