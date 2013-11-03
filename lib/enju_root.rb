@@ -1,4 +1,5 @@
 require "enju_root/engine"
+require "enju_root/version"
 require "enju_root/user"
 require "enju_root/helper"
 require "enju_core"
