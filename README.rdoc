@@ -16,9 +16,9 @@ Next-L Enju Root is a bibliographic data management system developed by {Project
 * https://github.com/next-l/enju_root/wiki
 
 == 関連するプロジェクト (Related projects)
-* {Next-L Enju Leaf}[https://github.com/nabeta/enju_leaf]
+* {Next-L Enju Leaf}[https://github.com/next-l/enju_leaf]
 * {Next-L Enju Flower}[https://github.com/next-l/enju_flower]
 
 == 製作者・貢献者 (Authors and contributors)
-* {TANABE, Kosuke}[http://mwr.mediacom.keio.ac.jp/~tanabe/] ({@nabeta}[https://twitter.com/nabeta])
+* {TANABE, Kosuke}[https://github.com/nabeta] ({@nabeta}[https://twitter.com/nabeta])
 * {Project Next-L}[http://www.next-l.jp] ({@ProjectNextL}[https://twitter.com/ProjectNextL])
