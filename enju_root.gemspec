@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.0"
-  s.add_dependency "enju_core", "~> 0.2.0.pre2"
+  s.add_dependency "enju_seed", "~> 0.2.0.pre4"
   s.add_dependency "ruby-graphviz"
   s.add_dependency "linkeddata"
   s.add_dependency "settingslogic"
