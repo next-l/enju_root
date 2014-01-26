@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "enju_root"
   s.version     = EnjuRoot::VERSION
   s.authors     = ["Kosuke Tanabe"]
-  s.email       = ["tanabe@mwr.mediacom.keio.ac.jp"]
+  s.email       = ["kosuke@e23.jp"]
   s.homepage    = "https://github.com/next-l/enju_root"
   s.summary     = "Next-L Enju Root"
   s.description = "bibliographic data management system"
