@@ -28,6 +28,7 @@ class Manifestation < ActiveRecord::Base
     integer :expression_ids, :multiple => true
     #text :creator
     #text :publisher
+    string :classification_number
   end
 
   def creators
@@ -85,7 +86,7 @@ class Manifestation < ActiveRecord::Base
   end
 
   def cinii_doc
-    Nokogiri::XML(open("#{url}.rdf").read)
+    Nokogiri::XML(open("#{url.to_s}.rdf").read)
     #Rails.cache.fetch(url){Nokogiri::XML(open("#{url}.rdf").read)}
   end
 end

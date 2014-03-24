@@ -33,6 +33,9 @@ class Work < ActiveRecord::Base
       expressions.map{|e| e.manifestations.pluck(:url)}.flatten
     end
     integer :creator_ids, :multiple => true
+    string :classification_number, :multiple => true do
+      expressions.map{|e| e.manifestations.pluck(:classification_number)}.flatten
+    end
   end
 
   attr_accessor :manifestation_id, :parent_id, :create_expression,
