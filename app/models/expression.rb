@@ -1,13 +1,13 @@
 class Expression < ActiveRecord::Base
   belongs_to :content_type
-  attr_accessible :preferred_title, :content_type_id, :work_id,
-    :manifestation_id, :note, :language,
-    :manifestation_url
-  attr_accessible :date_of_expression, :other_distinguishing_characteristic,
-    :horizontal_scale_of_cartographic_content,
-    :vertical_scale_of_cartographic_content, :authorized_access_point,
-    :variant_access_point, :status_of_identification, :source_consulted,
-    :cataloguers_note
+  #attr_accessible :preferred_title, :content_type_id, :work_id,
+  #  :manifestation_id, :note, :language,
+  #  :manifestation_url
+  #attr_accessible :date_of_expression, :other_distinguishing_characteristic,
+  #  :horizontal_scale_of_cartographic_content,
+  #  :vertical_scale_of_cartographic_content, :authorized_access_point,
+  #  :variant_access_point, :status_of_identification, :source_consulted,
+  #  :cataloguers_note
   has_one :reify
   has_one :work, :through => :reify
   has_many :realizes, :dependent => :destroy, :foreign_key => 'expression_id'

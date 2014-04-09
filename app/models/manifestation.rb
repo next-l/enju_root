@@ -1,9 +1,9 @@
 class Manifestation < ActiveRecord::Base
-  attr_accessible :cinii_title, :extent, :note,
-    :bib_id, :source_year, :examined_year,
-    :textbook_code, :textbook_number, :textbook_subject, :course,
-    :edition, :start_year, :end_year, :url,
-    :expression_id
+  #attr_accessible :cinii_title, :extent, :note,
+  #  :bib_id, :source_year, :examined_year,
+  #  :textbook_code, :textbook_number, :textbook_subject, :course,
+  #  :edition, :start_year, :end_year, :url,
+  #  :expression_id
   has_many :embodies
   has_many :expressions, :through => :embodies
   has_many :produces, :dependent => :destroy, :foreign_key => 'manifestation_id'

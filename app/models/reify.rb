@@ -3,7 +3,7 @@ class Reify < ActiveRecord::Base
   belongs_to :expression
   belongs_to :relationship_type
   # attr_accessible :title, :body
-  attr_accessible :work_id, :expression_id, :relationship_type_id
+  #attr_accessible :work_id, :expression_id, :relationship_type_id
   validates_uniqueness_of :expression_id, :scope => :work_id
 
   after_save :generate_graph if Setting.generate_graph
