@@ -1,5 +1,5 @@
 class EmbodiesController < ApplicationController
-  before_filter :prepare_options, :only => [:new, :edit]
+  before_filter :prepare_options, only: [:new, :edit]
   # GET /embodies
   # GET /embodies.json
   def index

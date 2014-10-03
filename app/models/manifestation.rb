@@ -5,12 +5,13 @@ class Manifestation < ActiveRecord::Base
   #  :edition, :start_year, :end_year, :url,
   #  :expression_id
   has_many :embodies
-  has_many :expressions, :through => :embodies
-  has_many :produces, :dependent => :destroy, :foreign_key => 'manifestation_id'
-  has_many :producers, :through => :produces, :source => :agent #, :order => 'produces.position'
+  has_many :expressions, through: :embodies
+  has_many :produces, dependent: :destroy, foreign_key: 'manifestation_id'
+  has_many :producers, through: :produces, source: :agent #, order: 'produces.position'
+  has_many :people, foreign_key: 'work_id'
 
-  #validates :cinii_title, :presence => true
-  validates :url, :presence => true, :uniqueness => true
+  #validates :cinii_title, presence: true
+  validates :url, presence: true, uniqueness: true
 
   after_save :generate_graph if Setting.generate_graph
 
@@ -25,14 +26,14 @@ class Manifestation < ActiveRecord::Base
     text :producer do
       producers.pluck(:full_name)
     end
-    integer :expression_ids, :multiple => true
+    integer :expression_ids, multiple: true
     #text :creator
     #text :publisher
-    string :classification_number
+    #string :classification_number
   end
 
   def creators
-    Agent.where(:id => Create.where(:work_id => expressions.joins(:reify).pluck(:work_id)).pluck(:agent_id))
+    Agent.where(id: Create.where(:work_id => expressions.joins(:reify).pluck(:work_id)).pluck(:agent_id))
   end
 
   def generate_graph
@@ -86,7 +87,18 @@ class Manifestation < ActiveRecord::Base
   end
 
   def cinii_doc
-    Nokogiri::XML(open("#{url.to_s}.rdf").read)
-    #Rails.cache.fetch(url){Nokogiri::XML(open("#{url}.rdf").read)}
+    Nokogiri::XML(Faraday.get("#{url.to_s}.rdf").body)
+  end
+
+  def authors
+    cinii_doc.xpath('//foaf:maker', "foaf" => "http://xmlns.com/foaf/0.1/").xpath('./foaf:Person/foaf:name[not(@xml:lang)]').map{|e| e.content}
+  end
+
+  def create_authors
+    authors.each do |author|
+      person = Person.new(name: author)
+      person.manifestation = self
+      person.save
+    end
   end
 end

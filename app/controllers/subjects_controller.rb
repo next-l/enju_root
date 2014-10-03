@@ -25,6 +25,8 @@ class SubjectsController < ApplicationController
   # GET /subjects/new.json
   def new
     @subject = Subject.new
+    @subject.work = Work.find(URI.parse(params[:work_url]).path.split('/').reverse.first)
+    @subject.url = params[:subject_url]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,10 +42,11 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = Subject.new(params[:subject])
+    @subject = Subject.new(subject_params)
 
     respond_to do |format|
       if @subject.save
+        @subject.work.index!
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
         format.json { render json: @subject, status: :created, location: @subject }
       else
@@ -79,5 +82,11 @@ class SubjectsController < ApplicationController
       format.html { redirect_to subjects_url }
       format.json { head :no_content }
     end
+  end
+
+  def subject_params
+    params.require(:subject).permit(
+      :work_id, :subject_relationship, :url
+    )
   end
 end

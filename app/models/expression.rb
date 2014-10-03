@@ -9,18 +9,18 @@ class Expression < ActiveRecord::Base
   #  :variant_access_point, :status_of_identification, :source_consulted,
   #  :cataloguers_note
   has_one :reify
-  has_one :work, :through => :reify
-  has_many :realizes, :dependent => :destroy, :foreign_key => 'expression_id'
-  has_many :contributors, :through => :realizes, :source => :agent #, :order => 'realizes.position'
+  has_one :work, through: :reify
+  has_many :realizes, dependent: :destroy, foreign_key: 'expression_id'
+  has_many :contributors, through: :realizes, source: :agent #, order: 'realizes.position'
   has_many :embodies
-  has_many :manifestations, :through => :embodies
-  has_many :children_relationships, :foreign_key => 'parent_id', :class_name => 'WorkRelationship', :dependent => :destroy
-  has_many :parents_relationships, :foreign_key => 'child_id', :class_name => 'WorkRelationship', :dependent => :destroy
-  has_many :children, :through => :children_relationships, :source => :child
-  has_many :parents, :through => :parents_relationships, :source => :parent
+  has_many :manifestations, through: :embodies
+  has_many :children_relationships, foreign_key: 'parent_id', class_name: 'WorkRelationship', dependent: :destroy
+  has_many :parents_relationships, foreign_key: 'child_id', class_name: 'WorkRelationship', dependent: :destroy
+  has_many :children, through: :children_relationships, source: :child
+  has_many :parents, through: :parents_relationships, source: :parent
 
-  validates :preferred_title, :presence => true
-  #validates :manifestation_url, :presence => true, :on => :create
+  validates :preferred_title, presence: true
+  #validates :manifestation_url, presence: true, on: :create
 
   after_save :generate_graph if Setting.generate_graph
 
@@ -29,7 +29,7 @@ class Expression < ActiveRecord::Base
     integer :work_id do
       work.id if work
     end
-    integer :manifestation_ids, :multiple => true
+    integer :manifestation_ids, multiple: true
   end
 
   attr_accessor :work_id, :manifestation_id, :manifestation_url

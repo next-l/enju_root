@@ -5,6 +5,9 @@ class ManifestationsController < ApplicationController
   def index
     @query = params[:query]
     @expression = expression = Expression.find(params[:expression_id]) if params[:expression_id]
+    if params[:url]
+      @manifestations = Manifestation.where(url: params[:url])
+    else
     @manifestations = Manifestation.search do
       #with(:course).equal_to "国語"
       if params[:mode] != 'add'
@@ -13,10 +16,11 @@ class ManifestationsController < ApplicationController
       fulltext params[:query]
       paginate :page => params[:page], :per_page => Manifestation.default_per_page
     end.results
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @manifestations }
+      format.json #{ render json: @manifestations }
     end
   end
 
@@ -41,7 +45,7 @@ class ManifestationsController < ApplicationController
   # GET /manifestations/new
   # GET /manifestations/new.json
   def new
-    @manifestation = Manifestation.new(params[:manifestation])
+    @manifestation = Manifestation.new #(manifestation_params)
     @expression = Expression.find(params[:expression_id]) if params[:expression_id]
     @manifestation.expression_id = @expression.id if @expression
 
@@ -59,7 +63,7 @@ class ManifestationsController < ApplicationController
   # POST /manifestations
   # POST /manifestations.json
   def create
-    @manifestation = Manifestation.new(params[:manifestation])
+    @manifestation = Manifestation.new(manifestation_params)
 
     respond_to do |format|
       if @manifestation.save
@@ -102,5 +106,10 @@ class ManifestationsController < ApplicationController
       format.html { redirect_to manifestations_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def manifestation_params
+    params.require(:manifestation).permit(:url)
   end
 end

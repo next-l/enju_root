@@ -5,7 +5,7 @@ class Embody < ActiveRecord::Base
   # attr_accessible :title, :body
   #attr_accessible :expression_id, :manifestation_id, :manifestation_url,
   #  :relationship_type_id
-  validates_uniqueness_of :manifestation_id, :scope => :expression_id
+  validates_uniqueness_of :manifestation_id, scope: :expression_id
 
   after_save :generate_graph if Setting.generate_graph
   after_save :create_index

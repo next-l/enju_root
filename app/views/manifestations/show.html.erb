@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[M<%= @manifestation.id %>] <%= t('enju.showing', :model => t('activerecord.models.manifestation')) -%></h1>
+  <h1 class="title">[M<%= @manifestation.id %>] <%= t('enju.showing', model: t('activerecord.models.manifestation')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -8,6 +8,17 @@
   [M<%= @manifestation.id %>] <%= @manifestation.cinii_title %>
   <br />
   (Creator: <%= @manifestation.cinii_creator %>)
+  <br />
+  <% @manifestation.people.each do |person| %>
+    <% if person.to_ndla["altLabel"] %>
+      <%= link_to person.to_ndla["prefLabel"]["literalForm"], person.to_ndla["uri"] %>
+      (<% person.to_ndla["altLabel"].each do |label| %>
+        <%= link_to label["literalForm"], person.to_ndla["uri"] %>
+      <% end %>)
+    <% else %>
+      <%= link_to person.to_ndla["prefLabel"]["literalForm"], person.to_ndla["uri"] %>
+    <% end %>
+  <% end %>
 </p>
 
 <p>
@@ -99,8 +110,8 @@
     <li><%= link_to t('enju.back'), manifestations_path %></li>
 
     <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
-    <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
-    <li><%= link_to 'New producer', agents_path(:manifestation_id => @manifestation.id, :mode => 'add') %></li>
-    <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, :format => :jsonld) %></li>
+    <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>
+    <li><%= link_to 'New producer', agents_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>
+    <li><%= link_to 'JSON-LD', manifestation_path(@manifestation, format: :jsonld) %></li>
   </div>
 </div>

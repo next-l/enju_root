@@ -7,6 +7,7 @@ require "validates_timeliness"
 require "nokogiri"
 require "ruby-graphviz"
 require "linkeddata"
+require "faraday"
 
 module EnjuRoot
 end

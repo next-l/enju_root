@@ -1,5 +1,5 @@
 class ExpressionRelationshipsController < ApplicationController
-  before_filter :prepare_options, :only => [:new, :edit]
+  before_filter :prepare_options, only: [:new, :edit]
 
   # GET /expression_relationships
   # GET /expression_relationships.json

@@ -14,9 +14,9 @@
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
-  <%= form_for :expressions, :url => expressions_path, :html => {:method => 'get'} do -%>
+  <%= form_for :expressions, url: expressions_path, :html => {method: 'get'} do -%>
     <p>
-      <%= search_field_tag 'query', params[:query], :class => 'search_form_short', :placeholder => t('enju.search') -%>
+      <%= search_field_tag 'query', params[:query], class: 'search_form_short', placeholder: t('enju.search') -%>
       <%= submit_tag t('enju.search') -%><br />
       <%= hidden_field_tag 'work_id', @work.id if @work %>
       <%= hidden_field_tag 'manifestation_url', params[:manifestation_url] if params[:manifestation_url] %>
@@ -44,7 +44,7 @@
     </td>
     <td>
       <% if params[:manifestation_url] %>
-        <%= link_to '関連を追加', new_embody_path(:expression_id => expression.id, :manifestation_url => params[:manifestation_url]) unless expression.manifestations.include?(Manifestation.where(:url => params[:manifestation_url]).first) %>
+        <%= link_to '関連を追加', new_embody_path(:expression_id => expression.id, :manifestation_url => params[:manifestation_url]) unless expression.manifestations.include?(Manifestation.where(url: params[:manifestation_url]).first) %>
       <% elsif @parent_expression and @parent_expression != expression %>
         <%= link_to '関連著作を追加', new_expression_relationship_path(:parent_id => @parent_expression.id, :child_id => expression.id) if !expression.parents.include?(@parent_expression)%>
       <% elsif @manifestation %>

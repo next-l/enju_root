@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :term %><br />
-    <%= f.text_field :term %>
+    <%= f.label :work_id %><br />
+    <%= link_to @subject.work.preferred_title, @subject.work %>
+    <%= f.hidden_field :work_id %>
   </div>
   <div class="field">
-    <%= f.label :subject_heading_id %><br />
-    <%= f.number_field :subject_heading_id %>
+    <%= f.label :subject %><br />
+    <%= f.hidden_field :url %>
+    <%= link_to subject_label(@subject.url), @subject.url %>
   </div>
   <div class="field">
-    <%= f.label :subject_type_id %><br />
-    <%= f.number_field :subject_type_id %>
+    <%= f.label :subject_relationship %><br />
+    <%= f.text_field :subject_relationship %>
   </div>
   <div class="actions">
     <%= f.submit %>

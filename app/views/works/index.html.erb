@@ -7,19 +7,18 @@
     <% end %>
   </h1>
 <div id="content_list">
-  <p id="notice"><%= notice %></p>
   <% if params[:work_url] %>
     <p>
       <%= params[:work_url] %> に対応するWorkを選択してください。
-      <%= link_to '追加', works_path(:mode => 'fetch', :work_url => params[:work_url]), :method => 'post' %>
+      <%= link_to '追加', works_path(mode: 'fetch', :work_url => params[:work_url]), method: 'post' %>
     </p>
   <% elsif params[:manifestation_url] %>
     <p><%= params[:manifestation_url] %> に対応するWorkを選択してください。</p>
   <% end %>
 
-  <%= form_for :works, :url => works_path, :html => {:method => 'get'} do -%>
+  <%= form_for :works, url: works_path, :html => {method: 'get'} do -%>
     <p>
-      <%= search_field_tag 'query', params[:query], :class => 'search_form_short', :placeholder => t('enju.search') -%>
+      <%= search_field_tag 'query', params[:query], class: 'search_form_short', placeholder: t('enju.search') -%>
       <%= submit_tag t('enju.search') -%><br />
       <%= hidden_field_tag 'manifestation_id', @manifestation_id if @manifestation_id %>
       <%= hidden_field_tag 'manifestation_url', params[:manifestation_url] if params[:manifestation_url] %>
@@ -49,13 +48,13 @@
     </td>
     <td>
       <% if params[:manifestation_url] %>
-        <%= link_to '関連を追加', expressions_path(:work_id => work.id, :manifestation_url => params[:manifestation_url]) unless work.expressions.map{|e| e.manifestations}.flatten.include?(Manifestation.where(:url => params[:manifestation_url]).first) %>
+        <%= link_to '関連を追加', expressions_path(:work_id => work.id, :manifestation_url => params[:manifestation_url]) unless work.expressions.map{|e| e.manifestations}.flatten.include?(Manifestation.where(url: params[:manifestation_url]).first) %>
       <% elsif @parent_work and @parent_work != work %>
         <%= link_to '関連著作を追加', new_work_relationship_path(:parent_id => @parent_work.id, :child_id => work.id) if !work.parents.include?(@parent_work)%>
       <% elsif @expression %>
         <%= link_to '関連著作を修正', edit_reify_path(@reify, :work_id => work.id, :expression_id => @expression) if !work.expressions.include?(@expression) and @reify %>
       <% elsif @manifestation_id %>
-        <%= link_to '関連著作を追加', expressions_path(:work_id => work.id, :manifestation_id => @manifestation_id, :mode => 'add') unless work.expressions.map{|e| e.manifestations}.flatten.include?(Manifestation.find(@manifestation_id)) %>
+        <%= link_to '関連著作を追加', expressions_path(:work_id => work.id, :manifestation_id => @manifestation_id, mode: 'add') unless work.expressions.map{|e| e.manifestations}.flatten.include?(Manifestation.find(@manifestation_id)) %>
       <% elsif @agent %>
         <%= link_to '関連著作を追加', new_create_path(:work_id => work.id, :agent_id => @agent.id) unless work.creators.include?(@agent) %>
       <% end %>
@@ -86,7 +85,7 @@
   <% if params[:manifestation_url] %>
     <h3>他のWEシステム</h3>
     <ul>
-      <%= form_for :works, :method => :post do |f| %>
+      <%= form_for :works, method: :post do |f| %>
       <% Work.search_we(params[:manifestation_url]).each do |work| %>
         <li><%= link_to work["http://purl.org/dc/terms/title"], work["@id"] %>
         <%= hidden_field_tag "mode", 'fetch' %>

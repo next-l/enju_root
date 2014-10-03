@@ -1,5 +1,5 @@
 class ReifiesController < ApplicationController
-  before_filter :prepare_options, :only => [:new, :edit]
+  before_filter :prepare_options, only: [:new, :edit]
   # GET /reifies
   # GET /reifies.json
   def index

@@ -1,5 +1,5 @@
 class ExpressionsController < ApplicationController
-  before_filter :prepare_options, :only => [:new, :edit]
+  before_filter :prepare_options, only: [:new, :edit]
 
   # GET /expressions
   # GET /expressions.json
@@ -70,7 +70,7 @@ class ExpressionsController < ApplicationController
   # POST /expressions
   # POST /expressions.json
   def create
-    @expression = Expression.new(params[:expression])
+    @expression = Expression.new(expression_params)
 
     respond_to do |format|
       work = Work.find(@expression.work_id)
@@ -83,9 +83,9 @@ class ExpressionsController < ApplicationController
             manifestation = Manifestation.where(:url => @expression.manifestation_url).first
             manifestation = Manifestation.create(:url => @expression.manifestation_url) unless manifestation
             manifestation.expressions << @expression
-            format.html { redirect_to manifestation, :notice => 'Expression was successfully created.' }
+            format.html { redirect_to manifestation, notice: 'Expression was successfully created.' }
           else
-            format.html { redirect_to @expression, :notice => 'Expression was successfully created.' }
+            format.html { redirect_to @expression, notice: 'Expression was successfully created.' }
           end
         #end
         format.json { render json: @expression, status: :created, location: @expression }
@@ -103,7 +103,7 @@ class ExpressionsController < ApplicationController
     @expression = Expression.find(params[:id])
 
     respond_to do |format|
-      if @expression.update_attributes(params[:expression])
+      if @expression.update_attributes(expression_params)
         format.html { redirect_to @expression, notice: 'Expression was successfully updated.' }
         format.json { head :no_content }
       else
@@ -129,5 +129,10 @@ class ExpressionsController < ApplicationController
   private
   def prepare_options
     @content_types = ContentType.all
+  end
+
+  def expression_params
+    params.require(:expression).permit(:preferred_title, :work_id,
+                                      :content_type_id)
   end
 end

@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[E<%= @expression.id %>] <%= t('enju.showing', :model => t('activerecord.models.expression')) -%></h1>
+  <h1 class="title">[E<%= @expression.id %>] <%= t('enju.showing', model: t('activerecord.models.expression')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -93,9 +93,9 @@
     <li><%= link_to t('enju.back'), expressions_path %></li>
 
     <li><%= link_to 'New child', expressions_path(:parent_id => @expression.id) %></li>
-    <li><%= link_to 'New manifestation', manifestations_path(:expression_id => @expression.id, :mode => 'add') %></li>
-    <li><%= link_to 'New contributor', agents_path(:expression_id => @expression.id, :mode => 'add') %></li>
-    <li><%= link_to 'Edit work', works_path(:expression_id => @expression.id, :mode => 'edit') %></li>
-    <li><%= link_to 'JSON-LD', expression_path(@expression, :format => :jsonld) %></li>
+    <li><%= link_to 'New manifestation', manifestations_path(:expression_id => @expression.id, mode: 'add') %></li>
+    <li><%= link_to 'New contributor', agents_path(:expression_id => @expression.id, mode: 'add') %></li>
+    <li><%= link_to 'Edit work', works_path(:expression_id => @expression.id, mode: 'edit') %></li>
+    <li><%= link_to 'JSON-LD', expression_path(@expression, format: :jsonld) %></li>
   </ul>
 </div>

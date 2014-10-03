@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "enju_root"
   s.version     = EnjuRoot::VERSION
   s.authors     = ["Kosuke Tanabe"]
-  s.email       = ["kosuke@e23.jp"]
+  s.email       = ["nabeta@fastmail.fm"]
   s.homepage    = "https://github.com/next-l/enju_root"
   s.summary     = "Next-L Enju Root"
   s.description = "bibliographic data management system"
@@ -18,14 +18,17 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1"
-  s.add_dependency "enju_seed", "~> 0.2.0.pre4"
+  s.add_dependency "enju_seed", "~> 0.2.0.pre6"
   s.add_dependency "ruby-graphviz"
   s.add_dependency "linkeddata"
   s.add_dependency "settingslogic"
   s.add_dependency "sunspot_rails"
   s.add_dependency "validates_timeliness"
   s.add_dependency "rack-protection"
+  s.add_dependency "closure_tree"
+  s.add_dependency "faraday"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec-rails", "~> 3.0"
   s.add_development_dependency "sunspot_solr"
 end

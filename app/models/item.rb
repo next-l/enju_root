@@ -5,5 +5,5 @@ class Item < ActiveRecord::Base
     string :item_identifier
   end
 
-  validates :item_identifier, :presence => true
+  validates :item_identifier, presence: true
 end

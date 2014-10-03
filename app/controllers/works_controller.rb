@@ -40,10 +40,10 @@ class WorksController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json #{ render json: @work }
+      format.json{ render json: @work }
       format.xml
       format.svg {
-        send_file "#{Rails.root.to_s}/public/work_#{@work.id}.svg", :disposition => "inline", :type => "image/svg+xml"
+        send_file "#{Rails.root.to_s}/public/work_#{@work.id}.svg", :disposition => "inline", type: "image/svg+xml"
       }
       format.jsonld
     end
@@ -85,7 +85,7 @@ class WorksController < ApplicationController
       @work = Work.fetch(params[:work_url])
       @work.manifestation_url = params[:manifestation_url]
     else
-      @work = Work.new(params[:work])
+      @work = Work.new(work_params)
       manifestation = Manifestation.find(@work.manifestation_id) rescue nil
       parent = Work.find(@work.parent_id) if @work.parent_id.present?
     end
@@ -98,9 +98,9 @@ class WorksController < ApplicationController
         if @work.work_url
           @work.fetch
         elsif @work.manifestation_url
-          format.html { redirect_to new_expression_url(:work_id => @work, :manifestation_url => @work.manifestation_url), :notice => 'Work was successfully created.' }
+          format.html { redirect_to new_expression_url(:work_id => @work, :manifestation_url => @work.manifestation_url), notice: 'Work was successfully created.' }
         else
-          format.html { redirect_to new_expression_url(:work_id => @work, :manifestation_url => @work.manifestation_url), :notice => 'Work was successfully created.' }
+          format.html { redirect_to new_expression_url(:work_id => @work, :manifestation_url => @work.manifestation_url), notice: 'Work was successfully created.' }
         end
         format.json { render json: @work, status: :created, location: @work }
       else
@@ -116,7 +116,7 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     respond_to do |format|
-      if @work.update_attributes(params[:work])
+      if @work.update_attributes(work_params)
         format.html { redirect_to @work, notice: 'Work was successfully updated.' }
         format.json { head :no_content }
       else
@@ -136,5 +136,10 @@ class WorksController < ApplicationController
       format.html { redirect_to works_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def work_params
+    params.require(:work).permit(:preferred_title)
   end
 end

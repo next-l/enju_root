@@ -32,6 +32,7 @@ ja:
       expression: Expression
       manifestation: Manifestation
       content_type: 表現の種類
+      subject: 件名
 
   enju:
     show: 表示

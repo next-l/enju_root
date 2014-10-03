@@ -10,15 +10,16 @@ class Work < ActiveRecord::Base
   #  :cataloguers_note
 
   has_many :reifies
-  has_many :expressions, :through => :reifies
-  has_many :creates, :dependent => :destroy, :foreign_key => 'work_id'
-  has_many :creators, :through => :creates, :source => :agent #, :order => 'creates.position'
-  has_many :children_relationships, :foreign_key => 'parent_id', :class_name => 'WorkRelationship', :dependent => :destroy
-  has_many :parents_relationships, :foreign_key => 'child_id', :class_name => 'WorkRelationship', :dependent => :destroy
-  has_many :children, :through => :children_relationships, :source => :child
-  has_many :parents, :through => :parents_relationships, :source => :parent
+  has_many :expressions, through: :reifies
+  has_many :creates, dependent: :destroy, foreign_key: 'work_id'
+  has_many :creators, through: :creates, source: :agent #, order: 'creates.position'
+  has_many :children_relationships, foreign_key: 'parent_id', class_name: 'WorkRelationship', dependent: :destroy
+  has_many :parents_relationships, foreign_key: 'child_id', class_name: 'WorkRelationship', dependent: :destroy
+  has_many :children, through: :children_relationships, source: :child
+  has_many :parents, through: :parents_relationships, source: :parent
+  has_many :subjects
 
-  validates :preferred_title, :presence => true
+  validates :preferred_title, presence: true
 
   after_save :generate_graph if Setting.generate_graph
 
@@ -26,15 +27,24 @@ class Work < ActiveRecord::Base
     text :preferred_title do
       titles
     end
-    string :url, :multiple => true do
+    string :url, multiple: true do
       expressions.map{|e| e.manifestations.pluck(:url)}.flatten
     end
     text :url do
       expressions.map{|e| e.manifestations.pluck(:url)}.flatten
     end
-    integer :creator_ids, :multiple => true
-    string :classification_number, :multiple => true do
+    integer :creator_ids, multiple: true
+    string :classification_number, multiple: true do
       expressions.map{|e| e.manifestations.pluck(:classification_number)}.flatten
+    end
+    string :subject_url, multiple: true do
+      subjects.pluck(:url)
+    end
+    string :subject, multiple: true do
+      subjects.map{|subject| subject.remote_term}
+    end
+    text :subject do
+      subjects.map{|subject| subject.remote_term}
     end
   end
 
@@ -100,7 +110,7 @@ class Work < ActiveRecord::Base
   end
 
   def self.fetch(work_url)
-    doc = Nokogiri::XML(open("#{work_url}.xml"))
+    doc = Nokogiri::XML(Faraday.get("#{work_url}.xml").body)
     work = Work.new(:preferred_title => doc.at('//work/title').content)
     work.save!
     doc.xpath('//expression').each do |e|
@@ -114,6 +124,6 @@ class Work < ActiveRecord::Base
 
   def self.search_we(mi_url)
     url = "http://ja-textbook.herokuapp.com/works.json?query=#{mi_url}"
-    JSON.parse(open(url).read)
+    JSON.parse(Faraday.get(url).body)
   end
 end

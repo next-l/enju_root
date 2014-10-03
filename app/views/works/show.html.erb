@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', :model => t('activerecord.models.work')) -%></h1>
+  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -9,6 +9,11 @@
     <br />
     (Creator: <%= @work.expressions.map{|e| e.manifestations}.flatten.map{|m| m.cinii_creator}.join(" / ") %>)
 </p>
+<ul>
+  <% @work.creators.each do |creator| %>
+    <li><%= link_to creator.url, creator.url %></li>
+  <% end %>
+</ul>
 
 <p>
   <b><%= t('activerecord.attributes.work.variant_title') %>:</b>
@@ -146,9 +151,9 @@
     <!--
     <li><%= link_to '関連を作る', new_reify_path(:work_id => @work.id, :manifestation_id => @manifestation_id) %></li>
     -->
-    <li><%= link_to 'New expression', expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], :mode => 'add') %></li>
+    <li><%= link_to 'New expression', expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], mode: 'add') %></li>
     <li><%= link_to 'New child', works_path(:parent_id => @work.id) %></li>
-    <li><%= link_to 'New creator', agents_path(:work_id => @work.id, :mode => 'add') %></li>
-    <li><%= link_to 'JSON-LD', work_path(@work, :format => :jsonld) %></li>
+    <li><%= link_to 'New creator', agents_path(:work_id => @work.id, mode: 'add') %></li>
+    <li><%= link_to 'JSON-LD', work_path(@work, format: :jsonld) %></li>
   </ul>
 </div>

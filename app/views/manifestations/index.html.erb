@@ -11,9 +11,9 @@
   </h1>
 <div id="content_list">
 
-  <%= form_for :manifestations, :url => manifestations_path, :html => {:method => 'get'} do -%>
+  <%= form_for :manifestations, url: manifestations_path, :html => {method: 'get'} do -%>
     <p>
-      <%= search_field_tag 'query', params[:query], :class => 'search_form_short', :placeholder => t('enju.search') -%>
+      <%= search_field_tag 'query', params[:query], class: 'search_form_short', placeholder: t('enju.search') -%>
       <%= submit_tag t('enju.search') -%><br />
       <%= hidden_field_tag 'expression_id', @expression.id if @expression %>
       <%= hidden_field_tag 'mode', 'add' if params[:mode] == 'add' %>

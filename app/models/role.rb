@@ -3,7 +3,7 @@ class Role < ActiveRecord::Base
   include MasterModel
   default_scope {order("roles.position")}
   has_many :user_has_roles
-  has_many :users, :through => :user_has_roles
+  has_many :users, through: :user_has_roles
   after_save :clear_all_cache
   after_destroy :clear_all_cache
 
@@ -27,7 +27,7 @@ class Role < ActiveRecord::Base
   end
 
   def self.default_role
-    Rails.cache.fetch('default_role'){Role.where(:name => 'Guest').first}
+    Rails.cache.fetch('default_role'){Role.where(name: 'Guest').first}
   end
 end
 

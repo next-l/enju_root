@@ -1,5 +1,5 @@
 class WorkRelationshipsController < ApplicationController
-  before_filter :prepare_options, :only => [:new, :edit]
+  before_filter :prepare_options, only: [:new, :edit]
 
   # GET /work_relationships
   # GET /work_relationships.json
