@@ -1,3 +1,4 @@
+require 'enju_seed'
 require 'ruby-graphviz'
 require 'nokogiri'
 
