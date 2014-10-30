@@ -1,0 +1,54 @@
+<div id="content_detail" class="ui-corner-all ui-widget-content">
+<h1 class="title">Listing classifications</h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<div class="search_form">
+  <%= form_for :classifications, :url => classifications_path, :html => {:method => 'get'} do -%>
+    <p>
+      <%= search_field_tag 'q', @query %>
+      <%= submit_tag 'Search' %><br />
+    </p>
+  <% end %>
+</div>
+<%= javascript_tag("$(function(){$('#q').focus()})") %>
+
+<table class="table table-striped index">
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Term and Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classifications.each do |classification| %>
+      <tr class="line<%= cycle("0", "1") -%>">
+        <td><%= classification.node %></td>
+        <td>
+          <%= if classification.term.present?
+                link_to "#{classification.category} (#{classification.term})", classification
+              else
+                link_to '(blank)', classification
+              end %></td>
+            <td><%= link_to 'Add', "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{classification_url(classification.id)}&work_url=#{params[:work_url]}" %></td>
+        <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
+        <td><%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@classifications) %>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to 'New Classification', new_classification_path %></li>
+  </ul>
+</div>

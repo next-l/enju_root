@@ -1,0 +1,26 @@
+<%= form_for(@agent) do |f| %>
+  <% if @agent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@agent.errors.count, "error") %> prohibited this agent from being saved:</h2>
+
+      <ul>
+      <% @agent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :work_id %><br />
+    <%= link_to @agent.work.preferred_title, @agent.work %>
+    <%= f.hidden_field :work_id %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.url_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<div id="content_detail" class="ui-corner-all">
+  <h1 class="title">[S<%= @subject.id %>] <%= t('enju.showing', model: t('activerecord.models.subject')) -%></h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>URL:</b>
+  <%= link_to subject_label(@subject.url), @subject.url %>
+</p>
+
+<p>
+  <b>Work:</b>
+  <%= link_to 'Work一覧', works_path(:query => "subject_url_sm:#{@subject.url}") %>
+</p>
+
+</div>
+</div>
+
+
+<div id="submenu" class="ui-corner-all">
+<%= link_to t('enju.edit'), edit_subject_path(@subject) %> |
+<%= link_to t('enju.back'), subjects_path %>
+</div>
