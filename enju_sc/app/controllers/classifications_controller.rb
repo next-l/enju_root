@@ -7,7 +7,8 @@ class ClassificationsController < ApplicationController
     query = @query = params[:q]
     @classifications = Classification.search do
       fulltext query
-      order_by :category
+      order_by :node
+      with(:parent_id).equal_to nil
       paginate :page => params[:page]
 #      with(:work_url).equal_to params[:work_url] if params[:work_url]
     end.results
@@ -84,12 +85,13 @@ class ClassificationsController < ApplicationController
       if params[:category]
         @classification = Classification.where(:category => params[:category]).first
       else
-        @classification = Classification.find(params[:id])
+        @classification = Classification.friendly.find(params[:id])
       end
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classification_params
-      params.require(:classification).permit(:node, :term, :category, :parent_id, :new_parent_id)
+      params.require(:classification).permit(:node, :term, :category, :parent_id, :new_parent_id, :parent_url, :child_url)
     end
 end
