@@ -63,7 +63,7 @@
           <% if @manifestation.expressions.exists?(e) %>
             <strong>
           <% end %>
-          [E<%= e.id %>] <%= link_to e.preferred_title, e %>
+          [E<%= e.id %>] <%= link_to "#{e.language} #{e.content_type.name}", e %>
           <% if @manifestation.expressions.exists?(e) %>
             </strong>
           <% end %>

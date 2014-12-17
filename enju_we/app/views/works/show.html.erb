@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%></h1>
+  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%> work</h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -111,7 +111,7 @@
 <ul>
   <% @work.expressions.each do |expression| %>
     <li>
-    [E<%= expression.id %>] <%= link_to expression.preferred_title, expression %>
+    [E<%= expression.id %>] <%= link_to "#{expression.language} #{expression.content_type.name}", expression %>
       <!--
       Creator: <%# expression.work.creators.each do |creator| %>
         <%#= link_to creator.full_name, creator %>
@@ -138,7 +138,7 @@
 
 <ul>
   <% @work.subjects.each do |subject| %>
-    <li><%= link_to subject_label(subject.url), works_url(query: "subject_url_sm:#{subject.url}", term: subject_label(subject.url)) %></li>
+    <li><%= link_to subject_label(subject.url), works_path(query: "subject_url_sm:http://sc-textbook.next-l.jp/classifications/#{subject_label(subject.url)}", node: subject_label(subject.url)) %></li>
   <% end %>
 </ul>
 
@@ -168,7 +168,7 @@
     <li><%= link_to 'New expression', expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], mode: 'add') %></li>
     <li><%= link_to 'New child', works_path(:parent_id => @work.id) %></li>
     <!--
-    <li><%= link_to 'New subject', "#{Rails.application.secrets.enju_root["sc_url"]}/classifications?work_url=#{work_url(@work.id)}" %></li>
+    <li><%# link_to 'New subject', "#{Rails.application.secrets.enju_root["sc_url"]}/classifications?work_url=#{work_url(@work.id)}" %></li>
     -->
     <li><%= link_to 'New creator', new_agent_path(work_url: work_url(@work.id)) %></li>
     <li><%= link_to 'New subject', new_subject_path(work_url: work_url(@work.id)) %></li>
