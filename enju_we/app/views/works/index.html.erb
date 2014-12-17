@@ -16,9 +16,11 @@
     <p><%= params[:manifestation_url] %> に対応するWorkを選択してください。</p>
   <% end %>
 
-  <% if params[:term] %>
+  <% if params[:node] %>
     <p>
-      Subject: <%= link_to params[:term], "#{Rails.application.secrets.enju_root["sc_url"]}/classifications?q=#{params[:term]}" %>
+    Subject: <%= link_to subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}") + " (#{params[:node]})", "#{Rails.application.secrets.enju_root["sc_url"]}/classifications/#{params[:node]}" %>
+    <br />
+    <%= link_to "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}", "#{Rails.application.secrets.enju_root["sc_url"]}/classifications/#{params[:node]}" %>
     </p>
   <% end %>
 
@@ -33,6 +35,8 @@
     </p>
   <%- end -%>
 </div>
+
+<p><%= @works.total_entries %> 件ヒットしました。</p>
 
 <table class="index">
   <tr>

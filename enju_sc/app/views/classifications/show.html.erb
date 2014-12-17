@@ -34,7 +34,8 @@
 </p>
 <ul>
   <% @classification.children.each do |child| %>
-    <li><%= link_to "#{child.term} #{child.category}", child %></li>
+    <li><%= link_to "#{child.category} (#{child.term})", child %>
+    <%= link_to 'WEシステムを検索', "#{Rails.application.secrets.enju_root["we_url"]}/works?query=classification_number_sm:#{@classification.category}&term=#{@classification.term}" %></li>
   <% end %>
 </ul>
 

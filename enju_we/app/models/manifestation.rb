@@ -76,6 +76,8 @@ class Manifestation < ActiveRecord::Base
 
     # NDL Search
     #cinii_doc.at('//dcterms:title').content
+  rescue
+    'error'
   end
 
   def cinii_creator
