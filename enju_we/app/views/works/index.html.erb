@@ -18,7 +18,11 @@
 
   <% if params[:node] %>
     <p>
-    Subject: <%= link_to subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}") + " (#{params[:node]})", "#{Rails.application.secrets.enju_root["sc_url"]}/classifications/#{params[:node]}" %>
+    <% if subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}").blank? %>
+      Subject: <%= link_to params[:node], "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}" %>
+    <% else %>
+      Subject: <%= link_to "#{params[:node]} " + subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}"), "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}" %>
+    <% end %>
     <br />
     <%= link_to "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}", "#{Rails.application.secrets.enju_root["sc_url"]}/classifications/#{params[:node]}" %>
     </p>

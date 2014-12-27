@@ -1,4 +1,4 @@
 class Work < ActiveRecord::Base
-  has_many :work_and_classifications
-  has_many :classifications, through: :work_and_classifications
+  has_many :work_and_themata
+  has_many :themata, through: :work_and_themata
 end

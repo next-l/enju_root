@@ -1,0 +1,56 @@
+<div id="content_detail" class="ui-corner-all ui-widget-content">
+<h1 class="title">Listing themata</h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<div class="search_form">
+  <%= form_for :themata, :url => themata_path, :html => {:method => 'get'} do -%>
+    <p>
+      <%= search_field_tag 'q', @query %>
+      <%= submit_tag 'Search' %><br />
+    </p>
+  <% end %>
+</div>
+<%= javascript_tag("$(function(){$('#q').focus()})") %>
+
+<p><%= @themata.total_entries %> 件ヒットしました。</p>
+
+<table class="table table-striped index">
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Term and Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @themata.each do |thema| %>
+      <tr class="line<%= cycle("0", "1") -%>">
+        <td><%= thema.node %></td>
+        <td>
+          <%= if thema.term.present?
+                link_to "#{thema.category} (#{thema.term})", thema
+              else
+                link_to '(blank)', thema
+              end %></td>
+            <td><%= link_to 'Add', "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{thema_url(thema.id)}&work_url=#{params[:work_url]}" %></td>
+        <td><%= link_to 'Edit', edit_thema_path(thema) %></td>
+        <td><%= link_to 'Destroy', thema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@themata) %>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to 'New Thema', new_thema_path %></li>
+  </ul>
+</div>

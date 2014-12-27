@@ -1,10 +1,10 @@
-<%= form_for(@classification) do |f| %>
-  <% if @classification.errors.any? %>
+<%= form_for(@thema) do |f| %>
+  <% if @thema.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@classification.errors.count, "error") %> prohibited this classification from being saved:</h2>
+      <h2><%= pluralize(@thema.errors.count, "error") %> prohibited this thema from being saved:</h2>
 
       <ul>
-      <% @classification.errors.full_messages.each do |msg| %>
+      <% @thema.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -22,7 +22,7 @@
   <div class="field">
     <%= f.label :parent %><br>
     <%= f.hidden_field :parent_id %>
-    <%= link_to @classification.parent.term, @classification.parent if @classification.parent %>
+    <%= link_to @thema.parent.term, @thema.parent if @thema.parent %>
   </div>
   <div class="field">
     <%= f.label :category %><br>

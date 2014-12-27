@@ -1,4 +1,4 @@
-class Classification < ActiveRecord::Base
+class Thema < ActiveRecord::Base
 #  acts_as_nested_set
   acts_as_tree
   searchable do

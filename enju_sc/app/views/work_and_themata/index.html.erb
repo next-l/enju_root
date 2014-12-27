@@ -1,0 +1,29 @@
+<h1>Listing work_and_themata</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work</th>
+      <th>Thema</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_and_themata.each do |work_and_thema| %>
+      <tr>
+        <td><%= work_and_thema.work_id %></td>
+        <td><%= work_and_thema.thema_id %></td>
+        <td><%= link_to 'Show', work_and_thema %></td>
+        <td><%= link_to 'Edit', edit_work_and_thema_path(work_and_thema) %></td>
+        <td><%= link_to 'Destroy', work_and_thema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work and thema', new_work_and_thema_path %>

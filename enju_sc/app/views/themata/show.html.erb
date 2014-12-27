@@ -1,0 +1,44 @@
+<div id="content_detail" class="ui-corner-all ui-widget-content">
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Node:</strong>
+  <%= @thema.node %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @thema.term %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @thema.category %>
+</p>
+
+<p>
+<strong>Parent:</strong>
+<%= link_to "#{@thema.parent.category} (#{@thema.parent.term})", @thema.parent if @thema.parent %>
+</p>
+
+<p>
+<strong>Child:</strong>
+</p>
+<ul>
+  <% @thema.children.each do |child| %>
+    <li><%= link_to "#{child.category} (#{child.term})", child %>
+    <%= link_to 'WEシステムを検索', "#{Rails.application.secrets.enju_root["we_url"]}/works?query=thema_number_sm:#{@thema.category}&term=#{@thema.term}" %></li>
+  <% end %>
+</ul>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to t('page.edit'), edit_thema_path(@thema) %></li>
+    <li><%= link_to t('page.back'), themata_path %></li>
+    <li><%= link_to 'Add a child', new_thema_path(parent_id: @thema.id) %></li>
+  </ul>
+</div>

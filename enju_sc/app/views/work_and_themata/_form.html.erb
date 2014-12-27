@@ -1,0 +1,26 @@
+<%= form_for(@work_and_thema) do |f| %>
+  <% if @work_and_thema.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work_and_thema.errors.count, "error") %> prohibited this work_and_thema from being saved:</h2>
+
+      <ul>
+      <% @work_and_thema.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :work_id %><br>
+    <%= f.number_field :work_id %>
+  </div>
+  <div class="field">
+    <%= f.label :thema_id %><br>
+    <%= link_to @work_and_thema.thema.term, @work_and_thema.thema %>
+    <%= f.hidden_field :thema_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :work_and_classifications
+  resources :work_and_themata
 
-  get 'nierc/:category' => 'classifications#show'
+  get 'nierc/:category' => 'themata#show'
 
-  resources :classifications
+  resources :themata
 end

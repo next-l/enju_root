@@ -6,6 +6,8 @@ module ApplicationHelper
 
   def subject_label(url)
     JSON.parse(Faraday.get("#{url}.json").body)["term"]
+  rescue JSON::ParserError
+    "not found"
   end
 
   def subject_category(url)
