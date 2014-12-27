@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "enju_seed", "~> 0.2.0.pre6"
   s.add_dependency "acts_as_tree"
+  s.add_dependency "linkeddata"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.1"

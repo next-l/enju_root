@@ -1,0 +1,54 @@
+<div id="content_detail" class="ui-corner-all ui-widget-content">
+  <h1 class="title">[T] Showing theme</h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Node:</strong>
+  <%= link_to classification_url(@classification.node), classification_url(@classification.node) %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @classification.term %>
+  <%= @classification.category %>
+</p>
+
+<!--
+<p>
+  <strong>Category:</strong>
+  <%= @classification.category %>
+</p>
+-->
+
+<p>
+<strong>Parent:</strong>
+<%= link_to "#{@classification.parent.category} (#{@classification.parent.term})", @classification.parent if @classification.parent %>
+<% if @classification.parent %>
+  (<%= @classification.parent.children.count %>)
+<% end %>
+</p>
+
+<p>
+<strong>Child:</strong>
+</p>
+<ul>
+  <% @classification.children.each do |child| %>
+    <li><%= link_to "#{child.category} (#{child.term})", child %>
+    <%= link_to 'WEシステムを検索', "#{Rails.application.secrets.enju_root["we_url"]}/works?query=classification_number_sm:#{@classification.category}&term=#{@classification.term}" %></li>
+  <% end %>
+</ul>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to t('page.edit'), edit_classification_path(@classification) %></li>
+    <li><%= link_to t('page.back'), classifications_path %></li>
+    <!--
+    <li><%= link_to 'Add a child', new_classification_path(parent_id: @classification.id) %></li>
+    -->
+    <li><%= link_to 'WEシステムを検索', "#{Rails.application.secrets.enju_root["we_url"]}/works?query=subject_url_sm:#{classification_url(@classification)}&node=#{@classification.node}" %></li>
+  </ul>
+</div>
