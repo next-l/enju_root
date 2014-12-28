@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "enju_seed", "~> 0.2.0.pre6"
   s.add_dependency "ruby-graphviz"
   s.add_dependency "linkeddata"
-  s.add_dependency "settingslogic"
   s.add_dependency "sunspot_rails"
   s.add_dependency "validates_timeliness"
   s.add_dependency "rack-protection"

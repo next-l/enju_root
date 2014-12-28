@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%> work</h1>
+  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -152,7 +152,7 @@
   <b>relationship graph:</b>
 </p>
 
-<%=raw File.open("#{Rails.root.to_s}/public/works/#{@work.id}.svg").read if Setting.generate_graph %>
+<%=raw File.open("#{Rails.root.to_s}/public/works/#{@work.id}.svg").read if Rails.application.config_for(:enju)["site_name"] %>
 
 </div>
 </div>

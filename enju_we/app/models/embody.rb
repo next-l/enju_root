@@ -7,7 +7,7 @@ class Embody < ActiveRecord::Base
   #  :relationship_type_id
   validates_uniqueness_of :manifestation_id, scope: :expression_id
 
-  after_save :generate_graph if Setting.generate_graph
+  after_save :generate_graph if Rails.application.config_for(:enju)["site_name"]
   after_save :create_index
 
   attr_accessor :manifestation_url

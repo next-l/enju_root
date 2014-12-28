@@ -1,7 +1,7 @@
 <div class="header_and_footer">
   <div id="header_left">
     <div id="library_system_name">
-      <h1 class="resource_title"><%= link_to Setting.site.name, root_path %></h1>
+      <h1 class="resource_title"><%= link_to Rails.application.config_for(:enju)["site_name"], root_path %></h1>
     </div>
     <div id="header_micro_advertisement"></div>
   </div>

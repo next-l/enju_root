@@ -10,7 +10,7 @@ class Work < ActiveRecord::Base
 
   validates :preferred_title, presence: true
 
-  after_save :generate_graph if Setting.generate_graph
+  after_save :generate_graph if Rails.application.config_for(:enju)["site_name"]
 
   searchable do
     text :preferred_title do

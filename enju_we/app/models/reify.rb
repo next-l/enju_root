@@ -6,7 +6,7 @@ class Reify < ActiveRecord::Base
   #attr_accessible :work_id, :expression_id, :relationship_type_id
   validates_uniqueness_of :expression_id, scope: :work_id
 
-  after_save :generate_graph if Setting.generate_graph
+  after_save :generate_graph if Rails.application.config_for(:enju)["site_name"]
   after_save :create_index
 
   def create_index

@@ -13,7 +13,7 @@ class Manifestation < ActiveRecord::Base
   #validates :cinii_title, presence: true
   validates :url, presence: true, uniqueness: true
 
-  after_save :generate_graph if Setting.generate_graph
+  after_save :generate_graph if Rails.application.config_for(:enju)["site_name"]
 
   attr_accessor :expression_id
 
