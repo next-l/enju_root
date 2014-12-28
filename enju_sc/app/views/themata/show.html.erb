@@ -39,6 +39,11 @@
     <li><%= link_to t('page.edit'), edit_thema_path(@thema) %></li>
     <li><%= link_to t('page.back'), themata_path %></li>
     <li><%= link_to 'Add a child', new_thema_path(parent_id: @thema.id) %></li>
-    <li><%= link_to 'WEシステムを検索', "http://we-textbook.next-l.jp/works?query=subject_url_sm:#{thema_url(@thema)}" %></li>
+    <li><%= link_to 'WEシステムを検索', works_url(
+      host: URI.parse(Rails.application.config_for(:enju)["we_url"]).host,
+      port: URI.parse(Rails.application.config_for(:enju)["we_url"]).port,
+      protocol: URI.parse(Rails.application.config_for(:enju)["we_url"]).scheme,
+      enju_subject_url: thema_url(@thema),
+      query: "subject_url_sm:#{thema_url(@thema)}") %></li>
   </ul>
 </div>
