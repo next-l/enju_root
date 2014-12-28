@@ -7,5 +7,6 @@ class CreateThemata < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :themata, :node
   end
 end
