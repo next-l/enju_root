@@ -15,9 +15,9 @@
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= agent.full_name %></td>
     <td><%= agent.agent_type_id %></td>
-    <td><%= link_to t('enju.show'), agent %></td>
-    <td><%= link_to t('enju.edit'), edit_agent_path(agent) %></td>
-    <td><%= link_to t('enju.destroy'), agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), agent %></td>
+    <td><%= link_to t('page.edit'), edit_agent_path(agent) %></td>
+    <td><%= link_to t('page.destroy'), agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[M<%= @manifestation.id %>] <%= t('enju.showing', model: t('activerecord.models.manifestation')) -%></h1>
+  <h1 class="title">[M<%= @manifestation.id %>] <%= t('page.showing', model: t('activerecord.models.manifestation')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -108,8 +108,8 @@
 
 <div id="submenu" class="ui-corner-all">
   <ul>
-    <li><%= link_to t('enju.edit'), edit_manifestation_path(@manifestation) %></li>
-    <li><%= link_to t('enju.back'), manifestations_path %></li>
+    <li><%= link_to t('page.edit'), edit_manifestation_path(@manifestation) %></li>
+    <li><%= link_to t('page.back'), manifestations_path %></li>
 
     <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
     <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>

@@ -17,8 +17,8 @@
 <div class="search_form">
   <%= form_for :expressions, url: expressions_path, :html => {method: 'get'} do -%>
     <p>
-      <%= search_field_tag 'query', params[:query], class: 'search_form_short', placeholder: t('enju.search') -%>
-      <%= submit_tag t('enju.search') -%><br />
+      <%= search_field_tag 'query', params[:query], class: 'search_form_short', placeholder: t('page.search') -%>
+      <%= submit_tag t('page.search') -%><br />
       <%= hidden_field_tag 'work_id', @work.id if @work %>
       <%= hidden_field_tag 'manifestation_url', params[:manifestation_url] if params[:manifestation_url] %>
       <%= hidden_field_tag 'mode', 'add' if params[:mode] == 'add' %>
@@ -57,8 +57,8 @@
         <%= link_to '関連を追加', new_reify_path(:work_id => @work.id, :expression_id => expression.id) if @work and expression.work != @work %>
       <% end %>
     </td>
-    <td><%= link_to t('enju.edit'), edit_expression_path(expression) %></td>
-    <td><%= link_to t('enju.destroy'), expression, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.edit'), edit_expression_path(expression) %></td>
+    <td><%= link_to t('page.destroy'), expression, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -13,9 +13,9 @@
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= exemplify.manifestation %></td>
     <td><%= exemplify.item %></td>
-    <td><%= link_to t('enju.show'), exemplify %></td>
-    <td><%= link_to t('enju.edit'), edit_exemplify_path(exemplify) %></td>
-    <td><%= link_to t('enju.destroy'), exemplify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), exemplify %></td>
+    <td><%= link_to t('page.edit'), edit_exemplify_path(exemplify) %></td>
+    <td><%= link_to t('page.destroy'), exemplify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

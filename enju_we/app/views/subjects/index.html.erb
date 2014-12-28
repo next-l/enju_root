@@ -15,9 +15,9 @@
     <td><%= subject.term %></td>
     <td><%= subject.subject_heading_id %></td>
     <td><%= subject.subject_type_id %></td>
-    <td><%= link_to t('enju.show'), subject %></td>
-    <td><%= link_to t('enju.edit'), edit_subject_path(subject) %></td>
-    <td><%= link_to t('enju.destroy'), subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), subject %></td>
+    <td><%= link_to t('page.edit'), edit_subject_path(subject) %></td>
+    <td><%= link_to t('page.destroy'), subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

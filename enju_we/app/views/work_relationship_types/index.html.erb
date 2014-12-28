@@ -12,8 +12,8 @@
 <% @work_relationship_types.each do |work_relationship_type| %>
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= link_to work_relationship_type.name, work_relationship_type %></td>
-    <td><%= link_to t('enju.edit'), edit_work_relationship_type_path(work_relationship_type) %></td>
-    <td><%= link_to t('enju.destroy'), work_relationship_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.edit'), edit_work_relationship_type_path(work_relationship_type) %></td>
+    <td><%= link_to t('page.destroy'), work_relationship_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

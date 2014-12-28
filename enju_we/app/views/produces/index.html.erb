@@ -13,9 +13,9 @@
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= produce.manifestation %></td>
     <td><%= produce.agent %></td>
-    <td><%= link_to t('enju.show'), produce %></td>
-    <td><%= link_to t('enju.edit'), edit_produce_path(produce) %></td>
-    <td><%= link_to t('enju.destroy'), produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), produce %></td>
+    <td><%= link_to t('page.edit'), edit_produce_path(produce) %></td>
+    <td><%= link_to t('page.destroy'), produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

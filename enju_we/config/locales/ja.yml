@@ -34,7 +34,7 @@ ja:
       content_type: 表現の種類
       subject: 件名
 
-  enju:
+  page:
     show: 表示
     edit: 編集
     destroy: 削除

@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[W<%= @work.id %>] <%= t('enju.showing', model: t('activerecord.models.work')) -%></h1>
+  <h1 class="title">[W<%= @work.id %>] <%= t('page.showing', model: t('activerecord.models.work')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -160,8 +160,8 @@
 
 <div id="submenu" class="ui-corner-all">
   <ul>
-    <li><%= link_to t('enju.edit'), edit_work_path(@work) %></li>
-    <li><%= link_to t('enju.back'), works_path %></li>
+    <li><%= link_to t('page.edit'), edit_work_path(@work) %></li>
+    <li><%= link_to t('page.back'), works_path %></li>
     <!--
     <li><%= link_to '???????????????', new_reify_path(:work_id => @work.id, :manifestation_id => @manifestation_id) %></li>
     -->

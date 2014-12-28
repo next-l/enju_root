@@ -12,8 +12,8 @@
 <% @expression_relationship_types.each do |expression_relationship_type| %>
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= link_to expression_relationship_type.name, expression_relationship_type %></td>
-    <td><%= link_to t('enju.edit'), edit_expression_relationship_type_path(expression_relationship_type) %></td>
-    <td><%= link_to t('enju.destroy'), expression_relationship_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.edit'), edit_expression_relationship_type_path(expression_relationship_type) %></td>
+    <td><%= link_to t('page.destroy'), expression_relationship_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

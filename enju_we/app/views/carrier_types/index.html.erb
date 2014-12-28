@@ -11,9 +11,9 @@
 <% @carrier_types.each do |carrier_type| %>
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= carrier_type.name %></td>
-    <td><%= link_to t('enju.show'), carrier_type %></td>
-    <td><%= link_to t('enju.edit'), edit_carrier_type_path(carrier_type) %></td>
-    <td><%= link_to t('enju.destroy'), carrier_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), carrier_type %></td>
+    <td><%= link_to t('page.edit'), edit_carrier_type_path(carrier_type) %></td>
+    <td><%= link_to t('page.destroy'), carrier_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

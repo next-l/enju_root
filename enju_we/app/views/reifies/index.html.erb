@@ -19,9 +19,9 @@
       <br />
       (<%= reify.expression.try(:language) %>)
     </td>
-    <td><%= link_to t('enju.show'), reify %></td>
-    <td><%= link_to t('enju.edit'), edit_reify_path(reify) %></td>
-    <td><%= link_to t('enju.destroy'), reify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), reify %></td>
+    <td><%= link_to t('page.edit'), edit_reify_path(reify) %></td>
+    <td><%= link_to t('page.destroy'), reify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

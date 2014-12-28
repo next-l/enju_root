@@ -13,9 +13,9 @@
   <tr class="line<%= cycle("0", "1") -%>">
     <td><%= realize.expression.preferred_title %></td>
     <td><%= realize.agent.full_name %></td>
-    <td><%= link_to t('enju.show'), realize %></td>
-    <td><%= link_to t('enju.edit'), edit_realize_path(realize) %></td>
-    <td><%= link_to t('enju.destroy'), realize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('page.show'), realize %></td>
+    <td><%= link_to t('page.edit'), edit_realize_path(realize) %></td>
+    <td><%= link_to t('page.destroy'), realize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
