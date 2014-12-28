@@ -16,15 +16,15 @@
     <p><%= params[:manifestation_url] %> に対応するWorkを選択してください。</p>
   <% end %>
 
-  <% if params[:node] %>
+  <% if params[:enju_subject_url] %>
     <p>
-    <% if subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}").blank? %>
-      Subject: <%= link_to params[:node], "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}" %>
+    <% if subject_label(params[:enju_subject_url]).blank? %>
+      Subject: <%= link_to params[:enju_subject_url], params[:enju_subject_url] %>
     <% else %>
-      Subject: <%= link_to "#{params[:node]} " + subject_category("#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}"), "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}" %>
+      Subject: <%= link_to "#{URI.parse(params[:enju_subject_url]).path.split('/').reverse[0]} " + subject_label(params[:enju_subject_url]), params[:enju_subject_url] %>
+      <br />
+      <%= link_to params[:enju_subject_url], params[:enju_subject_url] %>
     <% end %>
-    <br />
-    <%= link_to "#{Rails.application.secrets.enju_root['sc_url']}/classifications/#{params[:node]}", "#{Rails.application.secrets.enju_root["sc_url"]}/classifications/#{params[:node]}" %>
     </p>
   <% end %>
 

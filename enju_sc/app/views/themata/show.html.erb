@@ -39,5 +39,6 @@
     <li><%= link_to t('page.edit'), edit_thema_path(@thema) %></li>
     <li><%= link_to t('page.back'), themata_path %></li>
     <li><%= link_to 'Add a child', new_thema_path(parent_id: @thema.id) %></li>
+    <li><%= link_to 'WEシステムを検索', "http://we-textbook.next-l.jp/works?query=subject_url_sm:#{thema_url(@thema)}" %></li>
   </ul>
 </div>

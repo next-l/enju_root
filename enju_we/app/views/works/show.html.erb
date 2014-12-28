@@ -138,7 +138,7 @@
 
 <ul>
   <% @work.subjects.each do |subject| %>
-    <li><%= link_to subject_label(subject.url), works_path(query: "subject_url_sm:http://sc-textbook.next-l.jp/classifications/#{subject_label(subject.url)}", node: subject_label(subject.url)) %></li>
+    <li><%= link_to subject_label(subject.url), works_path(query: "subject_url_sm:#{subject.url}", enju_subject_url: subject.url) %></li>
   <% end %>
 </ul>
 
