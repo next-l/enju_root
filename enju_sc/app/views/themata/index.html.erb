@@ -36,9 +36,9 @@
               else
                 link_to '(blank)', thema
               end %></td>
-            <td><%= link_to 'Add', "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{thema_url(thema.id)}&work_url=#{params[:work_url]}" %></td>
-        <td><%= link_to 'Edit', edit_thema_path(thema) %></td>
-        <td><%= link_to 'Destroy', thema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t('page.add'), "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{thema_url(thema.id)}&work_url=#{params[:work_url]}" %></td>
+        <td><%= link_to t('page.edit'), edit_thema_path(thema) %></td>
+        <td><%= link_to t('page.destroy'), thema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

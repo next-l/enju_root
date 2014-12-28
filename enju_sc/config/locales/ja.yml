@@ -2,5 +2,6 @@ ja:
   page:
     back: 戻る
     edit: 編集
+    destroy: 削除
     show: 表示
-
+    add: 追加
