@@ -27,8 +27,7 @@
 </p>
 <ul>
   <% @thema.children.each do |child| %>
-    <li><%= link_to "#{child.category} (#{child.term})", child %>
-    <%= link_to 'WEシステムを検索', "#{Rails.application.secrets.enju_root["we_url"]}/works?query=thema_number_sm:#{@thema.category}&term=#{@thema.term}" %></li>
+    <li><%= link_to "#{child.category} (#{child.term})", child %></li>
   <% end %>
 </ul>
 

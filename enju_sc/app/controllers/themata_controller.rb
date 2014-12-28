@@ -7,8 +7,9 @@ class ThemataController < ApplicationController
     query = @query = params[:q]
     @themata = Thema.search do
       fulltext query
-      order_by :category
+      order_by :node
       paginate :page => params[:page]
+      with(:parent_id).equal_to nil
 #      with(:work_url).equal_to params[:work_url] if params[:work_url]
     end.results
   end

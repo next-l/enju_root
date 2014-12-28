@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :themata
+  resources :themata, id: %r{[^/]+?}, format: /json|csv|xml|html/
 end
