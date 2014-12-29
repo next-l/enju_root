@@ -9,6 +9,7 @@
   <br />
   (Creator: <%= @manifestation.cinii_creator %>)
   <br />
+  <!--
   <%# @manifestation.people.each do |person| %>
     <%# if person.to_ndla["altLabel"] %>
       <%# link_to person.to_ndla["prefLabel"]["literalForm"], person.to_ndla["uri"] %>
@@ -19,6 +20,7 @@
       <%# link_to person.to_ndla["prefLabel"]["literalForm"], person.to_ndla["uri"] %>
     <%# end %>
   <%# end %>
+  -->
 </p>
 
 <p>
@@ -26,11 +28,13 @@
   <%= @manifestation.cinii_publisher %>
 </p>
 
+<!--
 <ul>
   <%# @manifestation.producers.each do |producer| %>
     <li><%# link_to producer.full_name, producer %></li>
   <%# end %>
 </ul>
+-->
 
 <!--
 <p>

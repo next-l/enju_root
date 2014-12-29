@@ -8,9 +8,14 @@
 </p>
 
 <p>
-  <strong>Term:</strong>
-  <%= @thema.term %>
+  <strong>Nomen:</strong>
 </p>
+<ul>
+  <% @thema.nomina.each do |nomen| %>
+    <li><%= nomen.name %></li>
+  <% end %>
+</ul>
+
 
 <p>
   <strong>Category:</strong>
@@ -23,11 +28,17 @@
 </p>
 
 <p>
-<strong>Child:</strong>
+  <strong>Child:</strong>
 </p>
 <ul>
-  <% @thema.children.each do |child| %>
-    <li><%= link_to "#{child.category} (#{child.term})", child %></li>
+  <% @thema.children.order(:category).each do |child| %>
+    <li>
+    <% if child.term %>
+      <%= link_to "#{child.category} (#{child.term})", child %>
+    <% else %>
+      <%= link_to "#{child.category}", child %>
+    <% end %>
+    </li>
   <% end %>
 </ul>
 

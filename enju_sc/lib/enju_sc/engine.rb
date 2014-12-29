@@ -1,5 +1,5 @@
 require 'enju_seed'
-require 'acts_as_tree'
+require 'closure_tree'
 
 module EnjuSc
   class Engine < ::Rails::Engine

@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "enju_seed", "~> 0.2.0.pre6"
-  s.add_dependency "acts_as_tree"
+  s.add_dependency "closure_tree"
   s.add_dependency "linkeddata"
 
   s.add_development_dependency "sqlite3"
