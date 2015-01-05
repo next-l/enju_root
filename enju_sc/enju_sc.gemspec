@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = EnjuSc::VERSION
   s.authors     = ["Kosuke Tanabe"]
   s.email       = ["nabeta@fastmail.fm"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/next-l/enju_root"
   s.summary     = "TODO: Summary of EnjuSc."
   s.description = "TODO: Description of EnjuSc."
   s.license     = "MIT"

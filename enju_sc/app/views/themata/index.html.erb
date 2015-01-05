@@ -7,13 +7,13 @@
   <%= form_for :themata, :url => themata_path, :html => {:method => 'get'} do -%>
     <p>
       <%= search_field_tag 'q', @query %>
-      <%= submit_tag 'Search' %><br />
+      <%= submit_tag t('page.search') %><br />
     </p>
   <% end %>
 </div>
 <%= javascript_tag("$(function(){$('#q').focus()})") %>
 
-<p><%= @themata.total_entries %> 件ヒットしました。</p>
+<p><%= @themata.total_count %> 件ヒットしました。</p>
 
 <table class="table table-striped index">
   <thead>

@@ -4,14 +4,15 @@ class ThemataController < ApplicationController
   # GET /themata
   # GET /themata.json
   def index
-    query = @query = params[:q]
-    @themata = Thema.search do
-      fulltext query
-      order_by :node
-      paginate :page => params[:page]
-      with(:parent_id).equal_to nil
-#      with(:work_url).equal_to params[:work_url] if params[:work_url]
-    end.results
+    @query = params[:q]
+    query = Jbuilder.encode do |json|
+      json.query do
+        json.query_string do
+          json.query params[:q]
+        end
+      end
+    end
+    @themata = Thema.__elasticsearch__.search(query).page(params[:page]).records
   end
 
   # GET /themata/1
