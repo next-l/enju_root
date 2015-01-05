@@ -37,7 +37,7 @@
     <% if child.term %>
       <%= link_to "#{child.category} (#{child.term})", child %>
     <% else %>
-      <%= link_to "#{child.category}", child %>
+      <%= link_to "#{child.node}", child %>
     <% end %>
     </li>
   <% end %>
@@ -50,7 +50,7 @@
   <ul>
     <li><%= link_to t('page.edit'), edit_thema_path(@thema) %></li>
     <li><%= link_to t('page.back'), themata_path %></li>
-    <li><%= link_to 'Add a child', new_thema_path(parent_id: @thema.id) %></li>
+    <li><%= link_to t('page.add_child'), new_thema_path(parent_url: thema_url(@thema)) %></li>
     <li><%= link_to 'WEシステムを検索', works_url(
       host: URI.parse(Rails.application.config_for(:enju)["we_url"]).host,
       port: URI.parse(Rails.application.config_for(:enju)["we_url"]).port,

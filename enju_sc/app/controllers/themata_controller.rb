@@ -27,7 +27,7 @@ class ThemataController < ApplicationController
   # GET /themata/new
   def new
     @thema = Thema.new
-    @thema.parent_id = params[:parent_id]
+    @thema.parent_url = params[:parent_url]
   end
 
   # GET /themata/1/edit

@@ -12,5 +12,5 @@ class Thema < ActiveRecord::Base
     string :work_url
     integer :parent_id
   end
-  attr_accessor :new_parent
+  attr_accessor :new_parent, :parent_url, :child_url
 end

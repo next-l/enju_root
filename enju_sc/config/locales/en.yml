@@ -2,4 +2,7 @@ en:
   page:
     back: Back
     edit: Edit
+    destroy: Destroy
     show: Show
+    add: Add
+    add_child: Add a child
