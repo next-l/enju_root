@@ -20,9 +20,9 @@
     <tr>
       <th>Node</th>
       <th>Term and Category</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th style="width: 60px"></th>
+      <th style="width: 60px"></th>
+      <th style="width: 60px"></th>
     </tr>
   </thead>
 
@@ -35,8 +35,13 @@
                 link_to "#{thema.category} (#{thema.term})", thema
               else
                 link_to '(blank)', thema
-              end %></td>
-            <td><%= link_to t('page.add'), "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{thema_url(thema.id)}&work_url=#{params[:work_url]}" %></td>
+              end %>
+        </td>
+        <td>
+          <% if params[:work_url] %>
+            <%= link_to t('page.add'), "#{Rails.application.secrets.enju_root["we_url"]}/subjects/new?subject_url=#{thema_url(thema.id)}&work_url=#{params[:work_url]}" %>
+          <% end %>
+        </td>
         <td><%= link_to t('page.edit'), edit_thema_path(thema) %></td>
         <td><%= link_to t('page.destroy'), thema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
