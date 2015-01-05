@@ -6,10 +6,18 @@ class ThemataController < ApplicationController
   def index
     @query = params[:q] || '*:*'
     query = Jbuilder.encode do |json|
+      json.filter do
+        json.missing do
+          json.field "parent_id"
+        end
+      end
       json.query do
         json.query_string do
           json.query @query
         end
+      end
+      json.sort do
+        json.node "asc"
       end
     end
     @themata = Thema.__elasticsearch__.search(query).page(params[:page]).records
