@@ -4,11 +4,11 @@ class ThemataController < ApplicationController
   # GET /themata
   # GET /themata.json
   def index
-    @query = params[:q]
+    @query = params[:q] || '*:*'
     query = Jbuilder.encode do |json|
       json.query do
         json.query_string do
-          json.query params[:q]
+          json.query @query
         end
       end
     end
