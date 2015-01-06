@@ -1,4 +1,7 @@
 ja:
+  activerecord:
+    models:
+      thema: Thema
   page:
     back: 戻る
     edit: 編集
@@ -7,3 +10,7 @@ ja:
     add: 追加
     add_child: 子を追加
     search: 検索
+    listing: "%{model}の一覧"
+    new: "%{model}の新規作成"
+    editing: "%{model}の編集"
+    showing: "%{model}の表示"

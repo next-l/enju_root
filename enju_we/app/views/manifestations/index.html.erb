@@ -26,10 +26,10 @@
   <tr>
     <th><%= t('activerecord.attributes.manifestation.title_proper') %></th>
     <% if params[:mode] == 'add' %>
-      <th></th>
+      <th style="width: 60px"></th>
     <% end %>
-    <th></th>
-    <th></th>
+    <th style="width: 60px"></th>
+    <th style="width: 60px"></th>
   </tr>
 
 <% @manifestations.each do |manifestation| %>
@@ -61,9 +61,9 @@
 <div id="submenu" class="ui-corner-all">
   <ul>
     <% if @expression %>
-      <li><%= link_to 'New Manifestation', new_manifestation_path(:expression_id => @expression.id) %></li>
+      <li><%= link_to t('page.new', model: t('activerecord.models.manifestation')), new_manifestation_path(:expression_id => @expression.id) %></li>
     <% else %>
-      <li><%= link_to 'New Manifestation', new_manifestation_path %></li>
+      <li><%= link_to t('page.new', model: t('activerecord.models.manifestation')), new_manifestation_path %></li>
     <% end %>
   </ul>
 </div>

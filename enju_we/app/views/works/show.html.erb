@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-  <h1 class="title">[W<%= @work.id %>] <%= t('page.showing', model: t('activerecord.models.work')) -%></h1>
+<h1 class="title">[W<%= @work.id %>] <%= t('page.showing', model: t('activerecord.models.work')) -%></h1>
 <div id="content_list">
 <p id="notice"><%= notice %></p>
 
@@ -165,7 +165,7 @@
     <!--
     <li><%= link_to '???????????????', new_reify_path(:work_id => @work.id, :manifestation_id => @manifestation_id) %></li>
     -->
-    <li><%= link_to 'New expression', expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], mode: 'add') %></li>
+    <li><%= link_to t('page.new', model: t('activerecord.models.expression')), expressions_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url], mode: 'add') %></li>
     <li><%= link_to 'New child', works_path(:parent_id => @work.id) %></li>
     <!--
     <li><%# link_to 'New subject', "#{Rails.application.secrets.enju_root["sc_url"]}/classifications?work_url=#{work_url(@work.id)}" %></li>

@@ -29,9 +29,9 @@
 <table class="index">
   <tr>
     <th><%= t('activerecord.attributes.expression.preferred_title') %></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style="width: 60px"></th>
+    <th style="width: 60px"></th>
+    <th style="width: 60px"></th>
   </tr>
 
 <% @expressions.each do |expression| %>
@@ -72,11 +72,11 @@
   <ul>
     <li>
     <% if params[:manifestation_url] %>
-      <%= link_to 'New Expression', new_expression_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url]) %>
+      <%= link_to t('page.new', model: t('activerecord.models.expression')), new_expression_path(:work_id => @work.id, :manifestation_url => params[:manifestation_url]) %>
     <% elsif @manifestation and @work %>
-      <%= link_to 'New Expression', new_expression_path(:work_id => @work.id, :manifestation_id => @manifestation.id) %>
+      <%= link_to t('page.new', model: t('activerecord.models.expression')), new_expression_path(:work_id => @work.id, :manifestation_id => @manifestation.id) %>
     <% elsif @work %>
-      <%= link_to 'New Expression', new_expression_path(:work_id => @work.id) %>
+      <%= link_to t('page.new', model: t('activerecord.models.expression')), new_expression_path(:work_id => @work.id) %>
     <% elsif @manifestation %>
       <%= link_to 'New Work', new_work_path(:manifestation_id => @manifestation.id) %>
     <% elsif @expression %>

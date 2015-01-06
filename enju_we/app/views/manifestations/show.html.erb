@@ -115,8 +115,8 @@
     <li><%= link_to t('page.edit'), edit_manifestation_path(@manifestation) %></li>
     <li><%= link_to t('page.back'), manifestations_path %></li>
 
-    <li><%= link_to 'New work', works_path(:manifestation_id => @manifestation.id) %></li>
-    <li><%= link_to 'New expression', expressions_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>
+    <li><%= link_to t('page.new', model: t('activerecord.models.work')), works_path(:manifestation_id => @manifestation.id) %></li>
+    <li><%= link_to t('page.new', model: t('activerecord.models.expression')), expressions_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>
     <!--
     <li><%# link_to 'New producer', agents_path(:manifestation_id => @manifestation.id, mode: 'add') %></li>
     -->
