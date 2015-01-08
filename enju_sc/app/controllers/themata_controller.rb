@@ -4,7 +4,8 @@ class ThemataController < ApplicationController
   # GET /themata
   # GET /themata.json
   def index
-    @query = params[:q] || '*:*'
+    @query = params[:q]
+    @query = '*:*' if @query.blank?
     query = Jbuilder.encode do |json|
       json.filter do
         json.missing do

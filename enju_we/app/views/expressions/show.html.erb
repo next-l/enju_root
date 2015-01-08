@@ -92,12 +92,12 @@
     <li><%= link_to t('page.edit'), edit_expression_path(@expression) %></li>
     <li><%= link_to t('page.back'), expressions_path %></li>
 
-    <li><%= link_to 'New child', expressions_path(:parent_id => @expression.id) %></li>
-    <li><%= link_to 'New manifestation', manifestations_path(:expression_id => @expression.id, mode: 'add') %></li>
+    <li><%= link_to t('page.add_child'), expressions_path(:parent_id => @expression.id) %></li>
+    <li><%= link_to t('page.new', model: t('activerecord.models.manifestation')), manifestations_path(:expression_id => @expression.id, mode: 'add') %></li>
     <!--
     <li><%# link_to 'New contributor', agents_path(:expression_id => @expression.id, mode: 'add') %></li>
     -->
-    <li><%= link_to 'Edit work', works_path(:expression_id => @expression.id, mode: 'edit') %></li>
+    <li><%= link_to t('page.editing', model: t('activerecord.models.work')), works_path(:expression_id => @expression.id, mode: 'edit') %></li>
     <li><%= link_to 'JSON-LD', expression_path(@expression, format: :jsonld) %></li>
   </ul>
 </div>

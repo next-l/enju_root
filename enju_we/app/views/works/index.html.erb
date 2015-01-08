@@ -88,11 +88,11 @@
 <div id="submenu" class="ui-corner-all">
   <ul>
     <% if @parent_work %>
-      <li><%= link_to t('page.listing', model: t('activerecord.models.work')), new_work_path(:parent_id => @parent_work.id) %></li>
+      <li><%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path(:parent_id => @parent_work.id) %></li>
     <% elsif params[:work_url] %>
-      <li><%= link_to t('page.listing', model: t('activerecord.models.work')), new_work_path(:work_url => params[:work_url]) %></li>
+      <li><%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path(:work_url => params[:work_url]) %></li>
     <% else %>
-      <li><%= link_to t('page.listing', model: t('activerecord.models.work')), new_work_path(:manifestation_url => params[:manifestation_url]) %></li>
+      <li><%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path(:manifestation_url => params[:manifestation_url]) %></li>
     <% end %>
     <li><a href="javascript:window.location.href='<%= works_url %>?manifestation_url='+encodeURIComponent(location.href);">ブックマークレット</a></li>
     <li><a href="javascript:window.location.href='<%= works_url %>?query=url_sm%3A'+encodeURIComponent(location.href);">検索用ブックマークレット</a></li>

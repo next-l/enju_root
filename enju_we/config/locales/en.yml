@@ -3,5 +3,11 @@
 
 en:
   hello: "Hello world"
-  enju:
+  helpers:
+    submit:
+      create: "Create %{model}"
+      submit: "Submit %{model}"
+      update: "Update %{model}"
+  page:
     search: Search
+    add_child: Add child

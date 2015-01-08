@@ -78,11 +78,11 @@
     <% elsif @work %>
       <%= link_to t('page.new', model: t('activerecord.models.expression')), new_expression_path(:work_id => @work.id) %>
     <% elsif @manifestation %>
-      <%= link_to 'New Work', new_work_path(:manifestation_id => @manifestation.id) %>
+      <%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path(:manifestation_id => @manifestation.id) %>
     <% elsif @expression %>
-      <%= link_to 'New Work', new_work_path(:expression_id => @expression.id) %>
+      <%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path(:expression_id => @expression.id) %>
     <% else %>
-      <%= link_to 'New Work', new_work_path %>
+      <%= link_to t('page.new', model: t('activerecord.models.work')), new_work_path %>
     <% end %>
     </li>
   </ul>

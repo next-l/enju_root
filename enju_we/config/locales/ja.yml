@@ -33,6 +33,11 @@ ja:
       manifestation: Manifestation
       content_type: 表現の種類
       subject: 件名
+  helpers:
+    submit:
+      create: "%{model}を登録する"
+      submit: "%{model}を保存する"
+      update: "%{model}を更新する"
 
   page:
     show: 表示
@@ -44,3 +49,4 @@ ja:
     new: "%{model}の新規作成"
     editing: "%{model}の編集"
     showing: "%{model}の表示"
+    add_child: 子を追加
