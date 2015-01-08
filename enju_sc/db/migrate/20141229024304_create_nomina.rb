@@ -3,6 +3,7 @@ class CreateNomina < ActiveRecord::Migration
     create_table :nomina do |t|
       t.string :name
       t.string :scheme
+      t.integer :dimension
 
       t.timestamps null: false
     end

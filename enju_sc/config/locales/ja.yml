@@ -2,6 +2,13 @@ ja:
   activerecord:
     models:
       thema: Thema
+      nomen: Nomen
+  helpers:
+    submit:
+      create: "%{model}を登録する"
+      submit: "%{model}を保存する"
+      update: "%{model}を更新する"
+
   page:
     back: 戻る
     edit: 編集

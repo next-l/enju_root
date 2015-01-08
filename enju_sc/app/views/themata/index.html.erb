@@ -29,13 +29,9 @@
   <tbody>
     <% @themata.each do |thema| %>
       <tr class="line<%= cycle("0", "1") -%>">
-        <td><%= thema.node %></td>
+        <td><%= link_to thema.node, thema %></td>
         <td>
-          <%= if thema.term.present?
-                link_to "#{thema.category} (#{thema.term})", thema
-              else
-                link_to '(blank)', thema
-              end %>
+          <%= thema.nomina.pluck(:name).join(' ') %>
         </td>
         <td>
           <% if params[:work_url] %>

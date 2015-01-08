@@ -13,7 +13,7 @@
 </p>
 <ul>
   <% @thema.nomina.each do |nomen| %>
-    <li><%= nomen.name %></li>
+    <li><%= link_to nomen.name, nomen %></li>
   <% end %>
 </ul>
 
@@ -25,7 +25,7 @@
 
 <p>
 <strong>Parent:</strong>
-<%= link_to "#{@thema.parent.category} (#{@thema.parent.term})", @thema.parent if @thema.parent %>
+<%= link_to @thema.node, @thema.parent if @thema.parent %>
 </p>
 
 <p>
@@ -36,8 +36,10 @@
     <li>
     <% if child.term %>
       <%= link_to "#{child.category} (#{child.term})", child %>
+      <%= child.nomina.pluck(:name).join(' ') %>
     <% else %>
       <%= link_to "#{child.node}", child %>
+      (<%= child.nomina.pluck(:name).join(' ') %>)
     <% end %>
     </li>
   <% end %>

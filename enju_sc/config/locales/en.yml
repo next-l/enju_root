@@ -2,6 +2,7 @@ en:
   activerecord:
     models:
       thema: Thema
+      nomen: Nomen
   page:
     back: 戻る
     edit: 編集

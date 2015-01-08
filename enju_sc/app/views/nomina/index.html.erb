@@ -1,0 +1,46 @@
+<div id="content_detail" class="ui-corner-all ui-widget-content">
+<h1 class="title"><%= t('page.listing', model: t('activerecord.models.nomen')) %></h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<div class="search_form">
+  <%= form_for :nomenta, :url => nomina_path, :html => {:method => 'get'} do -%>
+    <p>
+      <%= search_field_tag 'q', @query %>
+      <%= submit_tag t('page.search') %><br />
+    </p>
+  <% end %>
+</div>
+<%= javascript_tag("$(function(){$('#q').focus()})") %>
+
+<p><%= @nomina.total_count %> 件ヒットしました。</p>
+
+<table class="table table-striped index">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nomina.each do |nomen| %>
+      <tr class="line<%= cycle("0", "1") -%>">
+        <td><%= link_to nomen.name, nomen %></td>
+        <td><%= link_to t('page.edit'), edit_nomen_path(nomen) %></td>
+        <td><%= link_to t('page.destroy'), nomen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate(@nomina) %>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to t('page.new', model: t('activerecord.models.nomen')), new_nomen_path %></li>
+  </ul>
+</div>
