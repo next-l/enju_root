@@ -46,7 +46,7 @@ class EmbodiesController < ApplicationController
   # POST /embodies
   # POST /embodies.json
   def create
-    @embody = Embody.new(params[:embody])
+    @embody = Embody.new(embody_params)
     if @embody.manifestation_url
       manifestation = Manifestation.new(:url => @embody.manifestation_url)
       @embody.manifestation = manifestation
@@ -70,7 +70,7 @@ class EmbodiesController < ApplicationController
     @embody = Embody.find(params[:id])
 
     respond_to do |format|
-      if @embody.update_attributes(params[:embody])
+      if @embody.update_attributes(embody_params)
         format.html { redirect_to @embody, notice: 'Embodiment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -94,6 +94,10 @@ class EmbodiesController < ApplicationController
   end
 
   private
+  def embody_params
+    params.require(:embody).permit(:expression_id, :manifestation_url)
+  end
+
   def prepare_options
     @relationship_types = ManifestationRelationshipType.all
   end

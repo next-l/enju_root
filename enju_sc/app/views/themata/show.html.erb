@@ -13,34 +13,36 @@
 </p>
 <ul>
   <% @thema.nomina.each do |nomen| %>
-    <li><%= link_to nomen.name, nomen %></li>
+    <li>
+      <%= link_to nomen.name, nomen %> (<%= nomen.scheme %>)
+      <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+    </li>
   <% end %>
 </ul>
 
-
+<!--
 <p>
   <strong>Category:</strong>
   <%= @thema.category %>
 </p>
+-->
 
 <p>
-<strong>Parent:</strong>
-<%= link_to @thema.node, @thema.parent if @thema.parent %>
+  <strong>Parent:</strong>
+  <%= link_to @thema.parent.node, @thema.parent if @thema.parent %>
 </p>
 
 <p>
   <strong>Child:</strong>
 </p>
 <ul>
-  <% @thema.children.order(:category).each do |child| %>
+  <% @thema.children.includes(:nomina).order('nomina.name').each do |child| %>
     <li>
-    <% if child.term %>
-      <%= link_to "#{child.category} (#{child.term})", child %>
-      <%= child.nomina.pluck(:name).join(' ') %>
-    <% else %>
       <%= link_to "#{child.node}", child %>
-      (<%= child.nomina.pluck(:name).join(' ') %>)
-    <% end %>
+      <%= child.nomina.pluck(:name).join(' ') %>
+      <% child.nomina.each do |nomen| %>
+        <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+      <% end %>
     </li>
   <% end %>
 </ul>

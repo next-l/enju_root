@@ -112,7 +112,7 @@ class Work < ActiveRecord::Base
   end
 
   def self.search_we(mi_url)
-    url = "http://ja-textbook.herokuapp.com/works.json?query=#{mi_url}"
+    url = "http://we-textbook.next-l.jp/works.json?query=#{mi_url}"
     JSON.parse(Faraday.get(url).body)
   end
 end

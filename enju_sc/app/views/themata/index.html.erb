@@ -19,7 +19,7 @@
   <thead>
     <tr>
       <th>Node</th>
-      <th>Term and Category</th>
+      <th>Label</th>
       <th style="width: 60px"></th>
       <th style="width: 60px"></th>
       <th style="width: 60px"></th>
@@ -31,7 +31,10 @@
       <tr class="line<%= cycle("0", "1") -%>">
         <td><%= link_to thema.node, thema %></td>
         <td>
-          <%= thema.nomina.pluck(:name).join(' ') %>
+          <% thema.nomina.each do |nomen| %>
+            <%= nomen.name %>
+            <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+          <% end %>
         </td>
         <td>
           <% if params[:work_url] %>
