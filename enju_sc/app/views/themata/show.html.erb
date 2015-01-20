@@ -15,7 +15,11 @@
   <% @thema.nomina.each do |nomen| %>
     <li>
       <%= link_to nomen.name, nomen %> (<%= nomen.scheme %>)
-      <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+      <ul>
+        <% nomen.children.each do |child| %>
+          <li><%= child.name %> (<%= child.scheme %>)</li>
+        <% end %>
+      </ul>
     </li>
   <% end %>
 </ul>
