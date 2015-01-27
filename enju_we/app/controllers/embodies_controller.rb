@@ -48,7 +48,7 @@ class EmbodiesController < ApplicationController
   def create
     @embody = Embody.new(embody_params)
     if @embody.manifestation_url
-      manifestation = Manifestation.new(:url => @embody.manifestation_url)
+      manifestation = Manifestation.where(:url => @embody.manifestation_url).first_or_create
       @embody.manifestation = manifestation
     end
 

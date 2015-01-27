@@ -1,4 +1,3 @@
-require 'enju_seed'
 require 'closure_tree'
 
 module EnjuSc
