@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2"
   s.add_dependency "friendly_id", "~> 5.1"
   s.add_dependency "kaminari", "~> 0.16.2"
-  s.add_dependency "devise", "~> 3.4"
+  s.add_dependency "omniauth-identity"
   s.add_dependency "pundit"
   s.add_dependency "acts_as_list", "~> 0.6"
   s.add_dependency "normalizr", "~> 0.1"
