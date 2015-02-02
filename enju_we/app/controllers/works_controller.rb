@@ -23,7 +23,7 @@ class WorksController < ApplicationController
         with(:creator_ids).equal_to agent.id if agent
       end
       fulltext params[:query]
-      paginate :page => params[:page], :per_page => Work.default_per_page
+      paginate page: params[:page], per_page: 10
     end.results
 
     respond_to do |format|

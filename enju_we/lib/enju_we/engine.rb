@@ -1,4 +1,5 @@
 require 'ruby-graphviz'
+require 'kaminari'
 require 'nokogiri'
 
 module EnjuWe
