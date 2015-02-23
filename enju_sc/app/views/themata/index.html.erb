@@ -33,7 +33,7 @@
         <td>
           <% thema.nomina.each do |nomen| %>
             <%= nomen.name %>
-            <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+            <%= nomen.derived_nomina.where(scheme: nil).pluck(:name).join(' ') %>
           <% end %>
         </td>
         <td>

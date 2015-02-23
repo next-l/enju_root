@@ -16,7 +16,7 @@
     <li>
       <%= link_to nomen.name, nomen %> (<%= nomen.scheme %>)
       <ul>
-        <% nomen.children.each do |child| %>
+        <% nomen.derived_nomina.each do |child| %>
           <li><%= child.name %> (<%= child.scheme %>)</li>
         <% end %>
       </ul>
@@ -45,7 +45,7 @@
       <%= link_to "#{child.node}", child %>
       <%= child.nomina.pluck(:name).join(' ') %>
       <% child.nomina.each do |nomen| %>
-        <%= nomen.children.where(scheme: nil).pluck(:name).join(' ') %>
+        <%= nomen.derived_nomina.where(scheme: nil).pluck(:name).join(' ') %>
       <% end %>
     </li>
   <% end %>

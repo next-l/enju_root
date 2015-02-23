@@ -9,7 +9,7 @@ class Nomen < ActiveRecord::Base
   has_many :derived_nomina, through: :children, source: :child
   has_many :original_nomina, through: :parents, source: :parent
 
-  acts_as_tree
+  #acts_as_tree
   settings do
     mappings dynamic: 'false' do
       indexes :name
