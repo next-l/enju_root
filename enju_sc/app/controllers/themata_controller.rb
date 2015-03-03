@@ -28,9 +28,9 @@ class ThemataController < ApplicationController
   # GET /themata/1.json
   def show
     respond_to do |format|
-    format.html
-    format.xml
-    format.json
+      format.html
+      format.xml
+      format.json
     end
   end
 

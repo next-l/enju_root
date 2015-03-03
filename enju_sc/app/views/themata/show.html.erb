@@ -17,7 +17,9 @@
       <%= link_to nomen.name, nomen %> (<%= nomen.scheme %>)
       <ul>
         <% nomen.derived_nomina.each do |child| %>
-          <li><%= child.name %> (<%= child.scheme %>)</li>
+          <li><%= child.name %>
+            <% if child.scheme? %>(<%= child.scheme %>)<% end %>
+          </li>
         <% end %>
       </ul>
     </li>
@@ -33,8 +35,21 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= link_to @thema.parent.node, @thema.parent if @thema.parent %>
 </p>
+<ul>
+  <% if @thema.parent %>
+    <li>
+      <%= link_to @thema.parent.node, @thema.parent %>
+      <% @thema.parent.nomina.order('nomina.name').each do |nomen| %>
+        <%= nomen.name %>
+        <%= nomen.derived_nomina.pluck(:name).join(' ') %>
+        <% nomen.derived_nomina.each do |n| %>
+          <%= n.derived_nomina.where(scheme: nil).pluck(:name).join(' ') %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 
 <p>
   <strong>Child:</strong>
