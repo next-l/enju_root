@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def subject_category(url)
-    JSON.parse(Faraday.get("#{url}.json").body)["category"]
+    JSON.parse(Faraday.get("#{url}.json").body)["scheme"]
   rescue JSON::ParserError
     "not found"
   end

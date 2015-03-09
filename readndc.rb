@@ -1,6 +1,8 @@
 require 'csv'
 csv = CSV.table(open('themata_url.txt'), col_sep: "\t", converters: nil)
-@cls = ""
+csv_hash = {}
+csv.map{|row| csv_hash.store(row[:ndc], row[:url])}
+@clsk = @clsd = ""
 @work = ""
 File.open('kyokasho_all.txt').each do |e|
   line = e.chomp.split("=")
@@ -8,19 +10,16 @@ File.open('kyokasho_all.txt').each do |e|
   when 'ID'
     @work = line[1]
   when 'CLSK'
-    @cls = line[1]
+    @clsk = line[1]
   when 'CLSD'
-    @cls += " #{line[1]}"
+    @clsd = line[1]
   when '--NACSIS-CATP--'
-    csv.each do |a|
-      w = Work.where(identifier: @work).first
-      subject = Subject.new(url: a[:url])
-      subject.work = w
-      if subject.save
-        puts "#{@work}: #{a[:url]}" if "NDC9 #{a[:ndc]}" == @cls
-      end
-    end
-    @cls = ""
+    w = Work.where(identifier: @work).first
+    url = csv_hash["#{@clsd.strip}"]
+    subject = Subject.create(url: url)
+    w.subjects << subject if w
+    puts url
+    @clsk = @clsd = ""
     @work = ""
   end
 end

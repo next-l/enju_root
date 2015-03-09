@@ -21,7 +21,9 @@
     <% if subject_label(params[:enju_subject_url]).blank? %>
       Subject: <%= link_to params[:enju_subject_url], params[:enju_subject_url] %>
     <% else %>
-      Subject: <%= link_to "#{URI.parse(params[:enju_subject_url]).path.split('/').reverse[0]} " + subject_label(params[:enju_subject_url]), params[:enju_subject_url] %>
+      Subject: <%= link_to "#{URI.parse(params[:enju_subject_url]).path.split('/').reverse[0]}" %> : 
+      <%= link_to subject_label(params[:enju_subject_url]), params[:enju_subject_url] %>
+      (<%= link_to subject_category(params[:enju_subject_url]), params[:enju_subject_url] %>)
       <br />
       <%= link_to params[:enju_subject_url], params[:enju_subject_url] %>
     <% end %>
