@@ -171,7 +171,7 @@
     <li><%# link_to 'New subject', "#{Rails.application.secrets.enju_root["sc_url"]}/classifications?work_url=#{work_url(@work.id)}" %></li>
     -->
     <li><%= link_to 'New creator', new_agent_path(work_url: work_url(@work.id)) %></li>
-    <li><%= link_to 'New subject', new_subject_path(work_url: work_url(@work.id)) %></li>
+    <li><%= link_to 'Add Thema', new_subject_path(work_url: work_url(@work.id)) %></li>
     <li><%= link_to 'JSON-LD', work_path(@work, format: :jsonld) %></li>
   </ul>
 </div>

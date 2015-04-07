@@ -4,7 +4,19 @@ class Subject < ActiveRecord::Base
 
   def remote_term
     if url
-      JSON.parse(Faraday.get("#{url}.json").body)["term"]
+      response = Faraday.get("#{url}.json")
+      if response.status == 200
+        JSON.parse(response.body)["term"]
+      end
+    end
+  end
+
+  def remote_label
+    if url
+      response = Faraday.get("#{url}.json")
+      if response.status == 200
+        JSON.parse(response.body)["label"]
+      end
     end
   end
 end

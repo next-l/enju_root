@@ -22,6 +22,9 @@ class Work < ActiveRecord::Base
     text :url do
       expressions.map{|e| e.manifestations.pluck(:url)}.flatten
     end
+    text :subject do
+      subjects.map{|s| [s.remote_term, s.remote_label]}.flatten
+    end
     #integer :creator_ids, multiple: true
     #string :classification_number, multiple: true do
     #  expressions.map{|e| e.manifestations.pluck(:classification_number)}.flatten
