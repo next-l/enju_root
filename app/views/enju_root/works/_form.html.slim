@@ -1,0 +1,16 @@
+= form_for(@work) do |f|
+  - if @work.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@work.errors.count, "error")
+        |  prohibited this work from being saved:
+      ul
+        - @work.errors.full_messages.each do |message|
+          li
+            = message
+  .form-group
+    = f.label :preferred_title
+    br
+    = f.text_field :preferred_title, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-default'

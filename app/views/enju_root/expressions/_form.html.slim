@@ -1,0 +1,21 @@
+= form_for(@expression) do |f|
+  - if @expression.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@expression.errors.count, "error")
+        |  prohibited this expression from being saved:
+      ul
+        - @expression.errors.full_messages.each do |message|
+          li
+            = message
+  .form-group
+    = f.label :language_id
+    br
+    = f.number_field :language_id
+  .form-group
+    = f.label :content_type_id
+    br
+    = f.number_field :content_type_id
+  .form-group
+    = f.hidden_field :work_id
+    = f.submit class: 'btn btn-default'

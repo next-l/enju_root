@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @work_relationship_type.name %>
+</p>
+
+<p>
+  <strong>Display name:</strong>
+  <%= @work_relationship_type.display_name %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @work_relationship_type.note %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @work_relationship_type.position %>
+</p>
+
+<%= link_to 'Edit', edit_work_relationship_type_path(@work_relationship_type) %> |
+<%= link_to 'Back', work_relationship_types_path %>

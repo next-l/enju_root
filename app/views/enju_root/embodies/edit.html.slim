@@ -1,0 +1,16 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Show', @embody
+          li
+            = link_to 'Back', embodies_path
+  .col-md-9
+    .panel.panel-default
+      .panel-header
+        h1.panel-title
+          | Editing Embody
+      .panel-body
+        = render 'form'

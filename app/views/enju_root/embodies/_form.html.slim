@@ -1,0 +1,28 @@
+= form_for(@embody) do |f|
+  - if @embody.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@embody.errors.count, "error")
+        |  prohibited this embody from being saved:
+      ul
+        - @embody.errors.full_messages.each do |message|
+          li
+            = message
+  .form-group
+    = f.label :expression_id
+    br
+    = f.number_field :expression_id
+  .form-group
+    = f.label :manifestation_id
+    br
+    = f.url_field :manifestation_url
+  .form-group
+    = f.label :embody_type_id
+    br
+    = f.number_field :embody_type_id
+  .form-group
+    = f.label :note
+    br
+    = f.text_area :note
+  .form-group
+    = f.submit class: 'btn btn-default'

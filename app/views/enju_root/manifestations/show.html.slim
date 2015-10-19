@@ -1,0 +1,9 @@
+p#notice
+  = notice
+p
+  strong
+    | Manifestation url:
+  = @manifestation.manifestation_url
+= link_to 'Edit', edit_manifestation_path(@manifestation)
+|  | 
+= link_to 'Back', manifestations_path

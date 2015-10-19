@@ -1,0 +1,14 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Back', manifestations_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | New Manifestation
+      .panel-body
+        = render 'form'

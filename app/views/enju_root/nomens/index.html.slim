@@ -1,0 +1,34 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'New Noman', new_nomen_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Listing Nomens
+      .panel-body
+        p#notice
+          = notice
+        = form_for :nomens, url: nomens_path, html: {method: 'get', class: 'form-inline'} do
+          .form-group
+            = label_tag :query, 'Search term'
+            | : 
+            => search_field_tag 'query', h(@query), class: 'form-control'
+            => submit_tag 'Search', class: 'btn btn-default'
+        table.table.table-striped
+          thead
+            tr
+              th[colspan="3"]
+          tbody
+            - @nomens.each do |nomen|
+              tr
+                td
+                  = link_to 'Show', nomen
+                td
+                  = link_to 'Edit', edit_nomen_path(nomen)
+                td
+                  = link_to 'Destroy', nomen, method: :delete, data: { confirm: 'Are you sure?' }

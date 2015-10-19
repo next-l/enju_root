@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Embody Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Display name</th>
+      <th>Note</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @embody_types.each do |embody_type| %>
+      <tr>
+        <td><%= embody_type.name %></td>
+        <td><%= embody_type.display_name %></td>
+        <td><%= embody_type.note %></td>
+        <td><%= embody_type.position %></td>
+        <td><%= link_to 'Show', embody_type %></td>
+        <td><%= link_to 'Edit', edit_embody_type_path(embody_type) %></td>
+        <td><%= link_to 'Destroy', embody_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Embody type', new_embody_type_path %>

@@ -1,0 +1,30 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Edit', edit_embody_path(@embody)
+          li
+            = link_to 'Back', embodies_path
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        p#notice
+          = notice
+        p
+          strong
+            | Expression:
+          = @embody.expression_id
+        p
+          strong
+            | Manifestation:
+          = @embody.manifestation_id
+        p
+          strong
+            | Embody type:
+          = @embody.embody_type_id
+        p
+          strong
+            | Note:
+          = @embody.note

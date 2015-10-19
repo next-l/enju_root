@@ -1,0 +1,38 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'New Manifestation', new_manifestation_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Listing Manifestations
+      .panel-body
+        p#notice
+          = notice
+        = form_for :manifestations, url: manifestations_path, html: {method: 'get', class: 'form-inline'} do
+          .form-group
+            = label_tag :query, 'Search term'
+            | : 
+            => search_field_tag 'query', h(@query), class: 'form-control'
+            => submit_tag 'Search', class: 'btn btn-default'
+        table.table.table-striped
+          thead
+            tr
+              th
+                | Manifestation url
+              th[colspan="3"]
+          tbody
+            - @manifestations.each do |manifestation|
+              tr
+                td
+                  = manifestation.manifestation_url
+                td
+                  = link_to 'Show', manifestation
+                td
+                  = link_to 'Edit', edit_manifestation_path(manifestation)
+                td
+                  = link_to 'Destroy', manifestation, method: :delete, data: { confirm: 'Are you sure?' }

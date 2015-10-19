@@ -1,0 +1,20 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Back', expressions_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | New Expression
+      .panel-body
+        p
+          strong
+            | Preferred title
+            | :
+            =>
+          = @expression.work.try(:preferred_title)
+        = render 'form'

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Work And Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source url</th>
+      <th>Destination url</th>
+      <th>Relationship type</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_and_subjects.each do |work_and_subject| %>
+      <tr>
+        <td><%= work_and_subject.source_url %></td>
+        <td><%= work_and_subject.destination_url %></td>
+        <td><%= work_and_subject.relationship_type_id %></td>
+        <td><%= work_and_subject.note %></td>
+        <td><%= link_to 'Show', work_and_subject %></td>
+        <td><%= link_to 'Edit', edit_work_and_subject_path(work_and_subject) %></td>
+        <td><%= link_to 'Destroy', work_and_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work and subject', new_work_and_subject_path %>

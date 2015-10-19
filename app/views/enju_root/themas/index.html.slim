@@ -1,0 +1,34 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'New Thema', new_thema_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Listing Themas
+      .panel-body
+        p#notice
+          = notice
+        = form_for :themas, url: themas_path, html: {method: 'get', class: 'form-inline'} do
+          .form-group
+            = label_tag :query, 'Search term'
+            | : 
+            => search_field_tag 'query', h(@query), class: 'form-control'
+            => submit_tag 'Search', class: 'btn btn-default'
+        table.table.table-striped
+          thead
+            tr
+              th[colspan="3"]
+          tbody
+            - @themas.each do |thema|
+              tr
+                td
+                  = link_to 'Show', thema
+                td
+                  = link_to 'Edit', edit_thema_path(thema)
+                td
+                  = link_to 'Destroy', thema, method: :delete, data: { confirm: 'Are you sure?' }

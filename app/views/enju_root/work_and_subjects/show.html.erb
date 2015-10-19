@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @work_and_subject.source_url %>
+</p>
+
+<p>
+  <strong>Destination url:</strong>
+  <%= @work_and_subject.destination_url %>
+</p>
+
+<p>
+  <strong>Relationship type:</strong>
+  <%= @work_and_subject.relationship_type_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @work_and_subject.note %>
+</p>
+
+<%= link_to 'Edit', edit_work_and_subject_path(@work_and_subject) %> |
+<%= link_to 'Back', work_and_subjects_path %>

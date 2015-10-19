@@ -1,0 +1,16 @@
+= form_for(@manifestation) do |f|
+  - if @manifestation.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@manifestation.errors.count, "error")
+        |  prohibited this manifestation from being saved:
+      ul
+        - @manifestation.errors.full_messages.each do |message|
+          li
+            = message
+  .form-group
+    = f.label :manifestation_url
+    br
+    = f.url_field :manifestation_url, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-default'

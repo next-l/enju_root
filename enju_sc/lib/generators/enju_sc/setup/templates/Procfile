@@ -1,2 +1,0 @@
-resque: bundle exec rake environment resque:work QUEUE=* TERM_CHILD=1
-web: bundle exec rails s

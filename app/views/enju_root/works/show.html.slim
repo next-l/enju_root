@@ -1,0 +1,25 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Edit', edit_work_path(@work)
+          li
+            = link_to 'New child', works_path(parent_id: @work.id)
+          li
+            = link_to 'New expression', new_expression_path(work_id: @work.id)
+          li
+            = link_to 'Back', works_path
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        p#notice
+          = notice
+          p
+            strong
+              | Preferred title
+              | :
+              =>
+            = @work.preferred_title
+        = frbr_graph(@work)

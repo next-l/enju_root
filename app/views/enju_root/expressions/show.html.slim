@@ -1,0 +1,35 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Edit', edit_expression_path(@expression)
+          li
+            = link_to 'Back', expressions_path
+          li
+            = link_to 'New embodiment', new_embody_path(expression_id: @expression.id)
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        #notice
+          = notice
+        p
+          strong
+            | Preferred title
+            | :
+            =>
+          = link_to @expression.work.try(:preferred_title), @expression.work
+        p
+          strong
+            | Language
+            | :
+            =>
+          = @expression.language_id
+        p
+          strong
+            | Content Type
+            | :
+            =>
+          = @expression.content_type_id
+        = frbr_graph(@expression)

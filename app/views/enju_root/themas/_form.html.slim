@@ -1,0 +1,12 @@
+= form_for(@thema) do |f|
+  - if @thema.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@thema.errors.count, "error")
+        |  prohibited this thema from being saved:
+      ul
+        - @thema.errors.full_messages.each do |message|
+          li
+            = message
+  .actions
+    = f.submit
