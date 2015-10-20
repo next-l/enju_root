@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title
+      | Next-L Enju Root
+    = stylesheet_link_tag    "enju_root/application", media: "all"
+    = javascript_include_tag "enju_root/application"
+    = csrf_meta_tags
+  body
+    .container
+      .row
+        .col-md-8
+          h1
+            = link_to 'Next-L Enju Root', enju_root.root_path
+        .col-md-4
+          - if user_signed_in?
+            br
+            = link_to 'Sign out', main_app.destroy_user_session_path, method: :delete
+          - else
+            br
+            = link_to 'Sign in', main_app.new_user_session_path
+      = render 'enju_root/page/menu'
+      = yield
+      = render 'enju_root/page/footer'
