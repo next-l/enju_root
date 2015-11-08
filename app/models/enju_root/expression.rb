@@ -9,7 +9,7 @@ module EnjuRoot
     validates :language_id, presence: true
     validates :content_type_id, presence: true
 
-    before_save :generate_graph
+    #after_save :generate_graph
     attachment :expression_graph
 
     searchable do

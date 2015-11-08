@@ -2,8 +2,11 @@ footer
   a[href="https://github.com/next-l/enju_root"]
     | Next-L Enju Root
     =>
-    = EnjuRoot::VERSION
+    => EnjuRoot::VERSION
+  | | 
+  - if defined?(EnjuLeaf)
+    => link_to 'Next-L Enju Leaf', main_app.root_path
   br
   |  Developed by Kosuke Tanabe and 
-  a[href="http://www.next-l.jp/"]
-    | Project Next-L
+  = link_to 'Project Next-L', "http://www.next-l.jp/"
+  |.

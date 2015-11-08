@@ -25,6 +25,7 @@ module EnjuRoot
     # POST /embodies
     def create
       @embody = Embody.new(embody_params)
+      @embody.manifestation = Manifestation.where(manifestation_url: @embody.manifestation_url).first_or_create
 
       if @embody.save
         redirect_to @embody, notice: 'Embody was successfully created.'
@@ -36,6 +37,8 @@ module EnjuRoot
     # PATCH/PUT /embodies/1
     def update
       if @embody.update(embody_params)
+        @embody.manifestation = Manifestation.where(manifestation_url: @embody.manifestation_url).first_or_create
+        @embody.save
         redirect_to @embody, notice: 'Embody was successfully updated.'
       else
         render :edit
@@ -56,7 +59,8 @@ module EnjuRoot
 
       # Only allow a trusted parameter "white list" through.
       def embody_params
-        params.require(:embody).permit(:expression_id, :manifestation_id, :embody_type_id, :note)
+        params.require(:embody).permit(:expression_id, :manifestation_id, :embody_type_id, :note,
+                                      :manifestation_url)
       end
   end
 end

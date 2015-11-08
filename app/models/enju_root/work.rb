@@ -11,7 +11,7 @@ module EnjuRoot
     #has_many :subjects
 
     validates :preferred_title, presence: true
-    before_save :generate_graph
+    #after_save :generate_graph
     attachment :work_graph
 
     searchable do
