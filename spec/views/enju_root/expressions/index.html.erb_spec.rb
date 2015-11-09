@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "expressions/index", type: :view do
   before(:each) do
     assign(:expressions, [
-      Expression.create!(),
-      Expression.create!()
+      EnjuRoot::Expression.create!(),
+      EnjuRoot::Expression.create!()
     ])
   end
 

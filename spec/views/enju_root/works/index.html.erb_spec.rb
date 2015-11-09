@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "works/index", type: :view do
+RSpec.describe "enju_root/works/index", type: :view do
   before(:each) do
     assign(:works, [
-      Work.create!(),
-      Work.create!()
+      EnjuRoot::Work.create!(),
+      EnjuRoot::Work.create!()
     ])
   end
 

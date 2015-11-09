@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "nomen/new", type: :view do
+RSpec.describe "enju_root/nomens/new", type: :view do
   before(:each) do
-    assign(:noman, Nomen.new())
+    assign(:noman, EnjuRoot::Nomen.new())
   end
 
   it "renders new noman form" do

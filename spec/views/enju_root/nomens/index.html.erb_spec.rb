@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "nomen/index", type: :view do
+RSpec.describe "enju_root/nomens/index", type: :view do
   before(:each) do
     assign(:nomen, [
-      Nomen.create!(),
-      Nomen.create!()
+      EnjuRoot::Nomen.create!(),
+      EnjuRoot::Nomen.create!()
     ])
   end
 

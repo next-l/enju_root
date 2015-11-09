@@ -4,7 +4,7 @@
       .panel-body
         ul
           li
-            = link_to 'New Noman', new_nomen_path
+            = link_to 'New Noman', enju_root.new_nomen_path
   .col-md-9
     .panel.panel-default
       .panel-heading
@@ -13,7 +13,7 @@
       .panel-body
         p#notice
           = notice
-        = form_for :nomens, url: nomens_path, html: {method: 'get', class: 'form-inline'} do
+        = form_for :nomens, url: enju_root.nomens_path, html: {method: 'get', class: 'form-inline'} do
           .form-group
             = label_tag :query, 'Search term'
             | : 
@@ -27,8 +27,8 @@
             - @nomens.each do |nomen|
               tr
                 td
-                  = link_to 'Show', nomen
+                  = link_to 'Show', enju_root.nomen_path(nomen)
                 td
-                  = link_to 'Edit', edit_nomen_path(nomen)
+                  = link_to 'Edit', enju_root.edit_nomen_path(nomen)
                 td
-                  = link_to 'Destroy', nomen, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Destroy', enju_root.nomen_path(nomen), method: :delete, data: { confirm: 'Are you sure?' }

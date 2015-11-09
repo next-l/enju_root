@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "nomen/show", type: :view do
+RSpec.describe "enju_root/nomens/show", type: :view do
   before(:each) do
-    @noman = assign(:noman, Nomen.create!())
+    @nomen = assign(:nomen, EnjuRoot::Nomen.create!())
   end
 
   it "renders attributes in <p>" do

@@ -1,4 +1,4 @@
-= form_for(@expression) do |f|
+= form_for([enju_root, @expression]) do |f|
   - if @expression.errors.any?
     #error_explanation
       h2

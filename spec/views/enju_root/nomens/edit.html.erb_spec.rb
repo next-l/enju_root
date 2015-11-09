@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "nomen/edit", type: :view do
+RSpec.describe "enju_root/nomens/edit", type: :view do
   before(:each) do
-    @noman = assign(:noman, Nomen.create!())
+    @noman = assign(:noman, EnjuRoot::Nomen.create!())
   end
 
   it "renders the edit noman form" do

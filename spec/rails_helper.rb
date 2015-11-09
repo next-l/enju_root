@@ -5,6 +5,7 @@ require File.expand_path('../../spec/dummy/config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'sunspot-rails-tester'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -49,4 +50,16 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  $original_sunspot_session = Sunspot.session
+
+  config.before do
+    Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
+  end
+
+  config.before :each, solr: true do
+    Sunspot::Rails::Tester.start_original_sunspot_session
+    Sunspot.session = $original_sunspot_session
+    Sunspot.remove_all!
+  end
 end

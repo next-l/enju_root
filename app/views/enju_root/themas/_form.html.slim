@@ -1,4 +1,4 @@
-= form_for(@thema) do |f|
+= form_for([enju_root, @thema]) do |f|
   - if @thema.errors.any?
     #error_explanation
       h2

@@ -4,7 +4,7 @@
       .panel-body
         ul
           li
-            = link_to 'New Thema', new_thema_path
+            = link_to 'New Thema', enju_root.new_thema_path
   .col-md-9
     .panel.panel-default
       .panel-heading
@@ -13,7 +13,7 @@
       .panel-body
         p#notice
           = notice
-        = form_for :themas, url: themas_path, html: {method: 'get', class: 'form-inline'} do
+        = form_for :themas, url: enju_root.themas_path, html: {method: 'get', class: 'form-inline'} do
           .form-group
             = label_tag :query, 'Search term'
             | : 
@@ -27,8 +27,8 @@
             - @themas.each do |thema|
               tr
                 td
-                  = link_to 'Show', thema
+                  = link_to 'Show', enju_root.thema_path(thema)
                 td
-                  = link_to 'Edit', edit_thema_path(thema)
+                  = link_to 'Edit', enju_root.edit_thema_path(thema)
                 td
-                  = link_to 'Destroy', thema, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Destroy', enju_root.thema_path(thema), method: :delete, data: { confirm: 'Are you sure?' }

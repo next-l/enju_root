@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "expressions/edit", type: :view do
   before(:each) do
-    @expression = assign(:expression, Expression.create!())
+    @expression = assign(:expression, EnjuRoot::Expression.create!())
   end
 
   it "renders the edit expression form" do

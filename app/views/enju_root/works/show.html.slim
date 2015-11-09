@@ -4,13 +4,13 @@
       .panel-body
         ul
           li
-            = link_to 'Edit', edit_work_path(@work)
+            = link_to 'Edit', enju_root.edit_work_path(@work)
           li
-            = link_to 'New child', works_path(parent_id: @work.id)
+            = link_to 'New child', enju_root.works_path(parent_id: @work.id)
           li
-            = link_to 'New expression', new_expression_path(work_id: @work.id)
+            = link_to 'New expression', enju_root.new_expression_path(work_id: @work.id)
           li
-            = link_to 'Back', works_path
+            = link_to 'Back', enju_root.works_path
   .col-md-9
     .panel.panel-default
       .panel-body
