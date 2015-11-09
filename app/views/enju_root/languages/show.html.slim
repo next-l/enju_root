@@ -1,0 +1,30 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+      ul
+        li
+          = link_to 'Edit', edit_language_path(@language)
+        li
+          = link_to 'Back', languages_path
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        p#notice
+          = notice
+        p
+          strong
+            | Name:
+          = @language.name
+        p
+          strong
+            | Display name:
+          = @language.display_name
+        p
+          strong
+            | Note:
+          = @language.note
+        p
+          strong
+            | Position:
+          = @language.position

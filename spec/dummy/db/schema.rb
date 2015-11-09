@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019160436) do
+ActiveRecord::Schema.define(version: 20151109163502) do
 
   create_table "enju_root_content_types", force: :cascade do |t|
     t.string   "name"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20151019160436) do
   end
 
   add_index "enju_root_expressions", ["work_id"], name: "index_enju_root_expressions_on_work_id"
+
+  create_table "enju_root_form_of_works", force: :cascade do |t|
+    t.string   "name"
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "enju_root_languages", force: :cascade do |t|
     t.string   "name"

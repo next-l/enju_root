@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | Name:
+  = @content_type.name
+p
+  strong
+    | Display name:
+  = @content_type.display_name
+p
+  strong
+    | Note:
+  = @content_type.note
+p
+  strong
+    | Position:
+  = @content_type.position
+= link_to 'Edit', edit_content_type_path(@content_type)
+|  | 
+= link_to 'Back', content_types_path

@@ -3,8 +3,12 @@ require 'rails_helper'
 RSpec.describe "enju_root/works/index", type: :view do
   before(:each) do
     assign(:works, [
-      EnjuRoot::Work.create!(),
-      EnjuRoot::Work.create!()
+      EnjuRoot::Work.create!(
+        preferred_title: 'test'
+      ),
+      EnjuRoot::Work.create!(
+        preferred_title: 'test'
+      )
     ])
   end
 

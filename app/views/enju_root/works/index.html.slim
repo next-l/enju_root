@@ -30,7 +30,7 @@
                   = link_to work.preferred_title, work
                 td
                   - if @parent
-                    = link_to 'Add a work', new_work_relationship_path(parent_id: @parent.id, child_id: work.id)
+                    = link_to 'Add a work', enju_root.new_work_relationship_path(parent_id: @parent.id, child_id: work.id)
                   - else
                     = link_to 'Edit', edit_work_path(work)
                 td

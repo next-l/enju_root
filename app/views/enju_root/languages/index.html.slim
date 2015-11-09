@@ -1,0 +1,44 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+      ul
+        li
+          = link_to 'New Language', new_language_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1
+          | Listing Languages
+      .panel-body
+        p#notice
+          = notice
+        table
+          thead
+            tr
+              th
+                | Name
+              th
+                | Display name
+              th
+                | Note
+              th
+                | Position
+              th[colspan="3"]
+          tbody
+            - @languages.each do |language|
+              tr
+                td
+                  = language.name
+                td
+                  = language.display_name
+                td
+                  = language.note
+                td
+                  = language.position
+                td
+                  = link_to 'Show', language
+                td
+                  = link_to 'Edit', edit_language_path(language)
+                td
+                  = link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' }
