@@ -52,62 +52,6 @@ module EnjuRoot
       work_graph
     end
 
-    def generate_graph
-      children.each do |c|
-        c.generate_graph
-      end
-      g = GraphViz::new("G", :type => :graph, :use => "dot")
-      g.node[:shape] = "plaintext"
-      g.node[:fontsize] = 10
-
-      w = g.add_nodes("[W#{id}] #{preferred_title}", "URL" => "/works/#{id}", :fontcolor => "red", :shape => 'box', :color => 'blue')
-
-      parents.each do |parent|
-        p = g.add_nodes("[W#{parent.id}] #{parent.preferred_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
-        g.add_edges(p, w)
-      end
-
-      children.each do |child|
-        c = g.add_nodes("[W#{child.id}] #{child.preferred_title}", "URL" => "/works/#{child.id}", :shape => 'box', :color => 'blue')
-        g.add_edges(w, c)
-        child.expressions.each do |expression|
-          e3 = g.add_nodes("[E#{expression.id}] #{expression.language.display_name} #{expression.content_type.display_name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
-          g.add_edges(c, e3)
-          expression.manifestations.each do |manifestation|
-            m = g.add_nodes("[M#{manifestation.id}] #{manifestation.cinii_title}", "URL" => "/manifestations/#{manifestation.id}", :shape => 'box', :color => 'blue')
-            g.add_edges(e3, m)
-          end
-        end
-      end
-
-      expressions.each do |expression|
-        e = g.add_nodes("[E#{expression.id}] #{expression.language.display_name} #{expression.content_type.display_name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
-        g.add_edges(w, e)
-        expression.manifestations.each do |manifestation|
-          m = g.add_nodes("[M#{manifestation.id}] #{manifestation.cinii_title}", "URL" => "/manifestations/#{manifestation.id}", :shape => 'box', :color => 'blue')
-          g.add_edges(e, m)
-          manifestation.expressions.each do |expression2|
-            unless expressions.include?(expression2)
-              e2 = g.add_nodes("[E#{expression2.id}] #{expression2.language.display_name} #{expression2.content_type.display_name}", "URL" => "/expressions/#{expression2.id}", :shape => 'box', :color => 'blue')
-              g.add_edges(e2, m)
-              if expression2.work != self
-                w2 = g.add_nodes("[W#{expression2.work.id}] #{expression2.work.preferred_title}", "URL" => "/works/#{expression2.work.id}", :shape => 'box', :color => 'blue')
-                g.add_edges(w2, e2)
-              end
-              expression.work.parents.each do |parent|
-                w3 = g.add_nodes("[W#{parent.id}] #{parent.preferred_title}", "URL" => "/works/#{parent.id}", :shape => 'box', :color => 'blue')
-                g.add_edges(w3, w2)
-              end
-            end
-          end
-        end
-      end
-      Tempfile.open("work_graph_#{id}") do |file|
-        g.output(:svg => file.path)
-        self.work_graph = file
-      end
-    end
-
     def self.fetch(work_url)
       doc = Nokogiri::XML(Faraday.get("#{work_url}.xml").body)
       work = Work.new(:preferred_title => doc.at('//work/title').content)

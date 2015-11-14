@@ -1,21 +1,30 @@
-p#notice
-  = notice
-p
-  strong
-    | Parent:
-  = link_to @work_relationship.parent.preferred_title, @work_relationship.parent
-p
-  strong
-    | Child:
-  = link_to @work_relationship.child.preferred_title, @work_relationship.child
-p
-  strong
-    | Work relationship type:
-  = @work_relationship.work_relationship_type_id
-p
-  strong
-    | Note:
-  = @work_relationship.note
-= link_to 'Edit', edit_work_relationship_path(@work_relationship)
-|  | 
-= link_to 'Back', work_relationships_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+      ul
+        li
+          = link_to 'Edit', edit_work_relationship_path(@work_relationship)
+          |  | 
+          = link_to 'Back', work_relationships_path
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        p#notice
+          = notice
+        p
+          strong
+            | Parent:
+          = link_to @work_relationship.parent.preferred_title, @work_relationship.parent
+        p
+          strong
+            | Child:
+          = link_to @work_relationship.child.preferred_title, @work_relationship.child
+        p
+          strong
+            | Work relationship type:
+          = @work_relationship.work_relationship_type_id
+        p
+          strong
+            | Note:
+          = @work_relationship.note
