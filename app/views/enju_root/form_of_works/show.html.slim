@@ -4,9 +4,9 @@
       .panel-body
       ul
         li
-          = link_to 'Edit', enju_root.edit_language_path(@language)
+          = link_to 'Edit', enju_root.edit_form_of_work_path(@form_of_work)
         li
-          = link_to 'Back', enju_root.languages_path
+          = link_to 'Back', enju_root.form_of_works_path
   .col-md-9
     .panel.panel-default
       .panel-body
@@ -15,16 +15,16 @@
         p
           strong
             | Name:
-          = @language.name
+          = @form_of_work.name
         p
           strong
             | Display name:
-          = @language.display_name
+          = @form_of_work.display_name
         p
           strong
             | Note:
-          = @language.note
+          = @form_of_work.note
         p
           strong
             | Position:
-          = @language.position
+          = @form_of_work.position

@@ -45,10 +45,12 @@ module EnjuRoot
     # GET /works/new
     def new
       @work = Work.new
+      prepare_options
     end
 
     # GET /works/1/edit
     def edit
+      prepare_options
     end
 
     # POST /works
@@ -58,6 +60,7 @@ module EnjuRoot
       if @work.save
         redirect_to @work, notice: 'Work was successfully created.'
       else
+        prepare_options
         render :new
       end
     end
@@ -67,6 +70,7 @@ module EnjuRoot
       if @work.update(work_params)
         redirect_to @work, notice: 'Work was successfully updated.'
       else
+        prepare_options
         render :edit
       end
     end
@@ -85,7 +89,11 @@ module EnjuRoot
 
       # Only allow a trusted parameter "white list" through.
       def work_params
-        params[:work].permit(:preferred_title)
+        params[:work].permit(:preferred_title, :form_of_work_id)
+      end
+
+      def prepare_options
+        @form_of_works = FormOfWork.order(:position)
       end
   end
 end

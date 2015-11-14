@@ -4,12 +4,12 @@
       .panel-body
       ul
         li
-          = link_to 'New Language', new_language_path
+          = link_to 'New Form of work', new_form_of_work_path
   .col-md-9
     .panel.panel-default
       .panel-heading
         h1.panel-title
-          | Listing Languages
+          | Listing Form of works
       .panel-body
         p#notice
           = notice
@@ -26,19 +26,19 @@
                 | Position
               th[colspan="3"]
           tbody
-            - @languages.each do |language|
+            - @form_of_works.each do |form_of_work|
               tr
                 td
-                  = language.name
+                  = form_of_work.name
                 td
-                  = language.display_name
+                  = form_of_work.display_name
                 td
-                  = language.note
+                  = form_of_work.note
                 td
-                  = language.position
+                  = form_of_work.position
                 td
-                  = link_to 'Show', language
+                  = link_to 'Show', form_of_work
                 td
-                  = link_to 'Edit', edit_language_path(language)
+                  = link_to 'Edit', edit_form_of_work_path(form_of_work)
                 td
-                  = link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Destroy', form_of_work, method: :delete, data: { confirm: 'Are you sure?' }

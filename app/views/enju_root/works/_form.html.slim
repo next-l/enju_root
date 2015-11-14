@@ -13,4 +13,8 @@
     br
     = f.text_field :preferred_title, class: 'form-control'
   .form-group
+    = f.label :form_of_work_id
+    br
+    = f.select(:form_of_work_id, @form_of_works.collect{|w| [w.display_name, w.id]}, {}, {class: 'form-control'})
+  .form-group
     = f.submit class: 'btn btn-default'

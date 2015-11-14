@@ -1,4 +1,4 @@
-= form_for(@nomen) do |f|
+= form_for([enju_root, @nomen]) do |f|
   - if @nomen.errors.any?
     #error_explanation
       h2

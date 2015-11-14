@@ -17,10 +17,12 @@ module EnjuRoot
     def new
       @expression = Expression.new
       @expression.work = Work.where(id: params[:work_id]).first
+      prepare_options
     end
 
     # GET /expressions/1/edit
     def edit
+      prepare_options
     end
 
     # POST /expressions
@@ -30,6 +32,7 @@ module EnjuRoot
       if @expression.save
         redirect_to @expression, notice: 'Expression was successfully created.'
       else
+        prepare_options
         render :new
       end
     end
@@ -39,6 +42,7 @@ module EnjuRoot
       if @expression.update(expression_params)
         redirect_to @expression, notice: 'Expression was successfully updated.'
       else
+        prepare_options
         render :edit
       end
     end
@@ -58,6 +62,11 @@ module EnjuRoot
       # Only allow a trusted parameter "white list" through.
       def expression_params
         params[:expression].permit(:work_id, :language_id, :content_type_id)
+      end
+
+      def prepare_options
+        @content_types = ContentType.order(:position)
+        @languages = Language.order(:position)
       end
   end
 end

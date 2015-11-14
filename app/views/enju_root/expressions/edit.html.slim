@@ -4,9 +4,9 @@
       .panel-body
         ul
           li
-            = link_to 'Show', @expression
+            = link_to 'Show', enju_root.expression_path(@expression)
           li
-            = link_to 'Back', expressions_path
+            = link_to 'Back', enju_root.expressions_path
   .col-md-9
     .panel.panel-default
       .panel-heading

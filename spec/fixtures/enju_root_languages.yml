@@ -1,0 +1,1520 @@
+--- 
+language_00001: 
+  position: 1
+  name: unknown  
+  display_name: "en: unknown\r\n\
+    ja: 不明"
+  id: 1
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00086: 
+  position: 86
+  name: Kinyarwanda  
+  display_name: Kinyarwanda
+  id: 86
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00141: 
+  position: 141
+  name: Scottish Gaelic  
+  display_name: Scottish Gaelic
+  id: 141
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00058: 
+  position: 58
+  name: "Guaran\xC3\xAD"  
+  display_name: "Guaran\xC3\xAD"
+  id: 58
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00113: 
+  position: 113
+  name: Nauru  
+  display_name: Nauru
+  id: 113
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00087: 
+  position: 87
+  name: Kirghiz  
+  display_name: Kirghiz
+  id: 87
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00142: 
+  position: 142
+  name: Serbian  
+  display_name: Serbian
+  id: 142
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00059: 
+  position: 59
+  name: Gujarati  
+  display_name: Gujarati
+  id: 59
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00114: 
+  position: 114
+  name: Navajo  
+  display_name: Navajo
+  id: 114
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00170: 
+  position: 170
+  name: Turkish  
+  display_name: Turkish
+  id: 170
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00088: 
+  position: 88
+  name: Kirundi  
+  display_name: Kirundi
+  id: 88
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00143: 
+  position: 143
+  name: Serbo-Croatian  
+  display_name: Serbo-Croatian
+  id: 143
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00115: 
+  position: 115
+  name: Ndonga  
+  display_name: Ndonga
+  id: 115
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00171: 
+  position: 171
+  name: Turkmen  
+  display_name: Turkmen
+  id: 171
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00144: 
+  position: 144
+  name: Shona  
+  display_name: Shona
+  id: 144
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00002: 
+  position: 2
+  name: Abkhazian  
+  display_name: Abkhazian
+  id: 2
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00116: 
+  position: 116
+  name: Nepali  
+  display_name: Nepali
+  id: 116
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00172: 
+  position: 172
+  name: Twi  
+  display_name: Twi
+  id: 172
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00030: 
+  position: 30
+  name: Chichewa  
+  display_name: Chichewa
+  id: 30
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00089: 
+  position: 89
+  name: Komi  
+  display_name: Komi
+  id: 89
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00145: 
+  position: 145
+  name: Sichuan Yi  
+  display_name: Sichuan Yi
+  id: 145
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00003: 
+  position: 3
+  name: Afar  
+  display_name: Afar
+  id: 3
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00117: 
+  position: 117
+  name: North Ndebele  
+  display_name: North Ndebele
+  id: 117
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00173: 
+  position: 173
+  name: Uighur  
+  display_name: Uighur
+  id: 173
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00031: 
+  position: 31
+  name: Chinese  
+  display_name: Chinese
+  id: 31
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00004: 
+  position: 4
+  name: Afrikaans  
+  display_name: Afrikaans
+  id: 4
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00118: 
+  position: 118
+  name: Northern Sami  
+  display_name: Northern Sami
+  id: 118
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00060: 
+  position: 60
+  name: Haitian  
+  display_name: Haitian
+  id: 60
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00174: 
+  position: 174
+  name: Ukrainian  
+  display_name: Ukrainian
+  id: 174
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00032: 
+  position: 32
+  name: Church Slavic  
+  display_name: Church Slavic
+  id: 32
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00146: 
+  position: 146
+  name: Sindhi  
+  display_name: Sindhi
+  id: 146
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00119: 
+  position: 119
+  name: Norwegian  
+  display_name: Norwegian
+  id: 119
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00061: 
+  position: 61
+  name: Hausa  
+  display_name: Hausa
+  id: 61
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00175: 
+  position: 175
+  name: Urdu  
+  display_name: Urdu
+  id: 175
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00033: 
+  position: 33
+  name: Chuvash  
+  display_name: Chuvash
+  id: 33
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00147: 
+  position: 147
+  name: Sinhala  
+  display_name: Sinhala
+  id: 147
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00005: 
+  position: 5
+  name: Akan  
+  display_name: Akan
+  id: 5
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00062: 
+  position: 62
+  name: Hebrew  
+  display_name: Hebrew
+  id: 62
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00176: 
+  position: 176
+  name: Uzbek  
+  display_name: Uzbek
+  id: 176
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00034: 
+  position: 34
+  name: Cornish  
+  display_name: Cornish
+  id: 34
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00148: 
+  position: 148
+  name: Slovak  
+  display_name: Slovak
+  id: 148
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00006: 
+  position: 6
+  name: Albanian  
+  display_name: Albanian
+  id: 6
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00090: 
+  position: 90
+  name: Kongo  
+  display_name: Kongo
+  id: 90
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00063: 
+  position: 63
+  name: Herero  
+  display_name: Herero
+  id: 63
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00177: 
+  position: 177
+  name: Venda  
+  display_name: Venda
+  id: 177
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00035: 
+  position: 35
+  name: Corsican  
+  display_name: Corsican
+  id: 35
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00149: 
+  position: 149
+  name: Slovenian  
+  display_name: Slovenian
+  id: 149
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00007: 
+  position: 7
+  name: Amharic  
+  display_name: Amharic
+  id: 7
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00091: 
+  position: 91
+  name: Korean  
+  display_name: Korean
+  id: 91
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00064: 
+  position: 64
+  name: Hindi  
+  display_name: Hindi
+  id: 64
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00178: 
+  position: 178
+  name: Vietnamese  
+  display_name: Vietnamese
+  id: 178
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00036: 
+  position: 36
+  name: Cree  
+  display_name: Cree
+  id: 36
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00008: 
+  position: 8
+  name: Arabic  
+  display_name: Arabic
+  id: 8
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00092: 
+  position: 92
+  name: Kurdish  
+  display_name: Kurdish
+  id: 92
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00065: 
+  position: 65
+  name: Hiri Motu  
+  display_name: Hiri Motu
+  id: 65
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00120: 
+  position: 120
+  name: "Norwegian Bokm\xC3\xA5l"  
+  display_name: "Norwegian Bokm\xC3\xA5l"
+  id: 120
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00179: 
+  position: 179
+  name: "Volap\xC3\xBCk"  
+  display_name: "Volap\xC3\xBCk"
+  id: 179
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00037: 
+  position: 37
+  name: Croatian  
+  display_name: Croatian
+  id: 37
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00009: 
+  position: 9
+  name: Aragonese  
+  display_name: Aragonese
+  id: 9
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00093: 
+  position: 93
+  name: Kwanyama  
+  display_name: Kwanyama
+  id: 93
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00066: 
+  position: 66
+  name: Hungarian  
+  display_name: Hungarian
+  id: 66
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00121: 
+  position: 121
+  name: Norwegian Nynorsk  
+  display_name: Norwegian Nynorsk
+  id: 121
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00038: 
+  position: 38
+  name: Czech  
+  display_name: Czech
+  id: 38
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00094: 
+  position: 94
+  name: Lao  
+  display_name: Lao
+  id: 94
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00067: 
+  position: 67
+  name: Icelandic  
+  display_name: Icelandic
+  id: 67
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00122: 
+  position: 122
+  name: Occitan  
+  display_name: Occitan
+  id: 122
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00039: 
+  position: 39
+  name: Danish  
+  display_name: Danish
+  id: 39
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00095: 
+  position: 95
+  name: Latin  
+  display_name: Latin
+  id: 95
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00150: 
+  position: 150
+  name: Somali  
+  display_name: Somali
+  id: 150
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00123: 
+  position: 123
+  name: Ojibwa  
+  display_name: Ojibwa
+  id: 123
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00096: 
+  position: 96
+  name: Latvian  
+  display_name: Latvian
+  id: 96
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00151: 
+  position: 151
+  name: Sotho  
+  display_name: Sotho
+  id: 151
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00068: 
+  position: 68
+  name: Ido  
+  display_name: Ido
+  id: 68
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00124: 
+  position: 124
+  name: Oriya  
+  display_name: Oriya
+  id: 124
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00180: 
+  position: 180
+  name: Walloon  
+  display_name: Walloon
+  id: 180
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00097: 
+  position: 97
+  name: Limburgish  
+  display_name: Limburgish
+  id: 97
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00152: 
+  position: 152
+  name: South Ndebele  
+  display_name: South Ndebele
+  id: 152
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00010: 
+  position: 10
+  name: Armenian  
+  display_name: Armenian
+  id: 10
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00069: 
+  position: 69
+  name: Igbo  
+  display_name: Igbo
+  id: 69
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00181: 
+  position: 181
+  name: Welsh  
+  display_name: Welsh
+  id: 181
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00098: 
+  position: 98
+  name: Lingala  
+  display_name: Lingala
+  id: 98
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00153: 
+  position: 153
+  name: Spanish  
+  display_name: Spanish
+  id: 153
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00011: 
+  position: 11
+  name: Assamese  
+  display_name: Assamese
+  id: 11
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00125: 
+  position: 125
+  name: Oromo  
+  display_name: Oromo
+  id: 125
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00182: 
+  position: 182
+  name: Western Frisian  
+  display_name: Western Frisian
+  id: 182
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00040: 
+  position: 40
+  name: Divehi  
+  display_name: Divehi
+  id: 40
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00099: 
+  position: 99
+  name: Lithuanian  
+  display_name: Lithuanian
+  id: 99
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00154: 
+  position: 154
+  name: Sundanese  
+  display_name: Sundanese
+  id: 154
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00012: 
+  position: 12
+  name: Avaric  
+  display_name: Avaric
+  id: 12
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00126: 
+  position: 126
+  name: Ossetian  
+  display_name: Ossetian
+  id: 126
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00183: 
+  position: 183
+  name: Wolof  
+  display_name: Wolof
+  id: 183
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00041: 
+  position: 41
+  name: Dutch  
+  display_name: Dutch
+  id: 41
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00155: 
+  position: 155
+  name: Swahili  
+  display_name: Swahili
+  id: 155
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00013: 
+  position: 13
+  name: Avestan  
+  display_name: Avestan
+  id: 13
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00127: 
+  position: 127
+  name: Panjabi  
+  display_name: Panjabi
+  id: 127
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00128: 
+  position: 128
+  name: Pashto  
+  display_name: Pashto
+  id: 128
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00184: 
+  position: 184
+  name: Xhosa  
+  display_name: Xhosa
+  id: 184
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00042: 
+  position: 42
+  name: Dzongkha  
+  display_name: Dzongkha
+  id: 42
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00156: 
+  position: 156
+  name: Swati  
+  display_name: Swati
+  id: 156
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00014: 
+  position: 14
+  name: Aymara  
+  display_name: Aymara
+  id: 14
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00070: 
+  position: 70
+  name: Indonesian  
+  display_name: Indonesian
+  id: 70
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00185: 
+  position: 185
+  name: Yiddish  
+  display_name: Yiddish
+  id: 185
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00043: 
+  position: 43
+  name: English  
+  display_name: English
+  id: 43
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00157: 
+  position: 157
+  name: Swedish  
+  display_name: Swedish
+  id: 157
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00015: 
+  position: 15
+  name: Azerbaijani  
+  display_name: Azerbaijani
+  id: 15
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00129: 
+  position: 129
+  name: Persian  
+  display_name: Persian
+  id: 129
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00071: 
+  position: 71
+  name: Interlingua  
+  display_name: Interlingua
+  id: 71
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00186: 
+  position: 186
+  name: Yoruba  
+  display_name: Yoruba
+  id: 186
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00044: 
+  position: 44
+  name: Esperanto  
+  display_name: Esperanto
+  id: 44
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00158: 
+  position: 158
+  name: Tagalog  
+  display_name: Tagalog
+  id: 158
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00016: 
+  position: 16
+  name: Bambara  
+  display_name: Bambara
+  id: 16
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00072: 
+  position: 72
+  name: Interlingue  
+  display_name: Interlingue
+  id: 72
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00017: 
+  position: 17
+  name: Bashkir  
+  display_name: Bashkir
+  id: 17
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00159: 
+  position: 159
+  name: Tahitian  
+  display_name: Tahitian
+  id: 159
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00187: 
+  position: 187
+  name: Zhuang  
+  display_name: Zhuang
+  id: 187
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00045: 
+  position: 45
+  name: Estonian  
+  display_name: Estonian
+  id: 45
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00100: 
+  position: 100
+  name: Luba-Katanga  
+  display_name: Luba-Katanga
+  id: 100
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00073: 
+  position: 73
+  name: Inuktitut  
+  display_name: Inuktitut
+  id: 73
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00188: 
+  position: 188
+  name: Zulu  
+  display_name: Zulu
+  id: 188
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00101: 
+  position: 101
+  name: Luxembourgish  
+  display_name: Luxembourgish
+  id: 101
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00046: 
+  position: 46
+  name: Ewe  
+  display_name: Ewe
+  id: 46
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00018: 
+  position: 18
+  name: Basque  
+  display_name: Basque
+  id: 18
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00074: 
+  position: 74
+  name: Inupiaq  
+  display_name: Inupiaq
+  id: 74
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00130: 
+  position: 130
+  name: Polish  
+  display_name: Polish
+  id: 130
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00075: 
+  position: 75
+  name: Irish  
+  display_name: Irish
+  id: 75
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00102: 
+  position: 102
+  name: Macedonian  
+  display_name: Macedonian
+  id: 102
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00019: 
+  position: 19
+  name: Belarusian  
+  display_name: Belarusian
+  id: 19
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00047: 
+  position: 47
+  name: Fanti  
+  display_name: Fanti
+  id: 47
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00131: 
+  position: 131
+  name: Portuguese  
+  display_name: Portuguese
+  id: 131
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00076: 
+  position: 76
+  name: Italian  
+  display_name: Italian
+  id: 76
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00103: 
+  position: 103
+  name: Malagasy  
+  display_name: Malagasy
+  id: 103
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00048: 
+  position: 48
+  name: Faroese  
+  display_name: Faroese
+  id: 48
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00104: 
+  position: 104
+  name: Malay  
+  display_name: Malay
+  id: 104
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00132: 
+  position: 132
+  name: Pali
+  display_name: !binary |
+    UMSBbGk=
+
+  id: 132
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00160: 
+  position: 160
+  name: Tajik  
+  display_name: Tajik
+  id: 160
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00077: 
+  position: 77
+  name: Japanese  
+  display_name: "en: Japanese\r\n\
+    ja: 日本語"
+  id: 77
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00049: 
+  position: 49
+  name: Fijian  
+  display_name: Fijian
+  id: 49
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00133: 
+  position: 133
+  name: Quechua  
+  display_name: Quechua
+  id: 133
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00105: 
+  position: 105
+  name: Malayalam  
+  display_name: Malayalam
+  id: 105
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00161: 
+  position: 161
+  name: Tamil  
+  display_name: Tamil
+  id: 161
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00078: 
+  position: 78
+  name: Javanese  
+  display_name: Javanese
+  id: 78
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00106: 
+  position: 106
+  name: Maltese  
+  display_name: Maltese
+  id: 106
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00134: 
+  position: 134
+  name: Raeto-Romance  
+  display_name: Raeto-Romance
+  id: 134
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00020: 
+  position: 20
+  name: Bengali  
+  display_name: Bengali
+  id: 20
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00079: 
+  position: 79
+  name: Kalaallisut  
+  display_name: Kalaallisut
+  id: 79
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00162: 
+  position: 162
+  name: Tatar  
+  display_name: Tatar
+  id: 162
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00107: 
+  position: 107
+  name: Manx  
+  display_name: Manx
+  id: 107
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00163: 
+  position: 163
+  name: Telugu  
+  display_name: Telugu
+  id: 163
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00135: 
+  position: 135
+  name: Romanian  
+  display_name: Romanian
+  id: 135
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00021: 
+  position: 21
+  name: Bihari  
+  display_name: Bihari
+  id: 21
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00164: 
+  position: 164
+  name: Thai  
+  display_name: Thai
+  id: 164
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00022: 
+  position: 22
+  name: Bislama  
+  display_name: Bislama
+  id: 22
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00050: 
+  position: 50
+  name: Finnish  
+  display_name: Finnish
+  id: 50
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00108: 
+  position: 108
+  name: Marathi  
+  display_name: Marathi
+  id: 108
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00136: 
+  position: 136
+  name: Russian  
+  display_name: Russian
+  id: 136
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00137: 
+  position: 137
+  name: Samoan  
+  display_name: Samoan
+  id: 137
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00051: 
+  position: 51
+  name: French  
+  display_name: French
+  id: 51
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00165: 
+  position: 165
+  name: Tibetan  
+  display_name: Tibetan
+  id: 165
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00023: 
+  position: 23
+  name: Bosnian  
+  display_name: Bosnian
+  id: 23
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00109: 
+  position: 109
+  name: Marshallese  
+  display_name: Marshallese
+  id: 109
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00166: 
+  position: 166
+  name: Tigrinya  
+  display_name: Tigrinya
+  id: 166
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00138: 
+  position: 138
+  name: Sango  
+  display_name: Sango
+  id: 138
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00080: 
+  position: 80
+  name: Kannada  
+  display_name: Kannada
+  id: 80
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00024: 
+  position: 24
+  name: Breton  
+  display_name: Breton
+  id: 24
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00052: 
+  position: 52
+  name: Fulah  
+  display_name: Fulah
+  id: 52
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00025: 
+  position: 25
+  name: Bulgarian  
+  display_name: Bulgarian
+  id: 25
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00139: 
+  position: 139
+  name: Sanskrit  
+  display_name: Sanskrit
+  id: 139
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00167: 
+  position: 167
+  name: Tonga  
+  display_name: Tonga
+  id: 167
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00053: 
+  position: 53
+  name: Galician  
+  display_name: Galician
+  id: 53
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00081: 
+  position: 81
+  name: Kanuri  
+  display_name: Kanuri
+  id: 81
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00168: 
+  position: 168
+  name: Tsonga  
+  display_name: Tsonga
+  id: 168
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00054: 
+  position: 54
+  name: Ganda  
+  display_name: Ganda
+  id: 54
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00082: 
+  position: 82
+  name: Kashmiri  
+  display_name: Kashmiri
+  id: 82
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00026: 
+  position: 26
+  name: Burmese  
+  display_name: Burmese
+  id: 26
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00110: 
+  position: 110
+  name: Moldavian  
+  display_name: Moldavian
+  id: 110
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00055: 
+  position: 55
+  name: Georgian  
+  display_name: Georgian
+  id: 55
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00083: 
+  position: 83
+  name: Kazakh  
+  display_name: Kazakh
+  id: 83
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00027: 
+  position: 27
+  name: Catalan  
+  display_name: Catalan
+  id: 27
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00169: 
+  position: 169
+  name: Tswana  
+  display_name: Tswana
+  id: 169
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00111: 
+  position: 111
+  name: Mongolian  
+  display_name: Mongolian
+  id: 111
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00056: 
+  position: 56
+  name: German  
+  display_name: German
+  id: 56
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00084: 
+  position: 84
+  name: Khmer  
+  display_name: Khmer
+  id: 84
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00028: 
+  position: 28
+  name: Chamorro  
+  display_name: Chamorro
+  id: 28
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00112: 
+  position: 112
+  name: Maori
+  display_name: Māorii
+  id: 112
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00057: 
+  position: 57
+  name: Greek  
+  display_name: Greek
+  id: 57
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00085: 
+  position: 85
+  name: Kikuyu  
+  display_name: Kikuyu
+  id: 85
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00029: 
+  position: 29
+  name: Chechen  
+  display_name: Chechen
+  id: 29
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+language_00140: 
+  position: 140
+  name: Sardinian  
+  display_name: Sardinian
+  id: 140
+  note: 
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
+
+# == Schema Information
+#
+# Table name: languages
+#
+#  id           :integer          not null, primary key
+#  name         :string           not null
+#  display_name :text
+#  note         :text
+#  position     :integer
+#

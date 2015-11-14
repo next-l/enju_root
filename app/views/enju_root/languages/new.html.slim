@@ -1,4 +1,14 @@
-h1
-  | New Language
-= render 'form'
-= link_to 'Back', languages_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Back', enju_root.languages_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | New Language
+      .panel-body
+        = render 'form'

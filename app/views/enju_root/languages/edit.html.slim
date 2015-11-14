@@ -1,6 +1,16 @@
-h1
-  | Editing Language
-= render 'form'
-= link_to 'Show', @language
-|  | 
-= link_to 'Back', languages_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Show', enju_root.language_path(@language)
+          li
+            = link_to 'Back', enju_root.languages_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Editing Language
+      .panel-body
+        = render 'form'

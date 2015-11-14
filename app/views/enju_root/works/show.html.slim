@@ -22,4 +22,10 @@
               | :
               =>
             = @work.preferred_title
+          p
+            strong
+              | Form of work
+              | :
+              =>
+            = @work.form_of_work.display_name
         = frbr_graph(@work)

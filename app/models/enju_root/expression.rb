@@ -31,13 +31,13 @@ module EnjuRoot
       g.node[:color] = "blue"
       g.node[:fontsize] = 10
 
-      e = g.add_nodes("[E#{id}] #{language} #{content_type.try(:name)}", "URL" => "/expressions/#{id}", :fontcolor => "red", :shape => 'box', :color => 'blue')
+      e = g.add_nodes("[E#{id}] #{language.display_name} #{content_type.try(:name)}", "URL" => "/expressions/#{id}", :fontcolor => "red", :shape => 'box', :color => 'blue')
       w = g.add_nodes("[W#{work.id}] #{work.preferred_title}", "URL" => "/works/#{work.id}", :shape => 'box', :color => 'blue')
       g.add_edges(w, e)
 
       work.expressions.each do |expression|
         if expression != self
-          e = g.add_nodes("[E#{expression.id}] #{expression.language} #{expression.content_type_id}", "URL" => "/expressions/#{expression.id}")
+          e = g.add_nodes("[E#{expression.id}] #{expression.language.display_name} #{expression.content_type.display_name}", "URL" => "/expressions/#{expression.id}")
           g.add_edges(w, e)
         end
       end

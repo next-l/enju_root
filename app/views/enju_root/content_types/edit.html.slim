@@ -1,6 +1,16 @@
-h1
-  | Editing Content Type
-= render 'form'
-= link_to 'Show', @content_type
-|  | 
-= link_to 'Back', content_types_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Show', enju_root.content_type_path(@content_type)
+          li
+            = link_to 'Back', enju_root.content_types_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Editing Content Type
+      .panel-body
+        = render 'form'

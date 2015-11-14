@@ -5,6 +5,7 @@ EnjuRoot::Engine.routes.draw do
   resources :work_relationship_types
   resources :content_types
   resources :languages
+  resources :form_of_works
   resources :work_relationships
   resources :work_and_subjects
   resources :nomens

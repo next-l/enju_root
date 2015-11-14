@@ -4,7 +4,7 @@
       .panel-body
         ul
           li
-            = link_to 'New Work', new_work_path
+            = link_to 'New Work', enju_root.new_work_path
   .col-md-9
     .panel.panel-default
       .panel-heading
@@ -13,7 +13,7 @@
       .panel-body
         p#notice
           = notice
-        = form_for :works, url: works_path, html: {method: 'get', class: 'form-inline'} do
+        = form_for :works, url: enju_root.works_path, html: {method: 'get', class: 'form-inline'} do
           .form-group
             = label_tag :query, 'Search term'
             | : 
@@ -27,11 +27,11 @@
             - @works.each do |work|
               tr
                 td
-                  = link_to work.preferred_title, work
+                  = link_to work.preferred_title, enju_root.work_path(work)
                 td
                   - if @parent
                     = link_to 'Add a work', enju_root.new_work_relationship_path(parent_id: @parent.id, child_id: work.id)
                   - else
-                    = link_to 'Edit', edit_work_path(work)
+                    = link_to 'Edit', enju_root.edit_work_path(work)
                 td
-                  = link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Destroy', enju_root.work_path(work), method: :delete, data: { confirm: 'Are you sure?' }

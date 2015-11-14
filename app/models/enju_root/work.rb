@@ -1,16 +1,15 @@
 module EnjuRoot
   class Work < ActiveRecord::Base
     has_many :expressions
-    #has_many :reifies
-    #has_many :expressions, through: :reifies
     #has_many :agents
     has_many :children_relationships, foreign_key: 'parent_id', class_name: 'WorkRelationship', dependent: :destroy
     has_many :parents_relationships, foreign_key: 'child_id', class_name: 'WorkRelationship', dependent: :destroy
     has_many :children, through: :children_relationships, source: :child
     has_many :parents, through: :parents_relationships, source: :parent
-    #has_many :subjects
+    belongs_to :form_of_work
 
     validates :preferred_title, presence: true
+    validates :form_of_work_id, presence: true
     #after_save :generate_graph
     attachment :work_graph
 
@@ -72,7 +71,7 @@ module EnjuRoot
         c = g.add_nodes("[W#{child.id}] #{child.preferred_title}", "URL" => "/works/#{child.id}", :shape => 'box', :color => 'blue')
         g.add_edges(w, c)
         child.expressions.each do |expression|
-          e3 = g.add_nodes("[E#{expression.id}] #{expression.language} #{expression.content_type.name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
+          e3 = g.add_nodes("[E#{expression.id}] #{expression.language.display_name} #{expression.content_type.display_name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
           g.add_edges(c, e3)
           expression.manifestations.each do |manifestation|
             m = g.add_nodes("[M#{manifestation.id}] #{manifestation.cinii_title}", "URL" => "/manifestations/#{manifestation.id}", :shape => 'box', :color => 'blue')
@@ -82,14 +81,14 @@ module EnjuRoot
       end
 
       expressions.each do |expression|
-        e = g.add_nodes("[E#{expression.id}] #{expression.language} #{expression.content_type.try(:name)}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
+        e = g.add_nodes("[E#{expression.id}] #{expression.language.display_name} #{expression.content_type.display_name}", "URL" => "/expressions/#{expression.id}", :shape => 'box', :color => 'blue')
         g.add_edges(w, e)
         expression.manifestations.each do |manifestation|
           m = g.add_nodes("[M#{manifestation.id}] #{manifestation.cinii_title}", "URL" => "/manifestations/#{manifestation.id}", :shape => 'box', :color => 'blue')
           g.add_edges(e, m)
           manifestation.expressions.each do |expression2|
             unless expressions.include?(expression2)
-              e2 = g.add_nodes("[E#{expression2.id}] #{expression2.language} #{expression2.content_type.name}", "URL" => "/expressions/#{expression2.id}", :shape => 'box', :color => 'blue')
+              e2 = g.add_nodes("[E#{expression2.id}] #{expression2.language.display_name} #{expression2.content_type.display_name}", "URL" => "/expressions/#{expression2.id}", :shape => 'box', :color => 'blue')
               g.add_edges(e2, m)
               if expression2.work != self
                 w2 = g.add_nodes("[W#{expression2.work.id}] #{expression2.work.preferred_title}", "URL" => "/works/#{expression2.work.id}", :shape => 'box', :color => 'blue')
