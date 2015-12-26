@@ -32,14 +32,14 @@ Gem::Specification.new do |s|
   s.add_dependency "cocoon"
   s.add_dependency "ruby-graphviz"
   s.add_dependency "linkeddata"
-  s.add_dependency "sunspot_rails", "~> 2.2"
+  s.add_dependency "sunspot_rails", "~> 2.2.3"
   s.add_dependency "validates_timeliness"
   s.add_dependency "closure_tree"
   s.add_dependency "faraday"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.4"
-  s.add_development_dependency "sunspot_solr", "~> 2.2"
+  s.add_development_dependency "sunspot_solr", "2.2.0"
   s.add_development_dependency "sunspot-rails-tester"
   s.add_development_dependency "annotate"
 end
