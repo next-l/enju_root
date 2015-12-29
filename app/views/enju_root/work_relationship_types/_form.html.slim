@@ -1,0 +1,28 @@
+= form_for([enju_root, @work_relationship_type]) do |f|
+  - if @work_relationship_type.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@work_relationship_type.errors.count, "error")
+        |  prohibited this work_relationship_type from being saved:
+      ul
+        - @work_relationship_type.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :name
+    br
+    = f.text_field :name
+  .field
+    = f.label :display_name
+    br
+    = f.text_area :display_name
+  .field
+    = f.label :note
+    br
+    = f.text_area :note
+  .field
+    = f.label :position
+    br
+    = f.number_field :position
+  .actions
+    = f.submit

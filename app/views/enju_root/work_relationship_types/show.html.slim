@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | Name:
+  = @work_relationship_type.name
+p
+  strong
+    | Display name:
+  = @work_relationship_type.display_name
+p
+  strong
+    | Note:
+  = @work_relationship_type.note
+p
+  strong
+    | Position:
+  = @work_relationship_type.position
+= link_to 'Edit', edit_work_relationship_type_path(@work_relationship_type)
+|  | 
+= link_to 'Back', work_relationship_types_path

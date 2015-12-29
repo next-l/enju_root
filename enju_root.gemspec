@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ruby-graphviz"
   s.add_dependency "linkeddata"
   s.add_dependency "sunspot_rails", "~> 2.2.3"
-  s.add_dependency "validates_timeliness"
+  s.add_dependency "validates_timeliness", "~> 4.0"
   s.add_dependency "closure_tree"
   s.add_dependency "faraday"
 

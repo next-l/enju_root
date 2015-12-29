@@ -1,0 +1,35 @@
+p#notice
+  = notice
+h1
+  | Listing Work Relationship Types
+table
+  thead
+    tr
+      th
+        | Name
+      th
+        | Display name
+      th
+        | Note
+      th
+        | Position
+      th[colspan="3"]
+  tbody
+    - @work_relationship_types.each do |work_relationship_type|
+      tr
+        td
+          = work_relationship_type.name
+        td
+          = work_relationship_type.display_name
+        td
+          = work_relationship_type.note
+        td
+          = work_relationship_type.position
+        td
+          = link_to 'Show', work_relationship_type
+        td
+          = link_to 'Edit', edit_work_relationship_type_path(work_relationship_type)
+        td
+          = link_to 'Destroy', work_relationship_type, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Work relationship type', new_work_relationship_type_path

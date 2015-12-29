@@ -1,0 +1,44 @@
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'New Work relationship', new_work_relationship_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1
+          | Listing Work Relationships
+      .panel-body
+        p#notice
+          = notice
+        table.table.table-striped
+          thead
+            tr
+              th
+                | Parent
+              th
+                | Child
+              th
+                | Work relationship type
+              th
+                | Note
+              th[colspan="3"]
+          tbody
+            - @work_relationships.each do |work_relationship|
+              tr
+                td
+                  = work_relationship.parent_id
+                td
+                  = work_relationship.child_id
+                td
+                  = work_relationship.work_relationship_type_id
+                td
+                  = work_relationship.note
+                td
+                  = link_to 'Show', work_relationship
+                td
+                  = link_to 'Edit', edit_work_relationship_path(work_relationship)
+                td
+                  = link_to 'Destroy', work_relationship, method: :delete, data: { confirm: 'Are you sure?' }
