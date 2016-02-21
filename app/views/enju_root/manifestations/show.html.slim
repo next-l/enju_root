@@ -1,9 +1,23 @@
-p#notice
-  = notice
-p
-  strong
-    | Manifestation url:
-  = @manifestation.manifestation_url
-= link_to 'Edit', edit_manifestation_path(@manifestation)
-|  | 
-= link_to 'Back', manifestations_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Edit', edit_manifestation_path(@manifestation)
+          li
+            = link_to 'Back', manifestations_path
+  .col-md-9
+    .panel.panel-default
+      .panel-body
+        #notice
+          = notice
+        p
+          strong
+            | Manifestation url: 
+          = @manifestation.manifestation_url
+        ul
+          - @manifestation.expressions.each do |expression|
+            li
+              = link_to expression.work.preferred_title, expression
+        

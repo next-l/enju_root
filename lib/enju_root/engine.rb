@@ -6,6 +6,7 @@ require 'refile/rails'
 require 'refile/mini_magick'
 require 'ruby-graphviz'
 require 'addressable/uri'
+require 'strip_attributes'
 
 module EnjuRoot
   class Engine < ::Rails::Engine

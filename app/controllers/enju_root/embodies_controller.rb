@@ -16,6 +16,8 @@ module EnjuRoot
     # GET /embodies/new
     def new
       @embody = Embody.new
+      @embody.expression = Expression.find(params[:expression_id]) if params[:expression_id]
+      @embody.manifestation_url = params[:manifestation_url]
     end
 
     # GET /embodies/1/edit
@@ -59,8 +61,10 @@ module EnjuRoot
 
       # Only allow a trusted parameter "white list" through.
       def embody_params
-        params.require(:embody).permit(:expression_id, :manifestation_id, :embody_type_id, :note,
-                                      :manifestation_url)
+        params.require(:embody).permit(
+          :expression_id, :manifestation_id, :embody_type_id, :note,
+          :manifestation_url
+        )
       end
   end
 end

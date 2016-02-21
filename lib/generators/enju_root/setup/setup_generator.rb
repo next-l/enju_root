@@ -1,4 +1,4 @@
-class EnjuRoot::SetupGenerator < Rails::Generators::NamedBase
+class EnjuRoot::SetupGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
   def copy_setup_files
@@ -17,6 +17,22 @@ class EnjuRoot::SetupGenerator < Rails::Generators::NamedBase
 EOS
     end
 
+    inject_into_file "app/assets/javascripts/application.js", after: /\/\/= require jquery_ujs$\n/ do
+      "//= require bootstrap-sprockets\n"
+    end
+    remove_file("app/assets/stylesheets/application.css")
+    create_file("app/assets/stylesheets/application.scss")
+    append_to_file("app/assets/stylesheets/application.scss") do
+      <<"EOS"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+EOS
+    end
+    gsub_file "app/assets/javascripts/application.js",
+      /\/\/= require turbolinks$/,
+      ""
+
+    append_to_file("Rakefile", "require 'resque/tasks'\n")
     application(nil, env: "development") do
       "config.action_mailer.default_url_options = {host: 'localhost:3000'}\n"
     end

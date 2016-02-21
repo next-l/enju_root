@@ -5,3 +5,5 @@ form_of_work_00001:
   id: 1
   position: 1
   note: ""
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>

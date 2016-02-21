@@ -1,6 +1,17 @@
-h1
-  | Editing Manifestation
-= render 'form'
-= link_to 'Show', @manifestation
-|  | 
-= link_to 'Back', manifestations_path
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-body
+        ul
+          li
+            = link_to 'Show', @manifestation
+          li
+            = link_to 'Back', manifestations_path
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title
+          | Editing Manifestation
+      .panel-body
+        #notice
+        = render 'form'

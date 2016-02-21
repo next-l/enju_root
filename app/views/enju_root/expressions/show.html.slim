@@ -25,11 +25,11 @@
             | Language
             | :
             =>
-          = @expression.language.display_name
+          = @expression.language.display_name.localize
         p
           strong
             | Content Type
             | :
             =>
-          = @expression.content_type.display_name
+          = @expression.content_type.display_name.localize
         = frbr_graph(@expression)

@@ -45,7 +45,8 @@ module EnjuRoot
       :manifestation_url, :work_url
 
     def titles
-      [preferred_title, expressions.map{|e| e.manifestations.map{|m| m.cinii_title}}].flatten
+      preferred_title
+      #[preferred_title, expressions.map{|e| e.manifestations.map{|m| m.cinii_title}}].flatten
     end
 
     def frbr_graph

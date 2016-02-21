@@ -6,6 +6,8 @@ content_type_00001:
     ja: 文字"
   note: 
   position: 1
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00002:
   id: 2
   name: performed_music
@@ -13,6 +15,8 @@ content_type_00002:
     ja: 音楽"
   note: 曲の演奏など
   position: 2
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00003:
   id: 3
   name: two_dimensional_moving_image
@@ -20,6 +24,8 @@ content_type_00003:
     ja: 動画"
   note: 
   position: 3
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00004:
   id: 4
   name: tactile_text
@@ -27,6 +33,8 @@ content_type_00004:
     ja: 点字など"
   note: 触ることのできる文字
   position: 4
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00005:
   id: 5
   name: still_image
@@ -34,6 +42,8 @@ content_type_00005:
     ja: 画像"
   note: 静止画像
   position: 5
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00006:
   id: 6
   name: cartographic_image
@@ -41,6 +51,8 @@ content_type_00006:
     ja: 地図"
   note: 
   position: 6
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00007:
   id: 7
   name: spoken_word
@@ -48,6 +60,8 @@ content_type_00007:
     ja: 音声"
   note: 読み上げ音声など
   position: 7
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00008:
   id: 8
   name: sounds
@@ -55,6 +69,8 @@ content_type_00008:
     ja: 音"
   note: 波音など
   position: 8
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00009:
   id: 9
   name: notated_music
@@ -62,6 +78,8 @@ content_type_00009:
     ja: 楽譜"
   note: 
   position: 9
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00010:
   id: 10
   name: three_dimensional_moving_image
@@ -69,6 +87,8 @@ content_type_00010:
     ja: 3D動画"
   note: 
   position: 10
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00011:
   id: 11
   name: other
@@ -76,6 +96,8 @@ content_type_00011:
     ja: その他"
   note: LCMARCに由来
   position: 11
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
 content_type_00012:
   id: 12
   name: unspecified
@@ -83,3 +105,5 @@ content_type_00012:
     ja: 不明"
   note: LCMARCに由来
   position: 12
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>

@@ -14,18 +14,18 @@
   .col-md-9
     .panel.panel-default
       .panel-body
-        p#notice
+        #notice
           = notice
-          p
-            strong
-              | Preferred title
-              | :
-              =>
-            = @work.preferred_title
-          p
-            strong
-              | Form of work
-              | :
-              =>
-            = @work.form_of_work.display_name
+        p
+          strong
+            | Preferred title
+            | :
+            =>
+          = @work.preferred_title
+        p
+          strong
+            | Form of work
+            | :
+            =>
+          = @work.form_of_work.display_name
         = frbr_graph(@work)

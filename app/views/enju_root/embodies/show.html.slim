@@ -14,12 +14,12 @@
           = notice
         p
           strong
-            | Expression:
-          = @embody.expression_id
+            | Expression: 
+          = link_to @embody.expression.work.preferred_title, @embody.expression
         p
           strong
-            | Manifestation:
-          = @embody.manifestation_id
+            | Manifestation: 
+          = @embody.manifestation.manifestation_url
         p
           strong
             | Embody type:
